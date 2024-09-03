@@ -1,7 +1,8 @@
 ---
 title: "Drag and Drop with AngularJS and jQuery UI"
 date: "2013-03-30"
-categories: 
+categories:
+  - "blog"
   - "javascript"
   - "ui"
   - "web"

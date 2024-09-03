@@ -1,7 +1,8 @@
 ---
 title: "Be a Subject Expert (in something else)"
 date: "2011-01-12"
-categories: 
+categories:
+  - "blog"
   - "personal"
   - "projects"
 ---

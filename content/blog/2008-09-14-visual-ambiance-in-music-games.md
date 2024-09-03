@@ -1,7 +1,8 @@
 ---
 title: "Visual Ambiance in Music Games"
 date: "2008-09-14"
-categories: 
+categories:
+  - "blog"
   - "music-video-games"
   - "projects"
 ---

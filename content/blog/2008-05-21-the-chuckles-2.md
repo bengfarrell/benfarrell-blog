@@ -2,6 +2,8 @@
 title: "The Chuckles!"
 date: "2008-05-21"
 categories:
+  - "blog"
+  - "illustration"
   - "projects"
 ---
 

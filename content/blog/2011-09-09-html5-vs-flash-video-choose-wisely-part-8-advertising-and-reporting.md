@@ -2,6 +2,7 @@
 title: "HTML5 vs Flash Video: Choose Wisely Part 8 – Advertising and Reporting"
 date: "2011-09-09"
 categories:
+  - "blog"
   - "development"
   - "flash"
   - "flashflex"

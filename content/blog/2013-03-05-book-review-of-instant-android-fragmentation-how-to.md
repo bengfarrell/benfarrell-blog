@@ -1,7 +1,8 @@
 ---
 title: "Book Review of Instant Android Fragmentation How-To"
 date: "2013-03-05"
-categories: 
+categories:
+  - "blog"
   - "android"
 ---
 

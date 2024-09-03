@@ -1,7 +1,8 @@
 ---
 title: "Weekend Project - Bye Bye Cable TV"
 date: "2009-02-01"
-categories: 
+categories:
+  - "blog"
   - "personal"
 ---
 

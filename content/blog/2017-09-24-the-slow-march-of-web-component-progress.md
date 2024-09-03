@@ -2,6 +2,7 @@
 title: "The Slow March of Web Component Progress"
 date: "2017-09-24"
 categories:
+  - "blog"
   - "html5"
   - "javascript"
   - "ui"

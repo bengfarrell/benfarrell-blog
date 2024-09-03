@@ -2,6 +2,7 @@
 title: "Ideas from Game Programming: A Resource Library with AngularJS"
 date: "2013-07-15"
 categories:
+  - "blog"
   - "angularjs"
   - "development"
   - "html5"

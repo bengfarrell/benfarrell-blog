@@ -1,0 +1,6 @@
+{% for post in postslist %}
+<h4 class="entry-title">{{ post.data.title }}</h4>
+<time datetime="{{ page.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+
+	{{ post.content | safe }}
+{% endfor %}

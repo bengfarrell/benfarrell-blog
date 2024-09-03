@@ -1,6 +1,8 @@
 ---
 title: "ES6 Web Components  Part 2 - The Building Blocks"
 date: "2015-10-27"
+categories:
+	- "blog"
 ---
 
 _This post is the second of five. [Click here to read the first](/blog/2015/10/26/es6-web-components-part-1-a-man-without-a-framework/) which covers why I came to Web Components in the first place._

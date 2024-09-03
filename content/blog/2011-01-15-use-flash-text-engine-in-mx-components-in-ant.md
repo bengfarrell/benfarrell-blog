@@ -1,6 +1,8 @@
 ---
 title: "Use Flash Text Engine in MX Components in ANT"
 date: "2011-01-15"
+categories:
+	- "blog"
 ---
 
 The title of this post is what I googled endlessly for like 2 hours trying to figure out how to do this.

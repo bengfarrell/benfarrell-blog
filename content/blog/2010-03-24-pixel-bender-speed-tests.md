@@ -1,6 +1,8 @@
 ---
 title: "Pixel Bender Speed Tests"
 date: "2010-03-24"
+categories:
+	- "blog"
 ---
 
 This is my last in a series of blog posts on Pixel Bender.  I'll probably be doing one more PxB post when I upgrade to Swiz 1.0 and we're talking about PxB processors with Swiz, but until then....

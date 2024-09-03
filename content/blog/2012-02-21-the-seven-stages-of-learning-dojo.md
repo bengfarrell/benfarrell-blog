@@ -1,7 +1,8 @@
 ---
 title: "The Seven Stages of Learning Dojo"
 date: "2012-02-21"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "dojo"
   - "html5"

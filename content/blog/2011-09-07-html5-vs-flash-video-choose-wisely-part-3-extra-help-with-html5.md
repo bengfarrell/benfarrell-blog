@@ -1,7 +1,8 @@
 ---
 title: "HTML5 vs Flash Video: Choose Wisely Part 3 - Extra Help with HTML5"
 date: "2011-09-07"
-categories: 
+categories:
+  - "blog"
   - "html5"
   - "javascript"
   - "ui"

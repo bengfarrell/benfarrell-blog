@@ -1,6 +1,8 @@
 ---
 title: "Embeds are broken in Flash 10.0 with Flex SDK 4.5"
 date: "2011-05-26"
+categories:
+	- "blog"
 ---
 
 I had a big problem today with backwards compatibility and the Flex 4.5 SDK today.

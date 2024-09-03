@@ -1,7 +1,8 @@
 ---
 title: "Book Review of Android 4: New Features for Application Development"
 date: "2013-02-24"
-categories: 
+categories:
+  - "blog"
   - "android"
   - "development"
   - "ui"

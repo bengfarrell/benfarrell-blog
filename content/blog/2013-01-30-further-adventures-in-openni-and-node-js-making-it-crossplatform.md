@@ -2,6 +2,7 @@
 title: "Further Adventures in OpenNI and Node.js - Making it Crossplatform"
 date: "2013-01-30"
 categories:
+  - "blog"
   - "c"
   - "kinect"
   - "nodejs"

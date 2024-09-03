@@ -1,6 +1,8 @@
 ---
 title: "Atomic Desktop Power"
 date: "2014-10-21"
+categories:
+	- "blog"
 ---
 
 Hey everyone! I just got back from [HTML5DevConf](http://html5devconf.com/) in San Francisco where I gave my talk "Atomic Desktop Power with Node.js". I had also given the same talk on the east coast last month at [NCDevCon](http://ncdevcon.com/).

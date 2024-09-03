@@ -2,6 +2,7 @@
 title: "Working with Input Text Bound to a Model in Polymer....made me angry"
 date: "2014-07-28"
 categories:
+  - "blog"
   - "polymer"
 ---
 

@@ -2,6 +2,7 @@
 title: "Some Geolocation and Google Mapping services in AngularJS"
 date: "2013-11-05"
 categories:
+  - "blog"
   - "angularjs"
   - "development"
   - "html5"

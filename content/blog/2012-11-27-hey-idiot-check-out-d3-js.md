@@ -2,6 +2,7 @@
 title: "Hey Idiot, Check Out D3.js"
 date: "2012-11-27"
 categories:
+  - "blog"
   - "development"
   - "html5"
   - "javascript"

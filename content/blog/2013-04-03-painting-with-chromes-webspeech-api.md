@@ -2,6 +2,7 @@
 title: "Painting with Chrome's WebSpeech API"
 date: "2013-04-03"
 categories:
+  - "blog"
   - "development"
   - "html5"
   - "nui"

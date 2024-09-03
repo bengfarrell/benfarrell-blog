@@ -2,6 +2,7 @@
 title: "360 Video: An Afternoon Within"
 date: "2016-08-20"
 categories:
+  - "blog"
   - "360"
   - "video"
   - "vr"

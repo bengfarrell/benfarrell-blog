@@ -2,9 +2,10 @@
 title: "Backyardigans: Mission To Mars"
 date: "2009-12-26"
 categories:
-  - "portfolio-desktop"
-  - "portfolio-development"
-  - "portfolio-flash"
+  - "portfolio"
+  - "desktop"
+  - "development"
+  - "flash"
 ---
 
 Backyardigans: Mission to Mars was a CD-ROM game we created at 360KID. It featured several games for this Nickelodeon show that were strung together by cut-scenes to create a great story where the Backyardigans journey to Mars.

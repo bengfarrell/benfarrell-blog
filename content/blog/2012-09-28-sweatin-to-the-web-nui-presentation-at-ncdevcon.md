@@ -1,7 +1,8 @@
 ---
 title: "Sweatin to the Web - NUI Presentation at NCDevCon"
 date: "2012-09-28"
-categories: 
+categories:
+  - "blog"
   - "javascript"
   - "kinect"
 ---
@@ -36,5 +37,5 @@ Primarily we explored the [Kinect SDK](http://www.microsoft.com/en-us/kinectforw
 - [Kinesis.io](http://kinesis.io/)
 - [KinectJS](http://kinect.childnodes.com/)
 
-  
+
 I also went into a few rules from the [Kinect for Windows Human Interface Guidelines](http://www.microsoft.com/en-us/kinectforwindows/develop/learn.aspx). Finally, I demoed a [KinectJS Kickstart](https://github.com/bengfarrell/KinectJSKickstart) I put together on Github, as well as my Kinect enabled music discovery project called [Blastanova](http://play.blastanova.com/kinect.html).   Here's my [presentation slides](https://docs.google.com/presentation/d/1zX2ejz6vFK41S4jstNj8npbG8rB9JFm0mUVjDw-2bQI/edit) as well!  Have fun with this stuff, it's awesome!

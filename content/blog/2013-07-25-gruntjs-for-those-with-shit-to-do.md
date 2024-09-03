@@ -1,7 +1,8 @@
 ---
 title: "GruntJS for those with shit to do"
 date: "2013-07-25"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "nodejs"
   - "web"

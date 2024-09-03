@@ -2,6 +2,7 @@
 title: "Hands on with the Oculus Rift"
 date: "2016-05-10"
 categories:
+  - "blog"
   - "user-experience"
   - "vr"
 ---

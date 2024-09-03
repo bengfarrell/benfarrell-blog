@@ -1,6 +1,8 @@
 ---
 title: "The Weird Developer Ecosystem for the Amazon Echo"
 date: "2015-04-28"
+categories:
+	- "blog"
 ---
 
 **Update: @garethwatts tells me that we were told that your app doesn't have to be hosted on AWS, only that it must be publicly accessible. In my opinion, this is BETTER, but still not great for just serving off local host in your dev environment! Thanks Gareth!**

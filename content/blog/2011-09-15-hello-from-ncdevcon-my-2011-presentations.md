@@ -2,6 +2,7 @@
 title: "Hello from NCDevCon! My 2011 Presentations"
 date: "2011-09-15"
 categories:
+  - "blog"
   - "development"
   - "flash"
   - "flashflex"

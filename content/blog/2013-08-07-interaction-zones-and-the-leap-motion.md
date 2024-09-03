@@ -2,6 +2,7 @@
 title: "Interaction Zones and the Leap Motion"
 date: "2013-08-07"
 categories:
+  - "blog"
   - "development"
   - "javascript"
   - "kinect"

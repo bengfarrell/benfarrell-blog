@@ -2,6 +2,7 @@
 title: "Thoughts on the MYO"
 date: "2013-02-25"
 categories:
+  - "blog"
   - "development"
   - "kinect"
   - "nui"

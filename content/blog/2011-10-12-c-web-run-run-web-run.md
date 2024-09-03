@@ -1,7 +1,8 @@
 ---
 title: "C Web Run, Run Web Run"
 date: "2011-10-12"
-categories: 
+categories:
+  - "blog"
   - "c"
   - "flashflex"
   - "html5"

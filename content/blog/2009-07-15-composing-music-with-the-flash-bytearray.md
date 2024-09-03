@@ -2,6 +2,7 @@
 title: "Composing Music with the Flash ByteArray"
 date: "2009-07-15"
 categories:
+  - "blog"
   - "flashflex"
   - "music-video-games"
 ---

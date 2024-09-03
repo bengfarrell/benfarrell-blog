@@ -1,7 +1,8 @@
 ---
 title: "Live Instrumentation in Flash Part 4 - A Little Music Theory"
 date: "2011-09-01"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "flash"
   - "flashflex"

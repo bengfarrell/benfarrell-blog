@@ -1,7 +1,8 @@
 ---
 title: "iOS Video is Cranky!"
 date: "2012-01-28"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "ios"
   - "video"

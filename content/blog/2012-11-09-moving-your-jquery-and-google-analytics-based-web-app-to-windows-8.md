@@ -1,7 +1,8 @@
 ---
 title: "Moving your jQuery and Google Analytics based Web App to Windows 8"
 date: "2012-11-09"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "html5"
   - "javascript"

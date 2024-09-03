@@ -1,7 +1,8 @@
 ---
 title: "A Codie Award to add to my resume!"
 date: "2008-05-27"
-categories: 
+categories:
+  - "blog"
   - "flashflex"
   - "personal"
   - "projects"

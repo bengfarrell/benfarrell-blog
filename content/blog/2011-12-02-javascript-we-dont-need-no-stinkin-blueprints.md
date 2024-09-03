@@ -1,7 +1,8 @@
 ---
 title: "Javascript: We don't need no stinkin Blueprints"
 date: "2011-12-02"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "javascript"
 ---

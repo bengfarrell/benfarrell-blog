@@ -1,6 +1,8 @@
 ---
 title: "Another jerk writes about Google Glass"
 date: "2014-04-30"
+categories:
+	- "blog"
 ---
 
 The last thing the internet needs is another jerk writing about Google Glass - yet here we are.

@@ -3,7 +3,13 @@ layout: layouts/page.njk
 title: "Affiliations"
 ---
 
-**Web Components in Space | Video Series, 2022-present**
+**Sun Gallery | Board Member, 2022-present**
+
+On the board of directors for this Hayward based non-profit art gallery and makerspace. [Sun Gallery](http://sungallery.org)
+
+ 
+
+**Web Components in Space | Video Series, 2022-2024**
 
 Independently produced video series set on a space lab orbiting Earth to teach about emerging and interesting technology as it applies to the latest Web Standards. [Web Components in Space](http://webcomponents.space)
 

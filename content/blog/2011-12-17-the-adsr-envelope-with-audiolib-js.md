@@ -2,6 +2,7 @@
 title: "The ADSR Envelope with Audiolib.js"
 date: "2011-12-17"
 categories:
+  - "blog"
   - "development"
   - "html5"
   - "javascript"

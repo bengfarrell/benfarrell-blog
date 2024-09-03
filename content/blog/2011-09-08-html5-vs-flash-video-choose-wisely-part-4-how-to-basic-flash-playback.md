@@ -1,7 +1,8 @@
 ---
 title: "HTML5 vs Flash Video: Choose Wisely Part 4 – How to: Basic Flash Playback"
 date: "2011-09-08"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "flash"
   - "flashflex"

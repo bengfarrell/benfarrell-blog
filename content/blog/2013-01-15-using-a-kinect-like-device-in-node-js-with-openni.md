@@ -2,6 +2,7 @@
 title: "Using a Kinect-like Device in Node.js with OpenNI"
 date: "2013-01-15"
 categories:
+  - "blog"
   - "c"
   - "development"
   - "javascript"

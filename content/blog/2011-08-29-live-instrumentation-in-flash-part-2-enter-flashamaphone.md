@@ -1,7 +1,8 @@
 ---
 title: "Live Instrumentation in Flash Part 2 - Enter Flashamaphone"
 date: "2011-08-29"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "flash"
   - "flashflex"

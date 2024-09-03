@@ -1,7 +1,8 @@
 ---
 title: "A Supervisor for Node.js"
 date: "2013-09-30"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "javascript"
   - "nodejs"

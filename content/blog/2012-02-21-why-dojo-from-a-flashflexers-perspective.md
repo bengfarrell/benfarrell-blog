@@ -1,7 +1,8 @@
 ---
 title: "Why Dojo?  From a Flash/Flexer's Perspective"
 date: "2012-02-21"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "dojo"
   - "flash"

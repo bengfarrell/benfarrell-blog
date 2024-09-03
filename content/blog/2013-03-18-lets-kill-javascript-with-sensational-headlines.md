@@ -1,7 +1,8 @@
 ---
 title: "Let's Kill Javascript with Sensational Headlines!"
 date: "2013-03-18"
-categories: 
+categories:
+  - "blog"
   - "development"
 ---
 

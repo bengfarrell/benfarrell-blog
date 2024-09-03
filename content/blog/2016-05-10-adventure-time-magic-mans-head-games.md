@@ -1,6 +1,8 @@
 ---
 title: "Adventure Time: Magic Man's Head Games..."
 date: "2016-05-10"
+categories:
+	- "blog"
 ---
 
 ... and other platformers.

@@ -2,6 +2,7 @@
 title: "Injecting Metadata with FFMpeg and Node.js"
 date: "2012-07-23"
 categories:
+  - "blog"
   - "development"
   - "nodejs"
   - "video"

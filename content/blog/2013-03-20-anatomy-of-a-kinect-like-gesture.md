@@ -2,6 +2,7 @@
 title: "Anatomy of a Kinect Like Gesture"
 date: "2013-03-20"
 categories:
+  - "blog"
   - "c"
   - "kinect"
   - "nodejs"

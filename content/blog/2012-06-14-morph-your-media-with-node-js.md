@@ -1,7 +1,8 @@
 ---
 title: "Morph your Media with Node.js"
 date: "2012-06-14"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "javascript"
   - "nodejs"

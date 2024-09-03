@@ -1,7 +1,8 @@
 ---
 title: "A Custom Multi-Selection Spark DropDownList"
 date: "2010-06-24"
-categories: 
+categories:
+  - "blog"
   - "flashflex"
 ---
 
@@ -27,11 +28,11 @@ The first thing I want to do is in the constructor - I want to add an event list
 			super();
 			this.addEventListener(DropDownEvent.OPEN, onOpen, false, 0, true);
 		}
-	
+
 		public function onOpen(event:DropDownEvent):void {
 			activateAllCheckBoxes();
-		}		
-		
+		}
+
 
 ```
 
@@ -41,10 +42,10 @@ So now, whenever someone clicks and opens the list, we'll be "activating" all of
 		protected function activateAllCheckBoxes():void {
 			for (var c:int = 0; c < dataGroup.numElements; c++) {
 				var obj:MultiSelectItemRenderer = dataGroup.getElementAt(c) as MultiSelectItemRenderer;
-					
+
 				obj.checkbox.addEventListener(MouseEvent.MOUSE_DOWN, mouseCheckBox, false, 0, true);
 				obj.checkbox.addEventListener(MouseEvent.MOUSE_UP, mouseCheckBox, false, 0, true);
-				obj.checkbox.addEventListener(Event.CHANGE, changeCheckBoxSelection, false, 0, true); 
+				obj.checkbox.addEventListener(Event.CHANGE, changeCheckBoxSelection, false, 0, true);
 }
 
 		protected function mouseCheckBox(event:Event):void {
@@ -60,13 +61,13 @@ Now, lets focus on the actual clicking of the checkbox:
 ```
 		protected function changeCheckBoxSelection(event:Event):void {
 			currentlySelectedCheckBoxes = selectedCheckboxes;
-			
+
 			// turn on multi-view mode
 			if (event.currentTarget.selected == true ) {
 				selectedIndex = -1;
 				labelDisplay.text = "multiple selections";
 			}
-			
+
 			dispatchEvent(new Event("selectionChange"));
 		}
 
@@ -115,12 +116,12 @@ protected function activateAllCheckBoxes():void {
 				if (dataProvider.getItemAt(c) == "Select This Item Only" ) {
 					obj.checkbox.visible = false;
 				}
-					
+
 				// find and check of previously checked boxes
 				if ( currentlySelectedCheckBoxes.indexOf(dataProvider.getItemAt(c)) != -1 ) {
 					obj.checkbox.selected = true;
 				}
-					
+
 				obj.checkbox.addEventListener(MouseEvent.MOUSE_DOWN, mouseCheckBox, false, 0, true);
 				obj.checkbox.addEventListener(MouseEvent.MOUSE_UP, mouseCheckBox, false, 0, true);
 				obj.checkbox.addEventListener(Event.CHANGE, changeCheckBoxSelection, false, 0, true);
@@ -138,9 +139,9 @@ override protected function item_mouseDownHandler(event:MouseEvent):void {
 	if ( event.currentTarget.data == "Select This Item Only" ) {
 		deselectAllCheckBoxes();
 	}
-			
+
 	if (selectedCheckboxes.length == 0) {
-		super.item_mouseDownHandler(event);	
+		super.item_mouseDownHandler(event);
 		dispatchEvent(new Event("selectionChange"));
 	} else {
 		closeDropDown(false);

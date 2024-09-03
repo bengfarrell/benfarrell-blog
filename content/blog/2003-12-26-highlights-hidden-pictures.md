@@ -2,8 +2,9 @@
 title: "Highlights - Hidden Pictures"
 date: "2003-12-26"
 categories:
-  - "portfolio-flash"
-  - "portfolio-mobile"
+  - "portfolio"
+  - "flash"
+  - "mobile"
 ---
 
 My first "mobile" project!  This was before Android, before iOS....

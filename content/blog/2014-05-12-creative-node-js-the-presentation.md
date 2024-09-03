@@ -2,6 +2,7 @@
 title: "Creative Node.js : The Presentation"
 date: "2014-05-12"
 categories:
+  - "blog"
   - "nodejs"
 ---
 

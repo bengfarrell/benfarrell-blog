@@ -1,6 +1,8 @@
 ---
 title: "Mozilla DeepSpeech vs Batman"
 date: "2017-12-01"
+categories:
+	- "blog"
 ---
 
 No, I'm not a "Machine Learning" developer, but I am having fun feeling out what it can do. All that's to say, this isn't an article about the gory technical details of Mozilla's DeepSpeech. Rather I'm writing my experience after spending a couple hours with it and being decently impressed and finding myself eagerly anticipating this project improving over time.
@@ -27,7 +29,7 @@ Honestly, this wasn't kosher. It was Google's service, and this is not what they
 
 Also, check out this Watson pricing [page](https://www.ibm.com/blogs/bluemix/2017/05/ibm-watson-speech-text-api-pricing-updates/). It's 2 cents per minute of audio uploaded. Yes, that seems super cheap. But it's 2017 and we're talking to our devices more than ever. Also, I have an idea for a project where I want to grab transcriptions for the entire Batman '66 run.
 
-![MV5BMTkzNDY5NTg5MF5BMl5BanBnXkFtZTgwNzI4NzM1MjE@._V1_UY268_CR13,0,182,268_AL_](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2017/12/MV5BMTkzNDY5NTg5MF5BMl5BanBnXkFtZTgwNzI4NzM1MjE@._V1_UY268_CR130182268_AL_.jpg)
+![MV5BMTkzNDY5NTg5MF5BMl5BanBnXkFtZTgwNzI4NzM1MjE@._V1_UY268_CR13,0,182,268_AL_](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2017/12/batman.jpg)
 
  
 
@@ -71,13 +73,13 @@ Some tips:
 
 My very first try was a random example WAV file I found online:
 
-\[audio mp3="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2017/12/bush\_01.mp3"\]\[/audio\]
+<audio controls src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2017/12/bush_01.mp3"></audio>
 
 It was pretty good! The result was "A tree has given us a you net opportunity to defend freedom and were going to seize the moment and do it". The mistakes were "a tree" instead of "history" and "you net" instead of "unique". Honestly, I wonder if these methods would exist if we applied some Natural Language Processing as a filter like the cloud services do...and since we run it local, we can easily insert this step and many others. It took 10 seconds to process this 4 second audio file.
 
-Now the real test, a two minute clip from Batman. Again, I ran this video through a downloader service. It saved to WAV, but I had to run it through Audition to make sure the bit rate and sample rate were correct.
+Now the real test, a two minute clip from Batman. Again, I ran this next video through a downloader service. It saved to WAV, but I had to run it through Audition to make sure the bit rate and sample rate were correct.
 
-https://www.youtube.com/watch?v=tgCkmUS1IYI
+[Batman talking to himself on Youtube](https://www.youtube.com/watch?v=tgCkmUS1IYI)
 
 The output was impressive, but there were long garbled stretches:
 

@@ -1,7 +1,8 @@
 ---
 title: "Showing an Image for your Audio Only HLS Stream on iOS"
 date: "2012-06-28"
-categories: 
+categories:
+  - "blog"
   - "ios"
   - "video"
 ---

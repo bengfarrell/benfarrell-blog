@@ -2,6 +2,7 @@
 title: "ES6 Web Components Part 4 - Project Setup and Opinions"
 date: "2015-10-27"
 categories:
+  - "blog"
   - "development"
   - "gulp"
   - "html5"

@@ -1,7 +1,9 @@
 ---
 title: "Why Web Components Now?"
 date: "2019-09-22"
-coverImage: "modelviewer.png"
+coverImage: "https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/09/22033410/modelviewer.png"
+categories:
+	- "blog"
 ---
 
 I’ve been procrastinating on this post. It started out as an idea from my publisher (Manning) back in April, just as my book was getting closer to being wrapped up, to make a decent argument about why it’s a great time for the web developers of the world to start using Web Components.

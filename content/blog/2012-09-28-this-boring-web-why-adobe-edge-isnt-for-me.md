@@ -1,7 +1,8 @@
 ---
 title: "This Boring Web - Why Adobe Edge isn't for me"
 date: "2012-09-28"
-categories: 
+categories:
+  - "blog"
   - "design"
   - "development"
   - "html5"

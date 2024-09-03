@@ -2,6 +2,7 @@
 title: "Motion Control Fun with Kinesis.io and Javascript"
 date: "2012-08-26"
 categories:
+  - "blog"
   - "development"
   - "javascript"
   - "kinect"

@@ -1,7 +1,8 @@
 ---
 title: "Windows for Front End Web Development"
 date: "2014-01-16"
-categories: 
+categories:
+  - "blog"
   - "development"
 ---
 

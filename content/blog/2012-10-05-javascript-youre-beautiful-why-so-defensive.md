@@ -1,7 +1,8 @@
 ---
 title: "Javascript, You're Beautiful.  Why so Defensive?"
 date: "2012-10-05"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "javascript"
   - "web"
@@ -21,7 +22,7 @@ Looking back, maybe we were a little freaky - but we owned it.  I don't know th
 
 That's exactly like Javascript developers.  They might be a little freaky, but they're no less beautiful than the popular kids.  And you know, the popular kids might look down on them because when they try to strike up a conversation interfaces, strict typing, etc - they just aren't on the same page.
 
-Here's the difference though - some Javascript developers seem to be saying "Cars are for pussies, try riding a bike next time".  "Sports? Pish-tosh, that's for you common folk un-intellectual folk.  I'm better than sports, surely you are as well"
+Here's the difference though - some Javascript developers seem to be saying "Cars are for weaklings, try riding a bike next time".  "Sports? Pish-tosh, that's for you common folk un-intellectual folk.  I'm better than sports, surely you are as well"
 
 No - you Javascript developers know who you are .  You're doing it wrong.  Javascript is different.  Javascript is a freak, but Javascript is beautiful too - and yes you might not need all the frills in the other langauges, but don't act like others are stupid for asking about them.  Calling somebody stupid and acting like you're better than them  is a barrier to the world having a good opinion of Javascript.
 

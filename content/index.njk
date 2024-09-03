@@ -4,19 +4,21 @@ layout: layouts/home.njk
 
 <div id="container" class="row">
 	<div id="primary" class="large-7 medium-9 small-11 small-centered columns">
-		<article class="articlebox post-1681 page type-page status-publish hentry">
+		<article class="articlebox page type-page status-publish hentry">
 			<header class="entry-header entry-header-single">
 				<h1 class="entry-title">
 					<img width="150" height="150" src="/images/benvector.svg"/>				</h1>
 			</header>
 			<div class="entry-content">
-				<p><span class="big-text">I work as a Prototyper on the<a href="https://adobe.design" target="_blank" rel="noopener"><img class="alignnone" src="/images/ad.gif" alt="Adobe Design" width="58" height="53"/></a>Prototyping Team. I create stuff with a lot of different tools and languages, but the web is my favorite. I&#8217;m writing a<a href="https://www.manning.com/books/web-components-in-action" target="_blank" rel="noopener"><img loading="lazy" class="alignnone wp-image-1693" src="/images/book.gif" alt="book" width="68" height="60"/></a>on Web Components, due out in Summer 2019. Over the past 20 years, I&#8217;ve worked on some<a href="/awards/" target="_blank" rel="noopener"><img loading="lazy" class="alignnone wp-image-1693" src="/images/trophy.gif" alt="book" width="45" height="70"/></a>winning projects with Adobe, various startups, and creative agencies.</span></p>
+				<p><span class="big-text">I work as a Prototyper on the<a href="https://adobe.design" target="_blank" rel="noopener"><img class="alignnone" src="/images/ad.gif" alt="Adobe Design" width="58" height="53"/></a>Prototyping Team. I create stuff with a lot of different tools and languages, but the web is my favorite. In fact I wrote a<a href="https://www.manning.com/books/web-components-in-action" target="_blank" rel="noopener"><img loading="lazy" class="alignnone wp-image-1693" src="/images/book.gif" alt="book" width="68" height="60"/></a>on Web Components. Over the past 25 years, I&#8217;ve worked on some<a href="/awards/" target="_blank" rel="noopener"><img loading="lazy" class="alignnone wp-image-1693" src="/images/trophy.gif" alt="book" width="45" height="70"/></a>winning projects with Adobe, various startups, and creative agencies.</span></p>
 				<p><span class="big-text"><br/>
 I live in the East Bay of California with my sci-fi/fantasy<a href="https://rebeccagomezfarrell.com/" target="_blank" rel="noopener"><img loading="lazy" class="alignnone" src="/images/writing.gif" alt="Writing" width="59" height="50"/></a>wife and two cats.</span></p>
 				<p><span class="big-text"><br/>
-You can find me on YouTube with my <a href="https://www.youtube.com/channel/UCXY-odXhkpetvbK0GOEqZNw" target="_blank" rel="noopener">Web Components in Space</a> channel.<br/>
-</span></p>
-				<div class="otw-row"></div>				</div><!-- .entry-content -->
+I love playing with all sorts of mediums and techonologies, but I'm currently deep-diving on music and making physical things with digital tech. Whatever I'm thinking about lately will probably be highlighted in my
+					most recent blog post:
+				{% set postslist = collections.posts | head(-1) %}
+				<a href="{{ postslist[0].url }}">&#8220;{{ postslist[0].data.title }}&#8221;</a></span></p>
+			</div><!-- .entry-content -->
 		</article>
 	</div><!-- #primary -->
 

@@ -2,6 +2,7 @@
 title: "Back From VRLA"
 date: "2017-04-17"
 categories:
+  - "blog"
   - "ar"
   - "vr"
 coverImage: "IMG_20170415_131157.jpg"

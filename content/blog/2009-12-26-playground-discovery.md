@@ -2,11 +2,12 @@
 title: "Playground Discovery"
 date: "2009-12-26"
 categories:
-  - "portfolio-desktop"
-  - "portfolio-development"
-  - "portfolio-director"
-  - "portfolio-flash"
-  - "portfolio-ui"
+  - "portfolio"
+  - "desktop"
+  - "development"
+  - "director"
+  - "flash"
+  - "ui"
 ---
 
 Playground Discovery by AT KidSystems featured a loveable robot named Cosmo. Cosmo led kids around through various activities as they popped bubbles, flew around in a jetpack, and jumped on springboards.

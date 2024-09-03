@@ -1,7 +1,8 @@
 ---
 title: "Progressive Web Apps"
 date: "2016-02-26"
-categories: 
+categories:
+  - "blog"
   - "android"
   - "development"
   - "ios"

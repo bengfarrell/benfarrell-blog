@@ -2,6 +2,7 @@
 title: "The Oculus Rift Dream Deck"
 date: "2016-05-10"
 categories:
+  - "blog"
   - "user-experience"
   - "vr"
 ---

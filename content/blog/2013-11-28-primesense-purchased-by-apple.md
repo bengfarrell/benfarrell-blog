@@ -1,7 +1,8 @@
 ---
 title: "Primesense purchased by Apple"
 date: "2013-11-28"
-categories: 
+categories:
+  - "blog"
   - "kinect"
   - "nui"
 ---

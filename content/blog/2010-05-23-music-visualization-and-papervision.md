@@ -1,7 +1,8 @@
 ---
 title: "Music Visualization and Papervision"
 date: "2010-05-23"
-categories: 
+categories:
+  - "blog"
   - "flashflex"
   - "music-video-games"
   - "personal"

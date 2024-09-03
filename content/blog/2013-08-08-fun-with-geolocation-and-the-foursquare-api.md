@@ -2,6 +2,7 @@
 title: "Fun with Geolocation and the FourSquare API"
 date: "2013-08-08"
 categories:
+  - "blog"
   - "angularjs"
   - "development"
   - "javascript"

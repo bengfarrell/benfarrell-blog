@@ -1,7 +1,8 @@
 ---
 title: "Morph your Media with Node.js Redux - Spawning Processes"
 date: "2012-10-03"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "nodejs"
   - "web"

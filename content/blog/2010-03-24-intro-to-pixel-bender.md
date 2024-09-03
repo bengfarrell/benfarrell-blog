@@ -2,6 +2,7 @@
 title: "Intro to Pixel Bender"
 date: "2010-03-24"
 categories:
+  - "blog"
   - "flashflex"
   - "music-video-games"
 tags:

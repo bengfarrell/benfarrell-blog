@@ -1,7 +1,8 @@
 ---
 title: "My first Node.js plugin for 3D motion sensing"
 date: "2013-05-07"
-categories: 
+categories:
+  - "blog"
   - "c"
   - "development"
   - "html5"

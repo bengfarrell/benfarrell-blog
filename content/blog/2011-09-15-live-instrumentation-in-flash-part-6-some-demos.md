@@ -2,6 +2,7 @@
 title: "Live Instrumentation in Flash Part 6 – Some Demos"
 date: "2011-09-15"
 categories:
+  - "blog"
   - "development"
   - "flashflex"
   - "flex"

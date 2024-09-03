@@ -1,0 +1,7 @@
+---
+layout: layouts/page.njk
+title: "Flash Portfolio"
+---
+
+{% set postslist = (collections.posts | filterByAllRequiredCategories(['portfolio', 'flash'])).reverse() %}
+{% include "fullpostslist.njk" %}

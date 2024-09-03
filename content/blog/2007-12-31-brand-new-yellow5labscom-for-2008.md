@@ -1,7 +1,8 @@
 ---
 title: "Brand New yellow5labs.com for 2008"
 date: "2007-12-31"
-categories: 
+categories:
+  - "blog"
   - "personal"
 ---
 

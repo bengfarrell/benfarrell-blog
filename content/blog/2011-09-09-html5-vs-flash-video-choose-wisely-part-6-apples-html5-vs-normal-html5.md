@@ -1,7 +1,8 @@
 ---
 title: "HTML5 vs Flash Video: Choose Wisely Part 6 – Apple's HTML5 vs Normal HTML5"
 date: "2011-09-09"
-categories: 
+categories:
+  - "blog"
   - "html5"
   - "ios"
   - "javascript"

@@ -1,6 +1,8 @@
 ---
 title: "Of Operating Systems and Toilet Paper"
 date: "2012-12-17"
+categories:
+	- "blog"
 ---
 
 How often do we get into "The Great OS Debate" with our colleagues and friends?

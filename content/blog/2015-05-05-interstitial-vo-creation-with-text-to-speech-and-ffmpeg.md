@@ -2,6 +2,7 @@
 title: "Interstitial VO Creation with Text to Speech and FFMPEG"
 date: "2015-05-05"
 categories:
+  - "blog"
   - "development"
   - "javascript"
   - "music"

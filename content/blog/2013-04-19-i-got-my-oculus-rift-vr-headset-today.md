@@ -1,6 +1,8 @@
 ---
 title: "I got my Oculus Rift VR Headset Today"
 date: "2013-04-19"
+categories:
+	- "blog"
 ---
 
 Ooooog.  I've been noodling around with this thing for about an hour.  I think I'm at a good stopping point because I'm a little motion sick.  It's weird because I think I'm only getting motion sick when I take OFF the goggles.  Maybe I just can't adapt to real-life anymore.

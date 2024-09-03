@@ -1,7 +1,8 @@
 ---
 title: "Thoughts....er...Wild Unsubstantiated Predictions on Flash"
 date: "2011-11-15"
-categories: 
+categories:
+  - "blog"
   - "flash"
   - "flashflex"
   - "flex"

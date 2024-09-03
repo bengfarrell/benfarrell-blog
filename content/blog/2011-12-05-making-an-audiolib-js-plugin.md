@@ -1,7 +1,8 @@
 ---
 title: "Making an Audiolib.js Plugin"
 date: "2011-12-05"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "html5"
   - "javascript"

@@ -15,42 +15,11 @@ const { execSync } = require('child_process')
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
+	eleventyConfig.addPlugin(metagen);
 	eleventyConfig.addShortcode('first_image', post => extractFirstImage(post));
 
 	eleventyConfig.on('eleventy.after', () => {
 		execSync(`npx pagefind --source _site --glob \"**/*.html\"`, { encoding: 'utf-8' })
-	});
-
-	eleventyConfig.addFilter('sidebarSelector', categories => {
-		if (haveCommonItems(categories, ['coffee-shops', 'bakeries'])) {
-			return 'cafe';
-		}
-
-		if (haveCommonItems(categories, ['spirits'])) {
-			return 'spirits';
-		}
-
-		if (haveCommonItems(categories, ['tasting-rooms', 'breweries', 'distilleries' ])) {
-			return 'tasting-rooms';
-		}
-
-		if (haveCommonItems(categories, ['bars', 'wine-bars'])) {
-			return 'nightlife-cocktails';
-		}
-
-		if (haveCommonItems(categories, ['travel-guides'])) {
-			return 'travelogues';
-		}
-
-		if (haveCommonItems(categories, ['restaurants', 'ice-cream-parlors', 'bakeries', 'food-trucks'])) {
-			return 'dining-out';
-		}
-
-		if (haveCommonItems(categories, ['wine'])) {
-			return 'wine';
-		}
-
-		return 'default';
 	});
 
 	eleventyConfig.addFilter("filterByTags", function(collection=[], ...requiredTags) {
@@ -237,7 +206,7 @@ function extractFirstImage(doc) {
 		return imgTag.substring(uriBegin+5, uriEnd);
 	}
 
-	return '/img/logo-no-imagefound.svg';
+	return '/images/benvector.svg';
 }
 
 const haveCommonItems = (arr1, arr2) => {

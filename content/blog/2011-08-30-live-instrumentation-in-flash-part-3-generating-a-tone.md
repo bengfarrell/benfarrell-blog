@@ -2,6 +2,7 @@
 title: "Live Instrumentation in Flash Part 3 - Generating a Tone"
 date: "2011-08-30"
 categories:
+  - "blog"
   - "flash"
   - "flashflex"
   - "flex"

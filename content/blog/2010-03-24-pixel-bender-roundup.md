@@ -1,6 +1,8 @@
 ---
 title: "Pixel Bender Roundup"
 date: "2010-03-24"
+categories:
+	- "blog"
 ---
 
 Hey everyone,

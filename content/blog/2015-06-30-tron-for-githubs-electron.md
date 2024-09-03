@@ -1,7 +1,8 @@
 ---
 title: "Tron (for Github's Electron)"
 date: "2015-06-30"
-categories: 
+categories:
+  - "blog"
   - "atom-shell"
   - "electron"
   - "html5"

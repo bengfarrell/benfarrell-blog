@@ -1,7 +1,8 @@
 ---
 title: "Music Video Games - The Official Website"
 date: "2008-08-22"
-categories: 
+categories:
+  - "blog"
   - "music-video-games"
 ---
 

@@ -2,6 +2,7 @@
 title: "Reactive Music Games"
 date: "2008-08-08"
 categories:
+  - "blog"
   - "music-video-games"
   - "projects"
 ---

@@ -1,7 +1,8 @@
 ---
 title: "Adventures in Silicon Valley Job Hunting"
 date: "2013-05-28"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "web"
 ---

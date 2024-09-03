@@ -1,7 +1,8 @@
 ---
 title: "HTML5 vs Flash Video: Choose Wisely Part 7 – What's Happening on the Server Side"
 date: "2011-09-09"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "flash"
   - "flashflex"

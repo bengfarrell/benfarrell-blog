@@ -2,6 +2,7 @@
 title: "Pixel Bending for Speed in Flash and Flex"
 date: "2010-03-19"
 categories:
+  - "blog"
   - "flashflex"
   - "music-video-games"
 ---

@@ -1,7 +1,8 @@
 ---
 title: "Does Illustrator CS3 Render a Buggy SWF?"
 date: "2008-01-15"
-categories: 
+categories:
+  - "blog"
   - "flashflex"
 ---
 

@@ -1,7 +1,8 @@
 ---
 title: "Ideas from Flex: Visual Application States in AngularJS"
 date: "2013-07-22"
-categories: 
+categories:
+  - "blog"
   - "angularjs"
   - "development"
   - "flex"

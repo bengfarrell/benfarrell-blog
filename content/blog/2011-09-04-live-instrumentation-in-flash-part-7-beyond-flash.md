@@ -1,7 +1,8 @@
 ---
 title: "Live Instrumentation in Flash Part 7 - Beyond Flash"
 date: "2011-09-04"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "flash"
   - "flashflex"

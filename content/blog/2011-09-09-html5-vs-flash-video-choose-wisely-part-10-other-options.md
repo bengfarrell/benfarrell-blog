@@ -1,7 +1,8 @@
 ---
 title: "HTML5 vs Flash Video: Choose Wisely Part 10 – Other Options"
 date: "2011-09-09"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "flash"
   - "flashflex"

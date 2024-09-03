@@ -2,6 +2,7 @@
 title: "Live Instrumentation in Flash Part 5 - Voice Synthesis"
 date: "2011-09-03"
 categories:
+  - "blog"
   - "development"
   - "flashflex"
   - "flex"

@@ -5,7 +5,7 @@ title: "Positions Held"
 
 **Adobe | Design Prototyping 2018 - present**
 
-Brought designs and concepts to life through design-led prototyping efforts, mainly on the web. Worked with Project Aero for Augmented Reality workflows, and Adobe Acrobat on their Machine Learning efforts. Gave two prototyping talks around the mixed reality space and led development efforts around a pro bono installation for the Museum of Photographic Arts in San Diego.
+Brought designs and concepts to life through design-led prototyping efforts, mainly on the web. As a "Design Engineer", I can step into product engineering roles, brand new startup efforts, and design thinking/experimentation. Projects ranged from photo/video editing tools, generative AI, design systems, 3D/mixed reality, Acrobat, as well as brand new product verticals. Led development efforts around pro bono installations for the Museum of Photographic Arts in San Diego, as well as the de Young and SFMOMA museums in San Francisco. As Staff Engineer, I gave internal talks and gave experienced support to others on my team.
 
  
 

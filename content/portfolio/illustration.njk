@@ -1,0 +1,15 @@
+---
+layout: layouts/page.njk
+title: "Web Portfolio"
+---
+
+<div id="container" class="row">
+	<div id="primary" class="large-7 medium-9 small-11 small-centered columns">
+		<article class="articlebox page type-page status-publish hentry">
+
+{% set postslist = (collections.posts | filterByAllRequiredCategories(['portfolio', 'illustration'])).reverse() %}
+{% include "postslist.njk" %}
+
+		</article>
+	</div>
+</div>

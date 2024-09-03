@@ -2,6 +2,7 @@
 title: "Finally Picking a Focus - Sweatin' to the Web"
 date: "2013-03-26"
 categories:
+  - "blog"
   - "development"
   - "kinect"
   - "nui"

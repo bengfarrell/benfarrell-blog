@@ -1,7 +1,8 @@
 ---
 title: "Working with the Flash Sound Object as a ByteArray"
 date: "2009-06-27"
-categories: 
+categories:
+  - "blog"
   - "flashflex"
 ---
 

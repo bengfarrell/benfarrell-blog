@@ -2,6 +2,7 @@
 title: "ES6 Web Components Part 3 - Making an ES6 Component Class"
 date: "2015-10-27"
 categories:
+  - "blog"
   - "development"
   - "javascript"
   - "ui"

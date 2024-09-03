@@ -2,6 +2,7 @@
 title: "The long and short of a simple UI Component in Dojo"
 date: "2012-03-06"
 categories:
+  - "blog"
   - "development"
   - "dojo"
   - "javascript"

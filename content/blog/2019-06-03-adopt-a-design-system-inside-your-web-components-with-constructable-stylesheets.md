@@ -1,7 +1,9 @@
 ---
 title: "Adopt a Design System inside your Web Components with Constructable Stylesheets"
 date: "2019-06-03"
-coverImage: "adopt-a-style.jpg"
+coverImage: "https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/06/02012707/adopt-a-style.jpg"
+categories:
+	- "blog"
 ---
 
 As someone who makes stuff on the web, there are two things that I've been seeing quite a bit lately: Web Component discussion and CSS debates. I think that Web Components, or more specifically the Shadow DOM, is poised to solve some long-standing CSS problems. I'm a big fan of Web Components. In fact, I'm just wrapping up a book with Manning Publications now, called [Web Components in Action](https://www.manning.com/books/web-components-in-action).

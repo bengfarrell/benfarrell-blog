@@ -2,6 +2,7 @@
 title: "Managing your Polymer Project with Git, Bower, and Yeoman"
 date: "2014-07-22"
 categories:
+  - "blog"
   - "javascript"
   - "polymer"
   - "web"

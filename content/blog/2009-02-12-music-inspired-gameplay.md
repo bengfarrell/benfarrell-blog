@@ -1,7 +1,8 @@
 ---
 title: "Music Inspired Gameplay"
 date: "2009-02-12"
-categories: 
+categories:
+  - "blog"
   - "music-video-games"
 ---
 

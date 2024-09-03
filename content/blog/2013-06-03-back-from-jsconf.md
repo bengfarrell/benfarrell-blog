@@ -1,7 +1,8 @@
 ---
 title: "Back from JSConf"
 date: "2013-06-03"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "javascript"
   - "nodejs"

@@ -1,7 +1,8 @@
 ---
 title: "Node.js with Jenkins"
 date: "2012-05-26"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "javascript"
   - "jenkins"

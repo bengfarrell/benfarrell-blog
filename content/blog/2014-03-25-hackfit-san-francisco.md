@@ -1,6 +1,8 @@
 ---
 title: "Hackfit San Francisco"
 date: "2014-03-25"
+categories:
+	- "blog"
 ---
 
 Yup, I'm pretty exhausted now because this weekend I attended [Hackfit San Francisco](http://www.hackfit.com/). What is it? Well - it's a hackathon that focuses on fitness and health tech, but ALSO promises group exercise, reasonable bedtimes, and healthy meals.

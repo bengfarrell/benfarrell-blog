@@ -2,6 +2,7 @@
 title: "Did HTML5 and Mobile Kill the Volume Slider?"
 date: "2012-10-24"
 categories:
+  - "blog"
   - "design"
   - "development"
   - "html5"

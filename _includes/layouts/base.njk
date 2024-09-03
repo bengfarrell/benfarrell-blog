@@ -1,24 +1,38 @@
 <!doctype html>
 <html lang="en-US">
 <head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-2Q7KSM1SBB"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-2Q7KSM1SBB');
+	</script>
 	<meta charset="utf-8"/>
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>- Ben Farrell</title>
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>{{ title or metadata.title }}</title>
+	<meta name="description" content="{{ description or metadata.description }}" />
+
+	{#- Atom and JSON feeds included by default #}
+	<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ title or metadata.title }}" />
+	<link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ title or metadata.title }}" />
 	<meta name='robots' content='max-image-preview:large'/>
 
-	<link rel="canonical" href="https://benfarrell.com/"/>
+	<link rel="canonical" href="https://benfarrell.com{{ page.url or metadata.url }}"/>
 	<meta property="og:locale" content="en_US"/>
 	<meta property="og:type" content="website"/>
-	<meta property="og:title" content="- Ben Farrell"/>
-	<meta property="og:description" content="I work as a Prototyper on thePrototyping Team. I create stuff with a lot of different tools and languages, but the web is my favorite. I&#8217;m writing aon Web Components, due out in Summer 2019. Over the past 20 years, I&#8217;ve worked on somewinning projects with Adobe, various startups, and creative agencies. I live in&nbsp;..."/>
-	<meta property="og:url" content="https://benfarrell.com/"/>
+	<meta property="og:title" content="{{ title or metadata.title }}"/>
+	<meta property="og:description" content="{{ description or metadata.description }}"/>
+	<meta property="og:url" content="https://benfarrell.com{{ page.url or metadata.url }}"/>
 	<meta property="og:site_name" content="Ben Farrell"/>
+	<meta property="og:image" content="{{ coverImage or metadata.image }}" />
 	<meta name="twitter:card" content="summary_large_image"/>
-	<meta name="twitter:description" content="I work as a Prototyper on thePrototyping Team. I create stuff with a lot of different tools and languages, but the web is my favorite. I&#8217;m writing aon Web Components, due out in Summer 2019. Over the past 20 years, I&#8217;ve worked on somewinning projects with Adobe, various startups, and creative agencies. I live in&nbsp;..."/>
-	<meta name="twitter:title" content="- Ben Farrell"/>
-	<meta name="twitter:image" content="/images/ad.gif"/>
-	<script type='application/ld+json'>{"@context":"https://schema.org","@type":"WebSite","@id":"https://benfarrell.com/#website","url":"https://benfarrell.com/","name":"Ben Farrell","potentialAction":{"@type":"SearchAction","target":"https://benfarrell.com/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+	<meta name="twitter:description" content="{{ description or metadata.description }}"/>
+	<meta name="twitter:title" content="{{ title or metadata.title }}"/>
+	<meta name="twitter:image" content="{{ coverImage or metadata.image }}" />
 
 	<link rel='dns-prefetch' href='//fonts.googleapis.com'/>
 	<link rel="alternate" type="application/json+oembed" href="https://benfarrell.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbenfarrell.com%2F"/>
@@ -37,20 +51,13 @@
 	<style type="text/css" id="wp-custom-css">.rb.row.text-center{display:none}.big-text{font-size:28px;line-height:60px}</style>
 	<style id="tt-easy-google-font-styles" type="text/css">p{}h1{}h2{}h3{}h4{}h5{}h6{}</style>
 </head>
-<body class="home page-template-default page page-id-1681">
+<body class="home page-template-default page">
 
 <header id="top-menu" class="top-bar" itemscope="itemscope">
-
-	<div class="menu-container-mobile" data-responsive-toggle="menu-container" data-hide-for="large">
-		<button class="icon-menu" type="button" data-toggle></button>
-	</div>
-
 	<div class="topbar-title title-logo" itemscope="itemscope" role="banner">
-
 		<a href="https://benfarrell.com/" title="Ben Farrell - creating digital hugs">
 			<h1 id="sitetitle">Ben Farrell</h1>
 		</a>
-
 	</div>
 
 	<div id="menu-container" class="menu-container">
@@ -61,64 +68,45 @@
 			</ul>
 		</nav>
 		<ul id="iconmenu" class="menu richiconmenu">
-
 			<li id="searchicon" class="icon-search menu-item">
-				<a>
-					Search            </a>
-
+				<a href="/search">Search</a>
 			</li>
 		</ul>
 	</div>
 
+	<canvas id="shader2"></canvas>
 </header>
 
-<div id="searchwrap">
-	<div class="row">
+<main id="skip">
+	{{ content | safe }}
+</main>
+
+<footer id="site-footer">
+	<aside>
+			<canvas id="shader"></canvas>
+			<div class="social-buttons">
+				<a target="_blank" href="https://bsky.app/profile/benforreal.bsky.social" rel="noopener"><img alt="bluesky" src="/images/social-1_round-bluesky.svg"/></a>
+				<a target="_blank" href="https://github.com/bengfarrell" rel="noopener"><img alt="github" src="/images/social-1_round-github.svg"/></a>
+				<a target="_blank" href="https://www.linkedin.com/in/bfarrellforever/" rel="noopener"><img alt="linkedin" src="/images/social-1_round-linkedin.svg"/></a>
+				<a target="_blank" href="https://www.instagram.com/ben.4.real/" rel="noopener"><img alt="instagram" src="/images/social-1_round-instagram.svg"/></a>
+			</div>
+
+			<div class="recent-moments">
+				<a target="_blank" href="/blog/2019-03-24-web-components-in-action/" rel="noopener"><img width="75" height="75" alt="Web Components in Action" src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/03/20044714/Farrell-WebC-MEAP-HI-100x100.jpg"/></a><a target="_blank" href="https://www.commarts.com/project/24685/self-composed" rel="noopener"><img width="75" height="75" alt="SFMOMA Self Composed" src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/03/23231356/893532_102_1160_NzE5NDgzOTc4LTExODA2MTgzMjc-100x100.jpg"/></a><a target="_blank" href="https://blog.adobe.com/en/publish/2019/02/01/visualizing-the-invisible" rel="noopener"><img width="75" height="75" alt="MOPA Note to Self" src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/03/23231824/43244797_568274210297436_1416940896466467256_n-100x100.jpg"/></a><a target="_blank" href="/blog/2019-03-24-adobe-max-sneaks/" rel="noopener"><img width="75" height="75" alt="Project Sonicscape at MAX Sneaks" src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/03/23232820/DMi5QzPVoAA_VfL-100x100.jpg"/></a><a target="_blank" href="/speaking-engagements/" rel="noopener"><img width="75" height="75" alt="Adobe's Immersive Future Talk" src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/03/23232421/image1-100x100.jpg"/></a>
+			</div>
+	</aside>
+
+	<div id="copyright" class="row">
 		<div class="columns">
-			<form role="search" method="get" id="searchform" action="https://benfarrell.com/">
-				<div class="input-group">
-					<input type="text" class="input-group-field" value="" name="s" id="s" placeholder="Search">
-					<div class="input-group-button">
-						<input type="submit" id="searchsubmit" value="Search" class="button">
-					</div>
-				</div>
-			</form>
+			&copy;&nbsp;2024&nbsp;					  <a href="https://benfarrell.com/" title="Ben Farrell - creating digital hugs">
+			Ben Farrell					  </a>
 		</div>
-	</div>
-</div>
-		<main id="skip">
-			{{ content | safe }}
-		</main>
-
-		<footer id="site-footer">
-			<div id="footer-widget-area" class="row widget-area footer-widget-area">
-				<div class="large-up-1 medium-up-1 column">
-					<aside id="custom_html-3" class="widget_text column widget footer-widget widget_custom_html"><div class="textwidget custom-html-widget"><style>.social-buttons,.recent-moments{width:100%;text-align:center}.recent-moments{padding-top:25px}.social-buttons a{margin:10px}</style>
-
-						<div class="social-buttons">
-							<a target="_blank" href="https://twitter.com/bfarrellforever" rel="noopener"><img alt="twitter" src="/images/social-1_round-twitter.svg"/></a>
-
-							<a target="_blank" href="https://github.com/bengfarrell" rel="noopener"><img alt="github" src="/images/social-1_round-github.svg"/></a>
-
-							<a target="_blank" href="https://www.linkedin.com/in/bfarrellforever/" rel="noopener"><img alt="linkedin" src="/images/social-1_round-linkedin.svg"/></a>
-
-							<a target="_blank" href="https://www.instagram.com/ben.4.real/" rel="noopener"><img alt="instagram" src="/images/social-1_round-instagram.svg"/></a>
-						</div>
-
-						<div class="recent-moments">
-							<a target="_blank" href="/blog/2019-03-24-web-components-in-action/" rel="noopener"><img width="75" height="75" alt="Web Components in Action" src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/03/20044714/Farrell-WebC-MEAP-HI-100x100.jpg"/></a><a target="_blank" href="https://www.commarts.com/project/24685/self-composed" rel="noopener"><img width="75" height="75" alt="SFMOMA Self Composed" src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/03/23231356/893532_102_1160_NzE5NDgzOTc4LTExODA2MTgzMjc-100x100.jpg"/></a><a target="_blank" href="https://blog.adobe.com/en/publish/2019/02/01/visualizing-the-invisible" rel="noopener"><img width="75" height="75" alt="MOPA Note to Self" src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/03/23231824/43244797_568274210297436_1416940896466467256_n-100x100.jpg"/></a><a target="_blank" href="/blog/2019-03-24-adobe-max-sneaks/" rel="noopener"><img width="75" height="75" alt="Project Sonicscape at MAX Sneaks" src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/03/23232820/DMi5QzPVoAA_VfL-100x100.jpg"/></a><a target="_blank" href="/speaking-engagements/" rel="noopener"><img width="75" height="75" alt="Adobe's Immersive Future Talk" src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/03/23232421/image1-100x100.jpg"/></a>
-						</div></div></aside>			</div>
-			</div><!-- .footer-widget-areas -->
-
-			<div id="copyright" class="row">
-				<div class="columns">
-					&copy;&nbsp;2024&nbsp;					  <a href="https://benfarrell.com/" title="Ben Farrell - creating digital hugs">
-					Ben Farrell					  </a>
-				</div>
-			</div><!-- #copyright -->
+	</div><!-- #copyright -->
 
 
-			<div class="&#114;b row text-center">&#087;&#111;&#114;&#100;&#080;&#114;&#101;&#115;&#115; &#084;&#104;&#101;m&#101; &#098;&#121; <a href="&#104;tt&#112;&#115;://&#82;&#105;&#99;&#104;&#87;&#80;.&#99;o&#109;/">&#82;&#105;&#99;&#104;&#87;&#80;</a></div>
-		</footer>
-	</body>
+	<div class="&#114;b row text-center">&#087;&#111;&#114;&#100;&#080;&#114;&#101;&#115;&#115; &#084;&#104;&#101;m&#101; &#098;&#121; <a href="&#104;tt&#112;&#115;://&#82;&#105;&#99;&#104;&#87;&#80;.&#99;o&#109;/">&#82;&#105;&#99;&#104;&#87;&#80;</a></div>
+</footer>
+
+<script src="/js/shaders.js"></script>
+</body>
 </html>

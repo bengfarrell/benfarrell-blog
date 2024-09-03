@@ -39,10 +39,10 @@
 		"@11ty/eleventy-plugin-bundle": "^1.0.4",
 		"@11ty/eleventy-plugin-rss": "^1.2.0",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-		"markdown-it-anchor": "^8.6.7",
-		"netlify-plugin-cache": "^1.0.3",
 		"luxon": "^3.3.0",
+		"markdown-it-anchor": "^8.6.7",
 		"marked": "^13.0.2",
+		"netlify-plugin-cache": "^1.0.3",
 		"pagefind": "^1.1.0",
 		"s3-folder-upload": "^2.3.5",
 		"wordpress-export-to-markdown": "^2.2.2"

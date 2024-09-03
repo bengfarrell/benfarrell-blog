@@ -1,7 +1,9 @@
 ---
 title: "Adobe MAX Sneaks"
 date: "2019-03-24"
-coverImage: "DMi5QzPVoAA_VfL.jpg"
+coverImage: "https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/03/23232820/DMi5QzPVoAA_VfL.jpg"
+categories:
+	- "blog"
 ---
 
 During my time on the Design Lab team at Adobe, there wasn't one year that passed where one of my projects did not make it to the big after-hours stage.

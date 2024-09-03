@@ -1,7 +1,8 @@
 ---
 title: "Front Enders vs Creative Developers"
 date: "2012-04-13"
-categories: 
+categories:
+  - "blog"
   - "c"
   - "development"
   - "html5"

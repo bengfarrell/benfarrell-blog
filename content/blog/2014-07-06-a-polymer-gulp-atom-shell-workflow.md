@@ -1,12 +1,13 @@
 ---
 title: "A Polymer + Gulp + Atom-Shell Workflow"
 date: "2014-07-06"
-categories: 
+categories:
+  - "blog"
   - "atom-shell"
   - "gulp"
   - "javascript"
   - "polymer"
-tags: 
+tags:
   - "atom-shell"
   - "gulp"
   - "polymer"

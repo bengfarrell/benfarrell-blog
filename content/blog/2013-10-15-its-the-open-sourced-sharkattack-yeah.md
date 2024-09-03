@@ -1,7 +1,8 @@
 ---
 title: "It's the Open Sourced SharkAttack, yeah!"
 date: "2013-10-15"
-categories: 
+categories:
+  - "blog"
   - "angularjs"
   - "development"
   - "html5"

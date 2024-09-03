@@ -1,7 +1,8 @@
 ---
 title: "Untold stories of web-dev-server"
 date: "2020-11-23"
-categories: 
+categories:
+  - "blog"
   - "web"
   - "web-components"
 ---
@@ -67,8 +68,8 @@ module.exports = {
 
 ```
 
-  
-  
+
+
 
 ## Rollup Plugins
 
@@ -90,8 +91,8 @@ export const style = css`
 
 ```
 
-  
-  
+
+
 
 However, this doesn't work so well if you didn't write the CSS yourself and are just importing from somewhere. I admit, there has been a rare moment I just wanted something to work, so I copied and pasted a small amount of CSS from my node\_modules into a JS file.
 
@@ -116,8 +117,8 @@ module.exports = {
 
 ```
 
-  
-  
+
+
 Obviously this is pretty specific to Web Components and LitElement, but all the same, it showcases a nice, simple adapted Rollup plugin. Also note the "mimeTypes" property - I stumbled on that the hard way, when my CSS files just weren't loading because they just weren't being accepted as files.
 
 ## CommonJS: The scourge of going buildless
@@ -165,7 +166,7 @@ One piece of additional trouble with some of my bundled CommonJS files is that y
 ```
 import * as MyLib from 'my-npm-library';
 
-MyLib.default.some_import 
+MyLib.default.some_import
 
 ```
 
@@ -232,8 +233,8 @@ nodeResolve: {
 
 ```
 
-  
-  
+
+
 In the above configuration snippet, we're configuring "nodeResolve" to "dedupe", or just use the top-level project node\_modules only for the listed modules.
 
 I should also mention, that depending on the load order in some situations I've had (as far as I can figure it), my "nodeResolve" was trying to handle those JS bundles I intended for my Alias plugin. So I've included some Regex here in the "resolveOnly" object to tell it not to handle the "my\_npm\_library" or another fictitious "different\_npm\_library" module in this plugin.

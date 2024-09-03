@@ -2,6 +2,7 @@
 title: "A Week at the Hololens Academy"
 date: "2016-06-17"
 categories:
+  - "blog"
   - "design"
   - "development"
   - "kinect"

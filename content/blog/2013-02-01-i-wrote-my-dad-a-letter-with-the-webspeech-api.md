@@ -1,7 +1,8 @@
 ---
 title: "I wrote MY dad a letter with the WebSpeech API"
 date: "2013-02-01"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "javascript"
   - "ui"

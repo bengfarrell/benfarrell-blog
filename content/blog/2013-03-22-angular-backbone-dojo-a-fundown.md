@@ -1,7 +1,8 @@
 ---
 title: "Angular + Backbone + Dojo: A Fundown"
 date: "2013-03-22"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "dojo"
   - "javascript"

@@ -2,6 +2,7 @@
 title: "You Suck, NCDevCon"
 date: "2013-07-23"
 categories:
+  - "blog"
   - "development"
   - "html5"
   - "ui"

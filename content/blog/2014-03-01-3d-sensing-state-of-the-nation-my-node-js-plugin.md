@@ -1,7 +1,8 @@
 ---
 title: "The 3D Sensing Apocalypse &amp; My Node.js plugin"
 date: "2014-03-01"
-categories: 
+categories:
+  - "blog"
   - "c"
   - "javascript"
   - "kinect"

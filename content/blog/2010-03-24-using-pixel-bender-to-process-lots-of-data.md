@@ -1,6 +1,8 @@
 ---
 title: "Using Pixel Bender to Process Lots of Data"
 date: "2010-03-24"
+categories:
+	- "blog"
 tags:
   - "as3"
   - "bytearray"

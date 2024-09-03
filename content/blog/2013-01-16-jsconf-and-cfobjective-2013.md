@@ -1,7 +1,8 @@
 ---
 title: "JSConf and cfObjective 2013"
 date: "2013-01-16"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "kinect"
   - "ui"

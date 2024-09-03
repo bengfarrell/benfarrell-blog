@@ -2,6 +2,7 @@
 title: "Live Instrumentation in Flash Part 1 - Basics of Dynamic Sound"
 date: "2011-08-29"
 categories:
+  - "blog"
   - "development"
   - "flash"
   - "flashflex"

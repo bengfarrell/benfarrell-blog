@@ -1,7 +1,8 @@
 ---
 title: "Do You Belieeeeve in Flash Autotuning"
 date: "2010-05-22"
-categories: 
+categories:
+  - "blog"
   - "flashflex"
   - "music-video-games"
   - "projects"

@@ -1,7 +1,8 @@
 ---
 title: "Feedback over Time: A Hard Skill to Learn for Software Devs"
 date: "2012-07-19"
-categories: 
+categories:
+  - "blog"
   - "development"
 ---
 

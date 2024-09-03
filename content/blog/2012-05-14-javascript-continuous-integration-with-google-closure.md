@@ -2,6 +2,7 @@
 title: "Javascript Continuous Integration with Google Closure"
 date: "2012-05-14"
 categories:
+  - "blog"
   - "dojo"
   - "html5"
   - "javascript"

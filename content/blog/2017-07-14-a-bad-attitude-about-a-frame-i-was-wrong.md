@@ -1,7 +1,8 @@
 ---
 title: "A-Bad attitude about A-Frame (I was wrong)"
 date: "2017-07-14"
-categories: 
+categories:
+  - "blog"
   - "design"
   - "development"
   - "html5"

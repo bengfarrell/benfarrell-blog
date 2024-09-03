@@ -1,7 +1,8 @@
 ---
 title: "HTML5 vs Flash Video: Choose Wisely Part 1 - War of the Buzzwords"
 date: "2011-09-05"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "flash"
   - "flashflex"

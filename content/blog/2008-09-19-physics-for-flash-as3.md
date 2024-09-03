@@ -1,7 +1,8 @@
 ---
 title: "Physics for Flash AS3"
 date: "2008-09-19"
-categories: 
+categories:
+  - "blog"
   - "flashflex"
   - "projects"
 ---

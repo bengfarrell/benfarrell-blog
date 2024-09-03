@@ -2,6 +2,7 @@
 title: "Starting out with OpenNI"
 date: "2012-12-12"
 categories:
+  - "blog"
   - "development"
   - "kinect"
 ---

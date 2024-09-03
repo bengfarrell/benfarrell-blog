@@ -1,7 +1,8 @@
 ---
 title: "HTML5 vs Flash Video: Choose Wisely Part 2 - Playing with the Video Tag"
 date: "2011-09-07"
-categories: 
+categories:
+  - "blog"
   - "development"
   - "flash"
   - "flashflex"

@@ -2,6 +2,7 @@
 title: "Where the *#$%! are my Windows 8 UI Button Graphics?"
 date: "2012-11-16"
 categories:
+  - "blog"
   - "design"
   - "development"
   - "html5"

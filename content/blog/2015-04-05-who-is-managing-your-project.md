@@ -1,6 +1,8 @@
 ---
 title: "Who is managing your project?"
 date: "2015-04-05"
+categories:
+	- "blog"
 ---
 
 I've had some pretty awesome co-workers in my time, so no doubt I keep in touch (or at least stalk them a little on Facebook and be glad when they are doing well). One of those folks is a very awesome lady named Polly Searles. To be honest, I don't recall working with her THAT much at my past job, but I do remember her to be crazy good at managing whatever project I was on.

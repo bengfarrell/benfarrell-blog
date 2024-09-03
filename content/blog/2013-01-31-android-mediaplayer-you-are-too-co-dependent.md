@@ -1,13 +1,14 @@
 ---
 title: "Android MediaPlayer, You are too Co-Dependent!"
 date: "2013-01-31"
-categories: 
+categories:
+  - "blog"
   - "android"
   - "development"
   - "java"
   - "ui"
   - "video"
-tags: 
+tags:
   - "android"
   - "java"
 ---

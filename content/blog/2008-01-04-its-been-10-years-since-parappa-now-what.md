@@ -2,6 +2,7 @@
 title: "It's been 10 years since PaRappa - now what?"
 date: "2008-01-04"
 categories:
+  - "blog"
   - "music-video-games"
   - "projects"
 ---

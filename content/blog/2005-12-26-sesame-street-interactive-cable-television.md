@@ -2,9 +2,10 @@
 title: "Sesame Street: Interactive Cable Television"
 date: "2005-12-26"
 categories:
-  - "portfolio-development"
-  - "portfolio-flash"
-  - "portfolio-mobile"
+  - "portfolio"
+  - "development"
+  - "flash"
+  - "mobile"
 ---
 
 This was quite the interesting project.  I was only a little involved the first year, and the second year this project resurfaced I created a new game.  And finally the 3rd year this project resurfaced, I managed the refresh and the new game that we added.

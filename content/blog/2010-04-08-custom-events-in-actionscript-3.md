@@ -1,9 +1,10 @@
 ---
 title: "Custom Events in Actionscript 3"
 date: "2010-04-08"
-categories: 
+categories:
+  - "blog"
   - "flashflex"
-tags: 
+tags:
   - "actionscript"
   - "as3"
   - "events"

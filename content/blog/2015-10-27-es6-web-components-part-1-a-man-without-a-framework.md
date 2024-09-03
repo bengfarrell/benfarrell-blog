@@ -2,6 +2,7 @@
 title: "ES6 Web Components Part 1 - A Man Without a Framework"
 date: "2015-10-27"
 categories:
+  - "blog"
   - "angularjs"
   - "development"
   - "dojo"

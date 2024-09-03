@@ -1,6 +1,8 @@
 ---
 title: "Retiring yellow5labs.com, launching blastanova.com"
 date: "2010-02-03"
+categories:
+	- "blog"
 ---
 
 Oh so long ago (2001 maybe?), I started yellow5labs.com.  I had been recently laid off, and wanted to set myself up with an online identity to get contract work and look all flashy so people would hire me.

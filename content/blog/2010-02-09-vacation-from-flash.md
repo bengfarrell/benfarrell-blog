@@ -1,7 +1,8 @@
 ---
 title: "Vacation from Flash"
 date: "2010-02-09"
-categories: 
+categories:
+  - "blog"
   - "flashflex"
 ---
 

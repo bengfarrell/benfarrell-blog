@@ -2,6 +2,7 @@
 title: "ES6 Web Components Part 5 - Wrap-Up"
 date: "2015-10-27"
 categories:
+  - "blog"
   - "development"
   - "html5"
   - "javascript"

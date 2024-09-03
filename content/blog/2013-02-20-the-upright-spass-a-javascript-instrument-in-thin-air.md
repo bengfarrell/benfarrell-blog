@@ -2,6 +2,7 @@
 title: "The Upright Spass - A Javascript Instrument in Thin Air"
 date: "2013-02-20"
 categories:
+  - "blog"
   - "c"
   - "development"
   - "html5"

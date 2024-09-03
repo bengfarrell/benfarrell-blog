@@ -1,7 +1,8 @@
 ---
 title: "C++ and Node.js: An Unholy Combination....But Oh So Right"
 date: "2013-01-03"
-categories: 
+categories:
+  - "blog"
   - "c"
   - "development"
   - "nodejs"

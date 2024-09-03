@@ -2,9 +2,21 @@
 layout: layouts/base.njk
 ---
 
+<ul style="display:none">
+	<li data-pagefind-sort="date">{{ page.date | htmlDateString }}</li>
+	{%- for tag in tags | filterTagList %}
+	<li data-pagefind-meta="tag">{{ tag }}</li>
+	{%- endfor %}
+	<li data-pagefind-meta="title">{{ title }}</li>
+	<li><time data-pagefind-meta="date:{{ page.date | htmlDateString }}" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
+</ul>
+
+<div id="herofeaturedimage" class="coverimage">
+	<img width="900" height="600" src="{{ coverImage }}" class="attachment-richone_single-post-cover size-richone_single-post-cover wp-post-image" alt="" loading="lazy" />
+</div>
 <div id="container" class="row">
 	<div id="primary" class="large-7 medium-9 small-11 small-centered columns">
-		<article class="articlebox post-1505 page type-page status-publish hentry">
+		<article class="articlebox page type-page status-publish hentry">
 			<header class="entry-header entry-header-single">
 				<h1 class="entry-title">{{ title }}</h1>
 				<time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
@@ -14,16 +26,28 @@ layout: layouts/base.njk
 			</div><!-- .entry-content -->
 		</article>
 
-		{%- if collections.posts %}
-		{%- set previousPost = collections.posts | getPreviousCollectionItem %}
-		{%- set nextPost = collections.posts | getNextCollectionItem %}
-		{%- if nextPost or previousPost %}
-		<ul class="links-nextprev">
-			{%- if previousPost %}<li class="prev-post">&lt&lt;&nbsp;<a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
-			{%- if nextPost %}<li class="next-post"><a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>&nbsp;&gt;&gt</li>{% endif %}
-		</ul>
-		{%- endif %}
-		{%- endif %}
-	</div><!-- #primary -->
+		<footer class="entry">
+			<p class="tags">
+				{% for cat in categories %}
+				{%- if cat != 'categories' %}
+				<a href="/category/{{cat}}" data-pagefind-meta="category" rel="category">{{cat}}</a>
+				{% endif %}
+				{% endfor %}
+			</p>
 
+			{%- if collections.posts %}
+			{%- set previousPost = collections.posts | getPreviousCollectionItem %}
+			{%- set nextPost = collections.posts | getNextCollectionItem %}
+			{%- if nextPost or previousPost %}
+			<ul class="links-nextprev">
+				{%- if previousPost %}<li class="prev-post">&larr;&nbsp;<a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
+				{%- if nextPost %}<li class="next-post"><a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>&rarr;&nbsp;</li>{% endif %}
+			</ul>
+			{%- endif %}
+			{%- endif %}
+
+			<p class="comments">Normally on a blog, comments would be here. Welp, this is a static site, and also I'd much rather you email me at ben@benfarrell.com or hit me up on <a href="https://bsky.app/profile/benforreal.bsky.socia">Bluesky</a>.
+				Who knows, if you add lots to the conversation, I might just do a follow up post!</p>
+		</footer>
+	</div><!-- #primary -->
 </div>

@@ -1,7 +1,8 @@
 ---
 title: "Consumption of Music on Demand"
 date: "2009-01-12"
-categories: 
+categories:
+  - "blog"
   - "music-video-games"
 ---
 
