@@ -15,7 +15,6 @@ const { execSync } = require('child_process')
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
-	eleventyConfig.addPlugin(metagen);
 	eleventyConfig.addShortcode('first_image', post => extractFirstImage(post));
 
 	eleventyConfig.on('eleventy.after', () => {
