@@ -1,0 +1,10 @@
+---
+layout: layouts/page.njk
+title: "Multimedia Portfolio"
+---
+
+<p>Yes, I work in media (many different forms) on a daily basis. But around the 2000's, "multimedia" was graphics rich interactive
+work that you couldn't find on a normal web page. Either it was CD-ROM based, or later delivered to the web as a Flash embed.</p>
+
+{% set postslist = (collections.posts | filterByCommonCategoriesWithOneRequired('portfolio', ['flash', 'flex', 'director'])).reverse() %}
+{% include "postslist.njk" %}

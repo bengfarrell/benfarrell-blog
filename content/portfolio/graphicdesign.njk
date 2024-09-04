@@ -1,0 +1,10 @@
+---
+layout: layouts/page.njk
+title: "Graphic Design"
+---
+
+<p>I've done loads of illustration, design, and other visual art work. Sometimes its just for fun, but other times I'm making
+real things for real people, maybe even to help market their work.</p>
+
+{% set postslist = (collections.posts | filterByCommonCategoriesWithOneRequired('portfolio', ['3d', 'design', 'art', 'illustration'])).reverse() %}
+{% include "postslist.njk" %}

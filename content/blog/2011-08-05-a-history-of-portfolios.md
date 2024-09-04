@@ -2,11 +2,14 @@
 title: "A History of Portfolios"
 date: "2011-08-05"
 categories:
-  - "portfolio-design"
-  - "portfolio-flash"
-  - "portfolio-illustration"
-  - "portfolio-ui"
-  - "portfolio-web"
+  - "portfolio"
+  - "design"
+  - "flash"
+  - "illustration"
+  - "ui"
+  - "web"
+  - "blog"
+coverImage: "https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2011/08/2009website.jpg"
 ---
 
 I was just going back through the archives and digging up screenshots of old portfolio sites and CD's.  Kind of embarrassing how bad things looked all those years ago, but it was in 1997, who can blame me!

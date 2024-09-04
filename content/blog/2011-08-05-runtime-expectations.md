@@ -2,9 +2,10 @@
 title: "Runtime Expectations"
 date: "2011-08-05"
 categories:
-  - "portfolio-design"
-  - "portfolio-illustration"
-  - "portfolio-logo"
+  - "portfolio"
+  - "design"
+  - "illustration"
+  - "logo"
 ---
 
 Runtime Expectations is a live talk show on software development.  I co-host with Bucky Schwarz and Adrian Pomilio.

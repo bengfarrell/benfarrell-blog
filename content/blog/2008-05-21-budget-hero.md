@@ -2,7 +2,6 @@
 title: "Budget Hero"
 date: "2008-05-21"
 categories:
-  - "flashflex"
   - "portfolio"
   - "development"
   - "flash"

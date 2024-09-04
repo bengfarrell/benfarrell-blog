@@ -1,9 +1,10 @@
 ---
 title: "Simmetrix"
-date: "2011-08-05"
+date: "1998-08-05"
 categories:
-  - "portfolio-design"
-  - "portfolio-web"
+  - "portfolio"
+  - "design"
+  - "web"
 ---
 
 Another embarrassing entry in my design portfolio!  I think this was the first paid website I ever did.  It looks pretty bad to me now, but it was done in like 1997.  The company was pretty happy with what I did, but the funny story was that I was learning Macromedia Dreamweaver at the time.  They wanted it done with Adobe GoLive.  I knew at the time that HTML files were HTML files, and any IDE would do the trick.

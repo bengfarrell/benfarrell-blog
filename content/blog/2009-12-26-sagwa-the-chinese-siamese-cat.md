@@ -2,8 +2,9 @@
 title: "Sagwa: the Chinese Siamese Cat"
 date: "2009-12-26"
 categories:
-  - "portfolio-development"
-  - "portfolio-flash"
+  - "portfolio"
+  - "flash"
+  - "development"
 ---
 
 We at 360KID did a few games for PBS Kids with Sagwa.  We did two similar style games.  Counting Koi was a simple counting games where kids would count fish in a pond, and Exploring the Palace was mostly a click and explore type of game.

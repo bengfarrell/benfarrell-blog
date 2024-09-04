@@ -3,7 +3,8 @@ title: "\"PopFly\" Reactive Music Game Prototype"
 date: "2008-11-28"
 categories:
   - "blog"
-  - "flashflex"
+  - "flash"
+  - "flex"
   - "music-video-games"
   - "projects"
 ---

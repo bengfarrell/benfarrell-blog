@@ -2,9 +2,10 @@
 title: "Bolt Talks Logo"
 date: "2011-09-09"
 categories:
-  - "portfolio-design"
-  - "portfolio-illustration"
-  - "portfolio-logo"
+  - "portfolio"
+  - "design"
+  - "illustration"
+  - "logo"
 ---
 
 Tim Cunningham, of www.cfmumbojumbo.com, needed a logo for his podcast/radio show where he does quick interviews featuring one guest per show.

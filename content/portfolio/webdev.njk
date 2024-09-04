@@ -1,7 +1,7 @@
 ---
 layout: layouts/page.njk
-title: "Web Portfolio"
+title: "Web Design/Development"
 ---
 
-{% set postslist = (collections.posts | filterByAllRequiredCategories(['portfolio', 'web'])).reverse() %}
-{% include "fullpostslist.njk" %}
+	{% set postslist = (collections.posts | filterByCommonCategoriesWithOneRequired('portfolio', ['web'])).reverse() %}
+	{% include "postslist.njk" %}

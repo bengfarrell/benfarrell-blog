@@ -2,8 +2,9 @@
 title: "The Chuckles"
 date: "2011-08-04"
 categories:
-  - "portfolio-illustration"
-coverImage: "chuckles_treehouse.jpg"
+  - "portfolio"
+  - "illustration"
+coverImage: "https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2011/08/chuckles_treehouse.jpg"
 ---
 
 My friend Jason Burke had asked me to help him on his children's show spoof he was working on for his senior thesis at Emerson.  I was asked to draw some scenes that he would composite live actors over

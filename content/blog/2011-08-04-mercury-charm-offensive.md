@@ -2,16 +2,17 @@
 title: "Mercury Charm Offensive"
 date: "2011-08-04"
 categories:
-  - "portfolio-design"
-  - "portfolio-illustration"
-  - "portfolio-logo"
-  - "portfolio-marketing"
-  - "portfolio-poster"
-  - "portfolio-web"
+  - "portfolio"
+  - "design"
+  - "illustration"
+  - "logo"
+  - "marketing"
+  - "poster"
+  - "web"
 tags:
   - "design"
   - "logo"
-coverImage: "faancyplanscover.jpg"
+coverImage: "https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2011/08/faancyplanscover.jpg"
 ---
 
 Back when I lived in Boston....lets say 2001 to 2005, I was in a rock band called Mercury Charm Offensive.  I played keyboard, and well I was their resident graphic and web designer.  I designed our logo too, see below!

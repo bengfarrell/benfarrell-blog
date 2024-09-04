@@ -27,6 +27,13 @@ module.exports = function(eleventyConfig) {
 		});
 	});
 
+	eleventyConfig.addFilter("filterByCommonCategoriesWithOneRequired", function(collection=[], singleRequiredCat, ...requiredCats) {
+		const filtered = collection.filter(post => {
+			return haveCommonItems(post.data.categories, requiredCats.flat()) && post.data.categories.includes(singleRequiredCat);
+		});
+		return filtered;
+	});
+
 	eleventyConfig.addFilter("filterByCommonCategories", function(collection = [], ...requiredCategories) {
 		const filtered = collection.filter(post => {
 			return haveCommonItems(post.data.categories, requiredCategories.flat());

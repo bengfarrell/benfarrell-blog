@@ -9,5 +9,5 @@ post to sporadically, and not really knowing how to organize it because I've don
 This is heavily under construction, but I'm leaving it here to guilt myself into doing something about it.
 
 - [Web Development](/portfolio/webdev/)
-- [Flash work](/portfolio/flash/)
-- [Illustration](/portfolio/illustration/)
+- [Multimedia](/portfolio/multimedia/)
+- [Illustration/Design/Art](/portfolio/graphicdesign/)

@@ -2,11 +2,12 @@
 title: "The Gourmez"
 date: "2011-08-05"
 categories:
-  - "portfolio-design"
-  - "portfolio-illustration"
-  - "portfolio-logo"
-  - "portfolio-marketing"
-  - "portfolio-web"
+  - "portfolio"
+  - "design"
+  - "illustration"
+  - "logo"
+  - "marketing"
+  - "web"
 ---
 
 My wife runs a restaurant and cocktail review website called "The Gourmez".  I designed a website for her and built a WordPress style around the design. Shown here is the second revision I made for her in 2010.

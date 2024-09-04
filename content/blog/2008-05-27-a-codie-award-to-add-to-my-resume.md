@@ -3,7 +3,8 @@ title: "A Codie Award to add to my resume!"
 date: "2008-05-27"
 categories:
   - "blog"
-  - "flashflex"
+  - "flash"
+  - "flex"
   - "personal"
   - "projects"
 ---
@@ -17,5 +18,3 @@ I won't go into the "making of" in the least, cause you know, it's safe to assum
 The project is: [http://www.pokemonlearningleague.com/](http://www.pokemonlearningleague.com/)
 
 And of course, yes I played a good part in it, but there were plenty more people involved at the company I work for [360KID](http://www.360kid.com).
-
-Blogged with the [Flock Browser](http://www.flock.com/blogged-with-flock "Flock Browser")

@@ -2,8 +2,9 @@
 title: "Codebass Radio"
 date: "2011-08-10"
 categories:
-  - "portfolio-illustration"
-  - "portfolio-logo"
+  - "portfolio"
+  - "illustration"
+  - "logo"
 ---
 
 In addition to running two shows on Codebass Radio (one music, one tech talk), I'm on the management team.  I've helped out with graphics here and there, so of course when station owner Vicky Ryder wanted a logo, I was happy to help!

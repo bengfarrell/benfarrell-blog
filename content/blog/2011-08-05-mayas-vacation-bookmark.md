@@ -2,8 +2,9 @@
 title: "Maya's Vacation Bookmark"
 date: "2011-08-05"
 categories:
-  - "portfolio-design"
-  - "portfolio-marketing"
+  - "portfolio"
+  - "design"
+  - "marketing"
 ---
 
 My wife, author of "Maya's Vacation" needed to send a bookmark to press in order to advertise her book.  I whipped up something in a few hours.  Note that the art is not mine, but rather drawn by an author at the publishing company
