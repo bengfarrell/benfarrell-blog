@@ -1,6 +1,6 @@
 ---
 title: "Sagwa: the Chinese Siamese Cat"
-date: "2009-12-26"
+date: "2004-01-01"
 categories:
   - "portfolio"
   - "flash"

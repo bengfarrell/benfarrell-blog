@@ -13,4 +13,6 @@ We just launched a new application at 360KID!  I wish I could say I did all of 
 
 This game called Budget Hero was developed for American Public Media, and allows you to play cards to adjust the federal budget and see if you can balance it.   Also allowing you to earn badges, you can see if you're also doing your part to maintain the military, health care, etc.  It's up to you to make sure the stuff you think is important doesn't wither away and STILL maintain the budget.
 
- [Click to Play Budget Hero](http://marketplace.publicradio.org/features/budget_hero/)
+![Budget Hero](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/portfolio/BudgetHero.jpg)
+
+[Press Release](https://www.americanpublicmedia.org/blog/new-online-game-empowers-anyone-to-be-americas-budget-hero/)

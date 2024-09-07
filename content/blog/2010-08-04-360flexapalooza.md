@@ -1,6 +1,6 @@
 ---
 title: "360Flexapalooza"
-date: "2011-08-04"
+date: "2010-08-04"
 categories:
   - "portfolio"
   - "illustration"

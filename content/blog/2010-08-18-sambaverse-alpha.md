@@ -2,8 +2,11 @@
 title: "Sambaverse Alpha"
 date: "2010-08-18"
 categories:
-  - "flashflex"
-  - "music-video-games"
+  - "flash"
+  - "flex"
+  - "blog"
+  - "music"
+  - "development"
   - "projects"
 ---
 

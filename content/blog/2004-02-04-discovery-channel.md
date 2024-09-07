@@ -1,10 +1,11 @@
 ---
 title: "Discovery Channel"
-date: "2009-12-26"
+date: "2003-02-04"
 categories:
-  - "portfolio-desktop"
-  - "portfolio-development"
-  - "portfolio-director"
+  - "portfolio"
+  - "desktop"
+  - "development"
+  - "director"
 ---
 
 While at 360KID, we created a interactive CD-ROM for the Discovery Channel.  The aim was to create a series of modules for kids to explore various scientific topics.

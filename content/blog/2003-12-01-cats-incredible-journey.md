@@ -1,9 +1,11 @@
 ---
 title: "Cats Incredible Journey"
-date: "2009-12-26"
+date: "2003-12-01"
 categories:
-  - "portfolio-development"
-  - "portfolio-flash"
+  - "portfolio"
+  - "development"
+  - "flash"
+  - "game"
 ---
 
 Cats Incredible Journey was a game created while I was at 360KID.  It focused on helping kids with emotions if I recall correctly.  In it's prototype phase, it was a Flash game with limited interaction and awesomely designed animated sequences.

@@ -1,6 +1,6 @@
 ---
 title: "Fantasy Novel Map"
-date: "2011-08-04"
+date: "2007-07-01"
 categories:
   - "portfolio"
   - "illustration"
