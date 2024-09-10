@@ -1,6 +1,7 @@
 ---
 title: "Hi, Long time, no blog!"
 date: "2024-09-04"
+coverImage: "https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2024/09/newblog-rotate.jpg"
 categories:
 - "blog"
 ---
@@ -64,7 +65,7 @@ microblogging platform to go to.
 
 ## What to blog
 
-The other piece of me getting back to blogging is that I've been doing (and meaning to do) some cool stuff lately. Non of it is Web Components, though
+The other piece of me getting back to blogging is that I've been doing (and meaning to do) some cool stuff lately. None of it is Web Components, though
 if I need to build something, OF COURSE that's what I'll use. I've been doing some generative AI experimentation like everyone else, but I've also been playing
 with making digital art physical with the laser cutter and 3D printer at the Sun Gallery makerspace.
 
@@ -92,3 +93,6 @@ way to connect with people over my renewed interests, and also just a way to kee
 and I end up on a blog post I wrote. See, even if nobody reads, it does serve a purpose!
 
 Find me here and on [Bluesky](https://bsky.app/profile/benforreal.bsky.social) and feel free to say hi!
+
+![whiteboard](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2024/09/newblog.jpg)
+*you can tell I'm serious because I made an experiments list on my whiteboard*
