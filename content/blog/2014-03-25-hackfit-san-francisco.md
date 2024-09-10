@@ -95,4 +95,4 @@ Anyway, that's the story of my team, the Wolfpack: an app that brings instructor
 
 I really must thank the organizers of Hackfit for an exhausting, but fun weekend.
 
-![](http://www.hackfit.com/2014/03/25/hackfit-san-francisco-final-results/1278178_317921168332916_628552969_o.jpg) bronze medalists (my wife included cause she was an awesome runner during the demo)
+*(boo, this photo has been lost over time)* bronze medalists (my wife included cause she was an awesome runner during the demo)
