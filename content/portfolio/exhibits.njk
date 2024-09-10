@@ -1,0 +1,11 @@
+---
+layout: layouts/page.njk
+title: "Exhibits"
+---
+
+<p>I've been fortunate enough to have built exhibits for museums across the country as well as one with my local art gallery.</p>
+<p>Here are (probably most of them), and my involvement varies from one of a few developers, helping design it, leading engineering, and sometimes doing
+the entire thing myself.</p>
+
+{% set postslist = (collections.posts | filterByCommonCategoriesWithOneRequired('portfolio', ['installation'])).reverse() %}
+{% include "postslist.njk" %}

@@ -1,9 +1,10 @@
 {%- css %}.postlist { counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }} }{% endcss %}
 <ol class="posts">
 {% for post in postslist %}
+	{% set firstimg = extractFirstImage(post) %}
 	<li class="post-item">
-		<a href="{{ post.url }}">
-			<img class="thumb" src="{% first_image post %}"></img>
+		<a class="thumb" href="{{ post.url }}">
+			{% image firstimg, "featured image" %}
 		</a>
 
 		<p>

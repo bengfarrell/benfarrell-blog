@@ -9,11 +9,10 @@ categories:
   - "desktop"
 ---
 
-This was a project I freelanced on. It was a marketing CD-ROM for a patient monitor.
-It was fairly standard fare for a medical device marketing CD-ROM. I do remember we had the
-challenge of a 360 degree rotating view of the monitor. We rendered tons of transparent pngs
-and then the mouse interaction flipped through them as though it was a 3D scene. 3D wasn't
-so amazing and realistic at the time, and we really wanted to show off the product.
+This was a marketing CD-ROM for a Phillips product called Intellivue - a networked system of patient monitoring systems.  I did the Director engineering work, and integrated the user interface with Flash assets produced by the artists.  There were several pre-rendered rotating 3D products, and several high quality videos.
 
 ![intellivue](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/portfolio/philips.jpg)
 *Philips Intellivue Patient Monitor*
+
+![intellivue](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/portfolio/Philips+Medical+-+Sales+Demo.jpg)
+*(faux, pre-rendered) 3D rotating view*

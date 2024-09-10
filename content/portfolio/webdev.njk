@@ -3,5 +3,9 @@ layout: layouts/page.njk
 title: "Web Design/Development"
 ---
 
+<p>My web development portfolio is going to be pretty thin for a while. I haven't been archiving well, and most of my best/finished work
+	is done for a company and under NDA. But also, I've done lots on Github and it will be a while before I sort through it all and document.
+	Until then, here's a small sample - with not much of it being recent.</p>
+
 	{% set postslist = (collections.posts | filterByCommonCategoriesWithOneRequired('portfolio', ['web'])).reverse() %}
 	{% include "postslist.njk" %}

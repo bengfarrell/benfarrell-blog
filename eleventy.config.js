@@ -16,7 +16,7 @@ const { execSync } = require('child_process')
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
 	eleventyConfig.addShortcode('first_image', post => extractFirstImage(post));
-
+	eleventyConfig.addNunjucksGlobal('extractFirstImage', extractFirstImage );
 	eleventyConfig.on('eleventy.after', () => {
 		execSync(`npx pagefind --source _site --glob \"**/*.html\"`, { encoding: 'utf-8' })
 	});
@@ -212,7 +212,7 @@ function extractFirstImage(doc) {
 		return imgTag.substring(uriBegin+5, uriEnd);
 	}
 
-	return '/images/benvector.svg';
+	return 'https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/portfolio/benvector.svg';
 }
 
 const haveCommonItems = (arr1, arr2) => {

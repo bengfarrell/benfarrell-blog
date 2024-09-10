@@ -134,14 +134,10 @@ function createShader(
 	return shader;
 }
 
-let shader1 = initialize('shader');
-let shader2 = initialize('shader2');
-animate(shader1);
-animate(shader2);
+let shader = initialize('shader');
+animate(shader);
 
 window.addEventListener("resize", () => {
-	shader1 = initialize('shader');
-	shader2 = initialize('shader2');
-	animate(shader1);
-	animate(shader2);
+	shader = initialize('shader');
+	animate(shader);
 });

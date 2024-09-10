@@ -11,3 +11,4 @@ This is heavily under construction, but I'm leaving it here to guilt myself into
 - [Web Development](/portfolio/webdev/)
 - [Multimedia](/portfolio/multimedia/)
 - [Illustration/Design/Art](/portfolio/graphicdesign/)
+- [Installations/Exhibits](/portfolio/exhibits/)

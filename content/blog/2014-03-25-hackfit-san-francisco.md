@@ -33,8 +33,7 @@ And there was team member #2 (as we'd find out later)
 
 At around 7pm or so, the pitches were made. Those who had an idea to pitch did so. Everyone did a fabulous job, but I was really only drawn to a couple of pitches. I was caught between not thinking the simpler ideas were fun/challenging enough to work on, but the complex ideas were TOO complex to do in the short amount of time.
 
-![](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2014/03/1969298_317434985048201_1383646825_n.jpg) Wolfpack pitcher #1 with pitcher #2 six people behind
- 
+*(boo, this photo has been lost over time)*
 
 I was ready to cheer on the North Carolina guy we met as he was waiting in line to pitch, but another person pitched the SAME exact idea just moments before. He took it remarkably well, but I felt like I was watching America's Funniest Home Videos when the star of the video gets a football in the groin. I made the same contorted face and felt the pain. They both turned it into a win when they decided to team up. He and his girlfriend became team members #3 and #4.
 
@@ -44,7 +43,7 @@ By this point - you know which team I was on. It was a hard decision though. I u
 
 I should back up to before the pitches, though. I should highlight the point at which I realized that I overlooked something major. See, I'm sorta between fitness regimens right now. Which is to say - I've been lazy for several months. Despite me not being prepared in the slightest, [FitMob](https://www.fitmob.com/) was there to lead the first workout. After the workout, even relatively fit people were saying it was brutal. Me, I did most of it....not well...but I did it. I've worked with a personal trainer before, so I knew the points at which I needed to slow down and stop. I think Fitmob realized it too, because they are the sort of instructors that get up in your face to motivate you. I was probably white as a sheet by the middle and they let me take it easy.
 
-![](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2014/03/1390760_317329591725407_1107544478_n.jpg) FitMob led workout session
+*(boo, this photo has been lost over time)*
 
 We left on Friday night throwing out a few ideas, but adjourned not knowing what would come the next day.
 
@@ -56,7 +55,7 @@ At least half the team arrived later (around 9 to 9:30) on Saturday morning. Bet
 
 If I did it again, I probably would have gotten more involved with initial planning. In hindsight, I may have railroaded the team into what I was doing. But it actually worked out really well. While I worked on the tech demo - the rest of the team worked out the business side of things. My co-worker was very involved in these convos, but broke off and started designing pure awesomeness in a short time.
 
-![](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2014/03/1511007_317436155048084_2011543278_n.jpg) half of our team hard at work
+*(boo, this photo has been lost over time)*
 
 As tech demos and designs and plans started shaping up, we all put our pencils down to head out to [StudioMix](http://www.studiomix.com/) for another workout session. I decided to bike the two miles from our workspace at [Tagged](http://www.tagged.com/). When I got outside, I realized that
 
@@ -88,7 +87,7 @@ My wife showed up right before our presentation to help out. We set her, Fernand
 
 The presentation went swimmingly, and the tech demo started a bit rocky but eventually our runners started showing up on screen around our area in San Francisco. When it started working, we got some great applause.
 
-![](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2014/03/1932796_317921134999586_1276670531_o.jpg) me giving the technical pitch and flailing my arms wildly
+*(boo, this photo has been lost over time)* me giving the technical pitch and flailing my arms wildly
 
 We had high marks all around and made [third place](http://www.hackfit.com/2014/03/25/hackfit-san-francisco-final-results/)...a bronze medal for my first hackathon. I also dig the fact that we had the highest technical score out of anybody and slightly below the highest "wow factor". We lost in the "wow factor" category to a pair of gals that wowed me as well. I talked to them afterward. With no previous hardware experience, they made an Arduino controlled light up armband which reads your heartrate and calculated if your BPM was in the correct zone for working out. Amazing.
 

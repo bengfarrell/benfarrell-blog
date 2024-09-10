@@ -69,7 +69,7 @@ li.post-item .title {
 	display: inline-block;
 }
 
-.post-item .thumb {
+.post-item a.thumb img {
 	margin-right: 15px;
 	width: 125px;
 	min-width: 125px;
