@@ -1,7 +1,7 @@
 ---
 title: "Lasers & Halftones"
 date: "2024-09-19"
-coverImage: "https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2024/09/bonobox-closeup.jpg"
+coverImage: "https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2024/09/cover.jpg"
 categories:
 - "blog"
 - "fabrication"
@@ -59,6 +59,7 @@ Mistakes are certainly what happened my first time cutting a halftone pattern!
 Our board president Carla brought her dog Chewbacca (what a wookie) to the gallery on the day I needed a subject for my first attempt.
 
 ![Chewbacca the dog](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2024/09/chewbacca-the-dog.jpg)
+
 *Carla doing her best to get Chewbacca to sit still for a halftone portrait*
 
 As I brought Chewie into "Hello Halftone", I noticed a couple of things right off the bat.
@@ -92,7 +93,7 @@ say it irked me.
 
 ## Hello Halftone - Laser Edition
 
-OK, no, I didn't actually call it "Laser Edition". But I did quietly add some features 3 plus years after we launched and deployed
+OK, no, I didn't actually call my app update "Laser Edition". But I did quietly add some features 3 plus years after we launched and deployed
 Hello Halftones to labs. The first two things I added were, if you know web dev, just canvas filters in our implementation.
 
 The first was a brightness filter. So, in the web app...instead of going out to Photoshop, you can adjust brightness of your imported image.
@@ -109,16 +110,14 @@ and will definitely lead to HONEYCOMB LASER COLLAPSE (I've named this here hopin
 ![Honeycomb laser collapse](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2024/09/honeycomb-laser-collapse.jpg)
 *Honeycomb laser collapse: a dramatic re-imagining generated with Adobe Firefly text to image*
 
-So, I added a third (and last feature) called "Max shape radius". Think of it like this, every atomic shape in a halftone pattern has a size (and therefore a radius).
+So, I added a third (and last feature) called "Max shape radius". Think of it like this: every atomic shape in a halftone pattern has a size (and therefore a radius).
 The darker the color in the image, the larger this shape will be and probably a little to close to its neighbors. On a digital image, there's really nothing wrong when these shapes overlap or slightly touch each other.
 
 ![a dark cluster](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2024/09/dark-halftone.png)
 
 *Halftones generated from a darker section of an image with make the halftone shapes larger and closer together*
 
-But when you're cutting holes with a laser cutter, as fine as the cutting beam is, if the shapes are too close together, you're just unintentionally carving
-out large pieces of the image. Worse, if you have a circle of dark areas enclosing a light area, well guess what, it's a physical object, so everything enclosed just
-falls out.
+But when you're cutting holes with a laser cutter, as fine as the cutting beam is...well. HONEYCOMB LASER COLLAPSE.
 
 So this new "Max shape radius" slider says - "Hey, if pure black gets represented by a shape that's 100% of the possible size, let's limit
 the possible size to some percentage of that maximum size".
@@ -130,7 +129,7 @@ uniform and you can't make out an image anymore. But, at the same time, it can s
 *Max shape radius starting at 100% (left), then 84%, 71%, and finally 50%. Notice how the shapes successfully get separated in preparation for laser cutting, but the image gets washed out
 when going too low*
 
-In practice, I've also noticed that what looks a bit unsaturated on screen in terms of shapes being smaller, actually ends up looking pretty great when cut. So there's a bit of a learning
+In practice, I've also noticed that what looks a bit unsaturated on screen in terms of shapes being smaller and more uniform, actually ends up looking pretty great when cut. So there's a bit of a learning
 curve and some eyeballing to do, but at least there is some control to constrain how much the laser cuts away.
 
 
@@ -176,7 +175,7 @@ At that point I knew my lighting plan should work! So, I measured the inside of 
 a great way to provide power without leaving the box always on.
 
 I did have a moment of disappointment when I turned on the box. The LEDs really weren't shining through all that well. The problem was that the light was mounted on the sides. I knew they weren't going to be directionally correct, but I
-thought that enough light would shine through the front. Unfortunately, this wasn't the case, so I lined the back panel of the box with aluminum foil.
+thought that enough light would shine through the front. Unfortunately, this wasn't the case, so I lined the back panel of the box with an aluminum foil wrapped piece of cardboard.
 
 THIS was enough to make the light shine through the front well enough and create a nice effect.
 
@@ -186,25 +185,18 @@ THIS was enough to make the light shine through the front well enough and create
 ![Inside](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2024/09/inside-of-box.jpg)
 *Inside the Bono-box: LEDs attached to the side, makeshift tin foil back, and 9V battery container*
 
+Though, if we're being honest, the LEDs now lit up the front too well. You could actually make out individual LED lights from certain angles.
+I gotta tell you, this was ruining my vibe. I don't need an EVEN light, just something noisy enough to not force you to see
+what the inside looks like.
 
-## Refining the process
+So at this point, I went to the library and studied up on optical physics...
 
-So at this point, I had something that worked well enough, but I had uneven cuts, badly nailed sections, and a makeshift aluminum foil reflector that I really didn't know how I wanted to attach.
+Just kidding. I balled up some aluminum foil, and stuck it to the back panel with some tape and hoped for the best.
 
-"If only I could cut wood with millimeter precision accurate straight lines"...he said with a straight face and full access to a laser cutter.
+![Tin foil ball](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2024/09/balled-up-tin-foil.jpg)
+*The optical physics of carefully balled up tin foil disperses the light*
 
-There's a fantastic website called [MakerCase](https://www.makercase.com/) that lets you input the dimensions of a box you want to make and lets you download an SVG of the faces of the box ready to be laser cut!
-I made a 5x5x2 inch box and cut it out of 1/8 inch birch plywood. The cuts were perfect for snug assembly, and I added the halftone pattern to a couple of the faces, ultimately making a [Lightburn template]() of sorts.
-I also decided to try a bit of album art instead of musicians, deciding that Pink Floyd's Division Bell would be a good choice.
-
-All went well, so I stained again (a couple coats per side), and then I assembled the entire box with some wood glue on the interlocking tabs. After leaving it to dry for a few hours (with a rubber band holding it together), now comes the fun part - getting it to light up!
-
-Nothing really changed with the LED strip. I cut it to size, and stuck it to the inside of the box, and wired another 9V battery up. I drilled a small hole in the back of the box to allow the wires to come out and connect to the battery holder outside of the box. It DOES have a
-switch, so i thought it would be better to be able to turn this off and on without removing the back.
-
-This time, however, instead of aluminum foil, I bought some scissor friendly tin sheets. I cut a piece a bit smaller than the back of the box with a little cut to let the wire through, and stuck it on the back with some strong quick dry adhesive.
-![reflective back](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2024/09/mirror-back.jpg)
-*Tin sheet glued to the back of the box to reflect the LED lights to the front*
+## Coloring the box
 
 Still having hurt feelings about my semi-transparent sealer attempt, I also picked up some [colored gel light filters](https://www.amazon.com/dp/B08NG8PLS3). I cut a blue one to height, and a bit wider than the box front and just stuffed it in. It's holding tight as its snug
 against the LED strip, so works well!
@@ -212,17 +204,15 @@ against the LED strip, so works well!
 ![colored gel filter](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2024/09/gel-filter.jpg)
 *Gel light filter curved to cram in the front against the laser cut face. The LED light strip holds it in place*
 
-When all was said and done, I turned it on, and it worked well! A little...too well! Some of the individual LED lights were visible
-around the bottom, which I didn't care for. Rather than think about a good solution to solve the problem, I just shoved in the remainder of my tin sheet at an angle.
-IT WORKED.
 
-![MOAR TIN](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2024/09/more-tin.jpg)
-*Shoved in MOAR TIN so it hopefully bounces the light more and doesn't show individual lights*
+## Refining the process
 
-I'm not quite sure what to do with the back of the box, I don't want to glue it on because I still want to be able to get in there,
-but the back is heavy enough that it doesn't quite stay in place - so for now scotch tape. Don't judge, you can't even see it.
+So at this point, I had something that worked well enough, but I had uneven cuts and badly nailed sections.
 
-In the end, I created my very own laser cut light box using halftones of U2's Bono!
+"If only I could cut wood with millimeter precision accurate straight lines"...he said with a straight face and full access to a laser cutter.
+
+There's a fantastic website called [MakerCase](https://www.makercase.com/) that lets you input the dimensions of a box you want to make and lets you download an SVG of the faces of the box ready to be laser cut!
+I made a 5x5x2 inch box and cut it out of 1/8 inch birch plywood. The cuts were perfect for snug assembly, and I added the halftone pattern to a couple of the faces, ultimately making a [Lightburn template]() of sorts.
 
 ![Bonobox close up](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2024/09/bonobox-closeup.jpg)
 *Is it a lightbox? Or is it a BONOBOX?*
@@ -231,8 +221,12 @@ In the end, I created my very own laser cut light box using halftones of U2's Bo
 ![Bonobox close up](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2024/09/bonobox-angle.jpg)
 *Photo taken from an angle, it's even better than the real thing*
 
-![Bonobox close up](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2024/09/bonobox-inroom.jpg)
-*You can sit in my office chair and admire Bono, he'll be here with or without you*
+![Bono and Lenon hanging out](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2024/09/bono-lenon.jpg)
+*Bono and John Lennon hanging out by my record collection*
+
+![Full set](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2024/09/full-set.jpg)
+*Bono x2, John Lennon, and Pink Floyd's Division Bell*
+
 
 This was a fun little experiment, and while I'm not necessarily handy with wood, lasers made it easy. If you're in the
 area, come learn about and check out the [Sun Gallery makerspace](https://makerspace.sungallery.org) and make your own laser cut light box!
