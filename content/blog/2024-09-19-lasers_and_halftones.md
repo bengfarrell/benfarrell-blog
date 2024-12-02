@@ -36,20 +36,20 @@ aesthetic effect every once in a while.
 At the time, we talked on my team a bit about how it would be neat if we tried using these for laser cutting or engraving. But alas, we didn't have access to a laser cutter at work.
 
 
-## Sun Gallery Makerspace
+## Makerspace
+*Edit: Unfortunately the makerspace I'm referencing is now unfortunately closed temporarily and under new leadership which I would describe as toxic*
 
 So lasers were again calling to me from the recesses of my 5th grade mind in 2021 when we launched this project. But they were unanswered until
-I joined the board of directors for the [Sun Gallery](https://sungallery.org) in Hayward, CA. The Sun Gallery is a local non-profit that had just won a grant to build a makerspace. And damn straight
-we purchased a laser cutter/engraver for the space. Honestly, how could you not? Lasers are a cornerstone of the makerspace equipment repertoire.
+I got involved with my local makerspace. But damn straight
+our makerspace had a laser cutter/engraver. Honestly, how could you not? Lasers are a cornerstone of the makerspace equipment repertoire.
 
 Now, things never go as planned when you finally get to try the thing you said you'd try. Just because you imagined it going 100% to plan doesn't make it so.
 
 ## Halftone laser cutting first attempt
-At the Sun Gallery, we have a fairly powerful 100W Omtech laser cutter/engraver. Laser cutting or engraving definitely has a bit of a learning curve. And yes, part of that learning curve
+At the makerspace, we have a fairly powerful 100W Omtech laser cutter/engraver. Laser cutting or engraving definitely has a bit of a learning curve. And yes, part of that learning curve
 is reading the manual, which I never do. However, I made an exception here, BECAUSE. LASERS. ARE. DANGEROUS.
 
-![Laser cutter at the Sun Gallery makerspace](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2024/09/lasercutter.png)
-*OMTech 100W Laser cutter/engraver at the [Sun Gallery makerspace](https://makerspace.sungallery.org)*
+![Laser cutter](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2024/09/lasercutter.png)
 
 We at the makerspace documented a lot of materials and the settings to use for each but
 every project is different, and you just need to get a feel for what you're trying to do and allow mistakes.
@@ -228,8 +228,8 @@ I made a 5x5x2 inch box and cut it out of 1/8 inch birch plywood. The cuts were 
 *Bono x2, John Lennon, and Pink Floyd's Division Bell*
 
 
-This was a fun little experiment, and while I'm not necessarily handy with wood, lasers made it easy. If you're in the
-area, come learn about and check out the [Sun Gallery makerspace](https://makerspace.sungallery.org) and make your own laser cut light box!
+This was a fun little experiment, and while I'm not necessarily handy with wood, lasers made it easy. If you have access to a laser cutter,
+try making your own laser cut light box!
 Here's my Lightburn template for the [Bono box](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2024/09/bonobox-0.125in-template.lbrn2).
 The template is for 1/8" inch thick material, and I used birch plywood.
 

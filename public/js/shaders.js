@@ -21,33 +21,64 @@ precision mediump float;
 uniform float time;
 uniform vec2 resolution;
 
-// Function to create a soft, organic shape
-float organicShape(vec2 st, float radius) {
-    return smoothstep(radius, radius + 0.01, length(st - vec2(0.5)));
+// Simulated frequency function with more variation
+float frequencyValue(float x) {
+    return 0.5 + 0.5 * (
+        sin(x * 15.0 + time * 2.0) *
+        sin(x * 7.0 + time) *
+        cos(x * 3.0)
+    );
 }
 
 void main() {
     vec2 st = gl_FragCoord.xy / resolution.xy;
     st.x *= resolution.x / resolution.y; // Correct aspect ratio
 
-    // Create a gradient background
-    vec3 color1 = vec3(0.0, 0.7, 1.0); // Sky blue
-    vec3 color2 = vec3(1.0, 1.0, 1.0); // White
-    vec3 bgcolor = mix(color1, color2, st.y);
+    // Increase number of frequency bands to fill entire width
+    float bands = 32.0;
+    float bandWidth = bands / resolution.xy[1];
 
-    // Add some animated, floating shapes
-    float t = time * 1.5;
-    vec2 pos1 = vec2(sin(t * 0.7) * 0.7 + 0.5, cos(t * 0.5) * 0.1 + 0.0);
-    vec2 pos2 = vec2(cos(t * 0.3) * 0.6 + 0.5, sin(t * 0.4) * 0.2 + 0.0);
+    // Base dark background
+    vec3 backgroundColor = vec3(0.02, 0.02, 0.05);
+    vec3 finalColor = backgroundColor;
 
-    float shape1 = organicShape(st - pos1, 0.1);
-    float shape2 = organicShape(st - pos2, 0.15);
+    // Iterate through frequency bands
+    for (int i = 0; i < 64; i++) {
+        // Calculate band position and frequency
+        float bandPos = float(i) * bandWidth;
+        float freq = frequencyValue(float(i));
 
-    // Combine shapes with the background
-    vec3 finalColor = mix(bgcolor, vec3(1.0), 1.0 - shape1 * shape2);
+        // Check if current pixel is in this frequency band
+        if (st.x >= bandPos && st.x < bandPos + bandWidth) {
+            // Create more complex color gradient
+            vec3 barColor = mix(
+                vec3(0.1, 0.0, 0.5),   // Deep purple (low frequencies)
+                vec3(0.1, 1.0, 0.9),   // Bright cyan (high frequencies)
+                pow(float(i) / 63.0, 1.5)
+            );
 
-    // Add a subtle pulsing effect
-    finalColor += vec3(sin(time * 5.0) * 0.05);
+            // Create vertical bar with frequency-based height
+            float barHeight = freq * 0.9;
+
+            // Check if pixel is within bar height
+            if (st.y < barHeight) {
+                // More complex vertical gradient
+                float gradient = pow(st.y / barHeight, 0.7);
+                finalColor = mix(
+                    barColor * 0.5,
+                    barColor * 1.5,
+                    gradient
+                );
+
+                // Add subtle horizontal noise
+                float noise = fract(sin(st.y * 50.0 + time) * 10.0) * 0.1;
+                finalColor += noise * barColor;
+            }
+        }
+    }
+
+    // Add more dynamic animation
+    finalColor *= 1.0 + sin(time * 4.0) * 0.15;
 
     gl_FragColor = vec4(finalColor, 1.0);
 }

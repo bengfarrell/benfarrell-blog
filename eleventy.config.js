@@ -1,6 +1,7 @@
 const { DateTime } = require("luxon");
 const markdownItAnchor = require("markdown-it-anchor");
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -15,6 +16,7 @@ const { execSync } = require('child_process')
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
+	eleventyConfig.addPlugin(syntaxHighlight);
 	eleventyConfig.addShortcode('first_image', post => extractFirstImage(post));
 	eleventyConfig.addNunjucksGlobal('extractFirstImage', extractFirstImage );
 	eleventyConfig.on('eleventy.after', () => {
