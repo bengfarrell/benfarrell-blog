@@ -203,6 +203,10 @@ function extractFirstImage(doc) {
 		return;
 	}
 
+	if (doc.data.coverImage) {
+		return doc.data.coverImage;
+	}
+
 	const content = doc.templateContent;
 
 	if (content.includes('<img')) {
