@@ -5,7 +5,7 @@ categories:
   - "blog"
   - "ar"
   - "vr"
-coverImage: "IMG_20170415_131157.jpg"
+coverImage: "https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2017/04/IMG_20170415_131157.jpg"
 ---
 
 I believe it was during a session called “Shooting VR for Post” that I found myself identifying heavily with one of the panelists who said something to the effect of “Before VR, my work was a bit mundane. We’d take a look at a shot we needed to do in a meeting, and we wouldn’t even have to talk, we’d instantly know what our roles were and break to get down to work. With VR now, it’s not that easy, we need to knock our heads against the wall and really come up with ways to get the job done.”

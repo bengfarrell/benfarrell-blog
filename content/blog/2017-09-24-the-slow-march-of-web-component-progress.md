@@ -8,7 +8,6 @@ categories:
   - "ui"
   - "web"
   - "web-components"
-coverImage: "Web-Components.png"
 ---
 
 Almost two years ago, I made a hefty series of posts on the [promise of Web Components](/blog/2015/10/26/es6-web-components-part-5-wrapup/). Things have changed and promises were broken, but on the whole, I don't think MUCH has changed from an implementation perspective. These days, I've been sucked into the awesome world of the 3D web and WebVR and soon WebAR, but often I need some 2D UI around my 3D scene/canvas. When I do, it's STILL all Web Component based HTML, CSS, and pure vanilla Javascript.

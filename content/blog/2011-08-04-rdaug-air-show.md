@@ -6,7 +6,7 @@ categories:
   - "illustration"
   - "marketing"
   - "poster"
-coverImage: "https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2011/08/airshow.jpg/airshow.jpg"
+coverImage: "https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2011/08/airshow.jpg"
 ---
 
 I used to run the Raleigh Durham Adobe User Group.  We joined forces with some other local groups when the Adobe team came around to showcase their new AIR runtime.

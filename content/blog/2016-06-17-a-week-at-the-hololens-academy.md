@@ -14,7 +14,6 @@ tags:
   - "hololens"
   - "microsoft"
   - "vr"
-coverImage: "5704f8ff4ea9a.jpg"
 ---
 
 Ahhhhh the Hololens. I finally get to check it off my list. When I express my disappointment with not being able to try it out to my friends and co-workers that are interested in VR, it's kinda like talking about going to Hawaii. "Ohhhh, you haven't been? You really should, it's an enjoyable experience." (said, of course, with a knowing smirk and possibly a wink).
