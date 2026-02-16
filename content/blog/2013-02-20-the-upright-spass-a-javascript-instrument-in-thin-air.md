@@ -17,7 +17,6 @@ tags:
   - "kinect"
   - "nodejs"
   - "openni"
-coverImage: "performance.png"
 ---
 
 Well, well, well....
