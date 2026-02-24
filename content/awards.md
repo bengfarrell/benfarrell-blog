@@ -4,6 +4,7 @@ title: "Awards"
 ---
 
  
+- **2026 Patent Granted** [Managing Multiple Datasets for Data Bound Objects](https://patentsgazette.uspto.gov/week07/OG/html/1543-3/US12555281-20260217.html) - Adobe
 - **2018 Patent Granted** [Patent for Immersive media content navigation and editing techniques](https://patents.google.com/patent/US10649638B2/) - Adobe
 - **2017 Top Ten Session** "Intro to VR" Session at Adobe Tech Summit - Adobe
 - **2017 Communication Arts Award of Excellence** ["Interactive/Environmental Design" - Adobe/SFMOMA for Self Composed Exhibit](https://www.commarts.com/project/24685/self-composed)

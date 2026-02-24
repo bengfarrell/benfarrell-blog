@@ -11,7 +11,7 @@ categories:
 - "hardware"
 ---
 
-A while back I had an idea for a project that might benefit from a drawing tablet. I'll brag on this later
+A while back I had an idea for [a project](/blog/2026-02-23-sketchatone) that might benefit from a drawing tablet. I'll brag on this later
 on my blog when I've polished and played a bunch more with it, but exploring how to interact with it
 got me sucked into the world of HID (human-interface-devices).
 

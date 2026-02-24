@@ -145,7 +145,7 @@ in the deeper corners.
 
 [And the docs are here](https://bengfarrell.github.io/blankslate/)
 
-Lastly, in my next post I'll tell ya all about "Project Sketchatone"!
+Lastly, in my next post I'll tell ya all about ["Project Sketchatone"](/blog/2026-02-23-sketchatone.md)!
 
 
 
