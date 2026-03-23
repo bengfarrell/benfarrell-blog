@@ -183,7 +183,7 @@ extremely accurately. So future explorations will likely be different control me
 All that said - I've really just made another instrument. And instruments take time to get good at, and having never played guitar, I'll have to work on my strum technique!
 
 Here's all the docs where you can find instructions, releases and more!
-[https://bengfarrell.github.io/sketchatone/](https://bengfarrell.github.io/sketchatone/)
+[https://sketchatone.com](https://sketchatone.com)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iXwvTR0crbg?si=UvxQ8YH8_fonOQxT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
