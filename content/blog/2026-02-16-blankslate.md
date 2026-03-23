@@ -145,6 +145,9 @@ in the deeper corners.
 
 [And the docs are here](https://bengfarrell.github.io/blankslate/)
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xZ2qLuHW_qE?si=bPNDSOcD28BIPb8t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 Lastly, in my next post I'll tell ya all about ["Project Sketchatone"](/blog/2026-02-23-sketchatone.md)!
 
 
