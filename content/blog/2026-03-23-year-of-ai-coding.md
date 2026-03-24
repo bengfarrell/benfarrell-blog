@@ -1,7 +1,7 @@
 ---
 title: "A Year of AI Coding"
 date: "2026-03-23"
-coverImage: "https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2026/03/audio-io-ports.jpg"
+coverImage: "https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2024/12/claude.jpg"
 categories:
 - "blog"
 - "ai"
