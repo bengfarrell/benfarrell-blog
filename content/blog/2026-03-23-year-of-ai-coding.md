@@ -30,7 +30,7 @@ what I was already doing well.
 The easy stuff, writing HTML/CSS/Javascript, I could already do pretty fast. So I tried to use it for the more complex stuff, but it
 often fell into these circular logic traps where it would keep doing the same bad thing over and over again.
 
-It was pretty clear that, in my use at the time, that Cursor was being more disruptive to my work than actually helping it.
+It was pretty clear in how I was using it at the time, that Cursor was being more disruptive to my work than actually helping it.
 
 It wasn't until the fall of 2025 that things really fell into place.
 
@@ -60,7 +60,7 @@ to make something with tools I was terrible with.
 I didn't expect to get good at Python by having AI write code for me. I'm happy to be super good at web tech and have
 a number of other languages and platforms that I can reasonably stumble through when I need to.
 
-I'm sure I'm marginally better at Python from this experience - but if I truly wanted to be a better, I'd have struggled
+I'm sure I'm marginally better at Python from this experience - but if I truly wanted to be better, I'd have struggled
 through it on my own and suffered the failures and rode it through to turn those failures into successes.
 
 This is something that was obvious to me for an entire programming language - but it did sneak up on me in relation to learning
@@ -72,7 +72,7 @@ for me of integrating these new-to-me concepts around HID devices.
 
 What happened as a result was that, I learned nothing. I had working code but no knowledge of how it worked on a larger level.
 I could eyeball functions and for loops and see what they were doing on a smaller scale, but HID concepts like "report ID" or "usage page", I had no idea.
-Ultimately, I went back much later using AI to summarize all of this things to actually learn what was going on.
+Ultimately, I went back much later using AI to summarize all of these things to actually learn what was going on.
 
 This turned problematic. I was still in the stage with Cursor that for higher level complex reasoning I'd often get into circular failures:
 
@@ -98,7 +98,7 @@ I ended up having some harder problems to work through, and no real understandin
 What I didn't mention was how I used Cursor. I'm a WEBSTORM4LIFE kind of person. I've been subscribing to this Intellij IDE for over a decade, and
 don't want to let it go. As a result I never got into using VSCode, so as a result Cursor was super awkward for me.
 
-My ACTUAL workflow during all of this was to have Cursor open and just ask it to do stuff for me. I'd ignore the rest of it's UI completely, while
+My ACTUAL workflow during all of this was to have Cursor open and just ask it to do stuff for me. I'd ignore the rest of its UI completely, while
 reviewing code and making small edits in Webstorm, which of course flagged all the files that were different from what was committed to git.
 
 In winter of 2025, I was able to get an Augment subscription that I tried out. The ability to have a panel right in Webstorm was REALLY nice and made
@@ -111,7 +111,7 @@ For not very complex tasks it was fine, and possibly a tiny bit better than Curs
 I found the other models.
 
 Yes, I stumble through life without reading the documentation - and hadn't actually tried changing models before. Until now, I just used whatever
-the default was. But changing to Opus 4.6 changed the entire game.
+the default was. But changing to a more advanced model changed the entire game.
 
 Suddenly, I wasn't getting the runaround for complex tasks - things were working remarkably well provided I gave the right context in my prompts.
 
@@ -126,7 +126,7 @@ menu before you click the dropdown.
 I remember this because I started using complex models that cost like twice the tokens for using them. I just did this for everything because I
 was supposed to be "exploring" anyway and my company was footing the bill.
 
-So, a month ago, the worst thing happened: our corporate subscription to Augment lost Opus 4.6. By this time, these tools were so ingrained into my workflow,
+So, a month ago, the worst thing happened: our corporate subscription to Augment lost one of the more advanced models (I think it was Opus 4.6). By this time, these tools were so ingrained into my workflow,
 I was barely actually writing code anymore. Losing this model meant AI was only medium smart now, and I was back to circular arguments again
 to get the more complex stuff done.
 
@@ -143,12 +143,12 @@ So that's where I am right now tool wise. As I mentioned before, I was working i
 could work without me actually coding. This gave me confidence and a good feel on how to be hands off and not code anything myself anymore.
 
 Eventually this led to me doing all the stuff I'm actually good at with AI too, and it's really made things go pretty quickly. I'm having Augment
-or Claude do a feature for me, and if I have an opinion up front on how to tackle it, I'll give it. That said, I usually just let it do it's thing
+or Claude do a feature for me, and if I have an opinion up front on how to tackle it, I'll give it. That said, I usually just let it do its thing
 and then review code afterwards.
 
 It's led me to be a lot more opinionated than I'm used to. Typically, as a prototyper, I may or may not work with another person on a project.
 But, if I do, I respect their opinions and don't nag about little things. After all, they know what they are doing and it's just a prototype at
-then end of the day with a limited shelf life.
+the end of the day with a limited shelf life.
 
 With AI tools on the other hand, I'm an absolutely annoying micromanager. I don't actually write the code, but I will complain about every little
 thing it does differently than I would have.
@@ -203,7 +203,7 @@ Or going after Predator...so much shooting, and they barely graze it.
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dK1B9b_0Z2Y?si=6JpxKRNrmgiMuQqI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Yup, if you don't put in the effort, AI made automated tests can miss pretty badly. I've seen some tests made by AI that just pass without
-testing anything at all with some complicated to compensate for it in the assertions.
+testing anything at all with some complicated code to compensate for it in the assertions.
 
 At that point, the pray and spray approach starts feeling absurd like....
 
@@ -229,7 +229,7 @@ you're less likely to innovate solutions to problems with your fuzzy mental mode
 
 Someone mentioned to me that they don't see themselves using AI coding tools because they actually enjoy coding. I thought the same too,
 but what I think I enjoy more is this bigger picture. The larger systems that can come together for a bigger application. It wasn't
-often I'd get to enjoy this aspect before because those moments were to few and far between because I was slogging through the underlying
+often I'd get to enjoy this aspect before because those moments were too few and far between because I was slogging through the underlying
 code before (as much as I do enjoy that too).
 
 And I think in this way, what we lose with coding by hand, we train ourselves to see the birds eye view more and more.
@@ -239,9 +239,9 @@ And I think in this way, what we lose with coding by hand, we train ourselves to
 
 LOL, I'm still not going to read the manual. There's no point. I can't imagine what we're doing today will be anything like what we're doing in 1 year or 2 years.
 I'm going to play with whatever tools I can get my hands on. Honestly, though, the idea we've injected a paid token model as a bottle-neck for work that
-we've always done with free/open source tools would be a bit distopian.
+we've always done with free/open source tools would be a bit dystopian.
 
-It WOULD be distopian if it weren't for the fact that we already have LLM models that run locally without the internet and it's only going to
+It WOULD be dystopian if it weren't for the fact that we already have LLM models that run locally without the internet and it's only going to
 get better. We just have to be a bit careful that we're not inviting these AI companies to become locked into our workflows. Keep exploring, and keep shaking things up
 until these tools are our own.
 
