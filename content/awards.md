@@ -4,6 +4,7 @@ title: "Awards"
 ---
 
  
+- **2026 Patent Granted** [Mapping color to data for data bound objects](https://patentsgazette.uspto.gov/week26/OG/html/1547-5/US12670636-20260630.html) - Adobe
 - **2026 NAB Best in Show** [Premiere Pro Color Mode](https://www.provideocoalition.com/best-in-show-awards-at-nab-2026/) - Adobe
 - **2026 Patent Granted** [Managing Multiple Datasets for Data Bound Objects](https://patentsgazette.uspto.gov/week07/OG/html/1543-3/US12555281-20260217.html) - Adobe
 - **2018 Patent Granted** [Patent for Immersive media content navigation and editing techniques](https://patents.google.com/patent/US10649638B2/) - Adobe
