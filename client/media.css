@@ -16,10 +16,29 @@
 }
 .media-manager .media-button:hover:not(:disabled) { background: #e2e2e2; }
 .media-manager .media-button:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
-.media-tabs { display: flex; gap: .5rem; border-bottom: 1px solid #ccc; margin-bottom: 1rem; }
+.media-toolbar { display: flex; align-items: center; justify-content: space-between; gap: .5rem; border-bottom: 1px solid #ccc; margin-bottom: 1rem; }
+.media-tabs { display: flex; gap: .5rem; }
+.media-auth-actions { margin-left: auto; flex-shrink: 0; }
+.media-manager .media-auth-actions button { margin-right: 0; }
+.media-sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border: 0;
+}
 .media-tabs [role="tab"] { background: transparent; color: inherit; border: 0; border-bottom: 3px solid transparent; }
+.media-tabs [role="tab"]:disabled { cursor: default; }
 .media-tabs [aria-selected="true"] { border-bottom-color: currentColor; font-weight: bold; }
 .media-tabs [role="tab"]:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.media-browse-controls { display: flex; align-items: center; gap: .5rem; }
+.media-browse-controls input { min-width: 0; }
+.media-manager .media-browse-controls > * { margin-right: 0; }
+.media-manager #media-refresh { display: inline-flex; align-items: center; padding: .5rem; }
 #media-error { color: #a01616; background: #fff0f0; padding: 1rem; }
 .media-library {
 	display: grid;
@@ -29,7 +48,18 @@
 	padding: 0;
 }
 .media-library li { border: 1px solid #ccc; padding: 1rem; overflow-wrap: anywhere; }
+.media-manager .media-asset-title {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	line-height: 1.4;
+	height: 4.2em;
+	margin-bottom: .5rem;
+	overflow: hidden;
+}
 .media-library img, .media-library video { width: 100%; height: 160px; object-fit: contain; background: #eee; }
 .media-library audio { width: 100%; }
-.media-url { display: block; width: 100%; font-size: .85rem; }
+.media-url-row { display: flex; align-items: center; gap: .5rem; }
+.media-manager .media-url { flex: 1; min-width: 0; width: 100%; margin-right: 0; font-size: .85rem; }
+.media-manager .media-copy { display: inline-flex; align-items: center; flex-shrink: 0; margin-right: 0; padding: .5rem; }
 #media-uploaded { overflow-wrap: anywhere; }

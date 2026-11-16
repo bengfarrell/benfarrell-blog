@@ -98,7 +98,7 @@ test("static site connection ignores environment overrides and never emits Lambd
 	}
 });
 
-test("private layout and sign-in form avoid analytics, indexing, and saved credentials", () => {
+test("private sign-in supports password managers without app credential storage", () => {
 	const layout = readFileSync("_includes/layouts/media.njk", "utf8");
 	assert.match(layout, /noindex, nofollow/);
 	assert.match(layout, /no-referrer/);
@@ -106,11 +106,19 @@ test("private layout and sign-in form avoid analytics, indexing, and saved crede
 	const page = readFileSync("content/media/index.njk", "utf8");
 	assert.match(page, /data-pagefind-ignore/);
 	assert.match(page, /layouts\/media.njk/);
-	assert.match(page, /id="media-login-form".*autocomplete="off"/);
+	assert.match(page, /id="media-login-form"[^>]*method="post"[^>]*autocomplete="on"/);
+	assert.match(page, /id="media-username"[^>]*name="username"[^>]*autocomplete="username"/);
+	assert.match(page, /id="media-password"[^>]*name="password"[^>]*autocomplete="current-password"/);
 	assert.match(page, /id="media-password" type="password"/);
 	assert.doesNotMatch(page, /id="media-api-url"|id="media-bucket"/);
 	assert.doesNotMatch(page, /media-destination|Supported image, audio, and video formats only/);
 	assert.match(page, /id="media-login" class="media-button"/);
+	assert.match(page, /id="media-login"[^>]*form="media-login-form"/);
+	assert.doesNotMatch(page, /<h1|Upload images, audio, and videos to S3, then copy their public URLs/);
+	const toolbar = page.slice(page.indexOf('class="media-toolbar"'), page.indexOf('id="media-status"'));
+	assert.match(toolbar, /id="media-login"/);
+	assert.match(toolbar, /id="media-logout"/);
+	assert.match(toolbar, /id="media-browse-tab"/);
 	const client = readFileSync("client/media.mjs", "utf8");
 	assert.doesNotMatch(client, /if \(!config\.configured\)|sessionStorage|localStorage|document\.cookie/);
 	const template = readFileSync("infrastructure/media/template.yaml", "utf8");
@@ -131,6 +139,8 @@ test("browse and upload have separate accessible tabs and preserve their existin
 	const browsePanel = page.slice(page.indexOf('id="media-browse-panel"'), page.indexOf('id="media-upload-panel"'));
 	assert.match(browsePanel, /id="media-library"/);
 	assert.match(browsePanel, /id="media-browse-month"/);
+	assert.match(browsePanel, /class="media-browse-controls"/);
+	assert.match(browsePanel, /id="media-refresh"[^>]*aria-label="Refresh library"[^>]*title="Refresh library"/);
 	const uploadPanel = page.slice(page.indexOf('id="media-upload-panel"'));
 	assert.match(uploadPanel, /id="media-uploader"/);
 	assert.match(uploadPanel, /id="media-uploaded"/);

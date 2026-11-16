@@ -37,7 +37,7 @@ function setup(options = {}) {
 	const regions = [];
 	const client = { send: async command => { commands.push(command); return options.result || {}; } };
 	const handle = createHandler({
-		config, now: () => date, uuid: () => "unique-id",
+		config, now: () => date,
 		clientForRegion: region => { regions.push(region); return client; },
 		sign: async (client, command, signing) => {
 			signatures.push({ command, signing });
@@ -125,11 +125,22 @@ test("an unconfigured deployed handler returns an explicit error and does not pr
 test("uses server UTC year/month, sanitizes filenames, and supports an explicit month", async () => {
 	const { handle } = setup();
 	const current = await prepare(handle);
-	assert.equal(current.key, "media/2026/11/unique-id-a-video.mp4");
-	assert.equal(current.url, "https://media.example.com/media/2026/11/unique-id-a-video.mp4");
+	assert.equal(current.key, "media/2026/11/a-video.mp4");
+	assert.equal(current.url, "https://media.example.com/media/2026/11/a-video.mp4");
 	const old = await prepare(handle, { month: "2024-02", name: "../../old clip.mp4" });
-	assert.equal(old.key, "media/2024/02/unique-id-old-clip.mp4");
+	assert.equal(old.key, "media/2024/02/old-clip.mp4");
 	assert.equal(old.partSize, PART_SIZE);
+});
+
+test("keeps ordinary filenames without an ID and uses the same key for repeat uploads in a month", async () => {
+	const { handle } = setup();
+	const first = await prepare(handle, { name: "ComfyUI_00022_.png", type: "image/png" });
+	const repeated = await prepare(handle, { name: "ComfyUI_00022_.png", type: "image/png" });
+	const nextMonth = await prepare(handle, { name: "ComfyUI_00022_.png", type: "image/png", month: "2026-12" });
+	assert.equal(first.key, "media/2026/11/ComfyUI_00022_.png");
+	assert.equal(repeated.key, first.key);
+	assert.equal(repeated.url, first.url);
+	assert.equal(nextMonth.key, "media/2026/12/ComfyUI_00022_.png");
 });
 
 test("enforces type/extension, file size boundaries, and valid calendar months", async () => {
@@ -332,7 +343,7 @@ test("each allowed bucket uses its own prefix, public URL, and regional S3 clien
 		bucket: secondary.bucket, prefix: "attacker/", publicBaseUrl: "https://attacker.example.com", region: "eu-west-1",
 	});
 	assert.equal(prepared.bucket, secondary.bucket);
-	assert.equal(prepared.key, "uploads/2026/11/unique-id-a-video.mp4");
+	assert.equal(prepared.key, "uploads/2026/11/a-video.mp4");
 	assert.equal(prepared.url, `${secondary.publicBaseUrl}/${prepared.key}`);
 	await handle({
 		...event("GET /media"),

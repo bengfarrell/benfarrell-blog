@@ -14,8 +14,9 @@ const elements = Object.fromEntries([
 	"browse-tab", "upload-tab", "browse-panel", "upload-panel",
 ].map(name => [name, document.getElementById(`media-${name}`)]));
 
-function status(message) {
+function status(message, quiet = false) {
 	elements.status.textContent = message;
+	elements.status.classList.toggle("media-sr-only", quiet);
 }
 
 function showError(error) {
@@ -46,6 +47,13 @@ function node(tag, text) {
 
 function asset(item, preview = true) {
 	const row = node("li");
+	const link = node("a", item.key.split("/").at(-1));
+	link.href = item.url;
+	link.target = "_blank";
+	link.rel = "noopener noreferrer";
+	link.className = "media-asset-title";
+	link.title = link.textContent;
+	row.append(link);
 	const type = mediaType(item.key);
 	if (preview && type && !["image/heic", "image/heif"].includes(type)) {
 		const media = node(type.startsWith("audio/") ? "audio" : type.startsWith("video/") ? "video" : "img");
@@ -59,20 +67,39 @@ function asset(item, preview = true) {
 		media.src = item.url;
 		row.append(media);
 	}
-	const link = node("a", item.key.split("/").at(-1));
-	link.href = item.url;
-	link.target = "_blank";
-	link.rel = "noopener noreferrer";
+	row.append(node("p", formatBytes(item.size)));
 	const label = node("label", "Public media URL");
 	const input = node("input");
 	input.type = "url";
 	input.readOnly = true;
 	input.value = item.url;
 	input.className = "media-url";
-	label.append(input);
-	const copy = node("button", "Copy URL");
+	input.id = `media-url-${crypto.randomUUID()}`;
+	label.htmlFor = input.id;
+	const urlRow = node("div");
+	urlRow.className = "media-url-row";
+	const copy = node("button");
 	copy.type = "button";
-	copy.className = "media-button";
+	copy.className = "media-button media-copy";
+	copy.setAttribute("aria-label", "Copy URL");
+	copy.title = "Copy URL";
+	const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+	svg.setAttribute("viewBox", "0 0 24 24");
+	svg.setAttribute("width", "20");
+	svg.setAttribute("height", "20");
+	svg.setAttribute("fill", "none");
+	svg.setAttribute("stroke", "currentColor");
+	svg.setAttribute("stroke-width", "2");
+	svg.setAttribute("aria-hidden", "true");
+	svg.setAttribute("focusable", "false");
+	const outline = document.createElementNS(svg.namespaceURI, "path");
+	outline.setAttribute("d", "M8 15H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3");
+	const square = document.createElementNS(svg.namespaceURI, "rect");
+	for (const [name, value] of Object.entries({ x: "8", y: "8", width: "13", height: "13", rx: "2" })) {
+		square.setAttribute(name, value);
+	}
+	svg.append(outline, square);
+	copy.append(svg);
 	copy.addEventListener("click", async () => {
 		try {
 			await navigator.clipboard.writeText(item.url);
@@ -83,7 +110,8 @@ function asset(item, preview = true) {
 			showError(new Error("Clipboard access failed. Copy the selected URL manually."));
 		}
 	});
-	row.append(link, node("p", `${item.key} (${formatBytes(item.size)})`), label, copy);
+	urlRow.append(input, copy);
+	row.append(label, urlRow);
 	return row;
 }
 
@@ -113,12 +141,13 @@ async function start() {
 		auth.clear();
 		connection = null;
 		elements["login-form"].hidden = false;
+		elements.login.hidden = false;
 		elements.logout.hidden = true;
 		elements.private.hidden = true;
+		elements["browse-tab"].disabled = true;
+		elements["upload-tab"].disabled = true;
 		selectTab("browse");
 	}
-	lock();
-	status("Sign in to browse and upload media.");
 	elements["upload-month"].value = new Date().toISOString().slice(0, 7);
 	elements["browse-month"].value = new Date().toISOString().slice(0, 7);
 
@@ -150,8 +179,12 @@ async function start() {
 	let cursor = null;
 	let listedMonth = "";
 	let browsing = false;
+	let refreshPending = false;
 	async function browse(append = false) {
-		if (browsing) return;
+		if (browsing) {
+			if (!append) refreshPending = true;
+			return;
+		}
 		const destination = connection;
 		browsing = true;
 		elements.refresh.disabled = true;
@@ -169,7 +202,8 @@ async function start() {
 			cursor = page.cursor;
 			listedMonth = month;
 			elements.more.hidden = !cursor;
-			status(elements.library.children.length ? "Media library loaded." : "No media found for this month/prefix.");
+			const hasMedia = elements.library.children.length > 0;
+			status(hasMedia ? "Media library loaded." : "No media found for this month/prefix.", hasMedia);
 			return true;
 		} catch (error) {
 			showError(error);
@@ -179,8 +213,13 @@ async function start() {
 			browsing = false;
 			elements.refresh.disabled = false;
 			elements.more.disabled = false;
+			if (refreshPending) {
+				refreshPending = false;
+				if (connection) browse();
+			}
 		}
 	}
+	elements["browse-month"].addEventListener("change", () => browse());
 	elements.browse.addEventListener("submit", event => {
 		event.preventDefault();
 		browse();
@@ -264,12 +303,13 @@ async function start() {
 			const destination = { ...siteConnection };
 			auth.login(elements.username.value, elements.password.value);
 			connection = destination;
-			elements.username.value = "";
-			elements.password.value = "";
 			if (await browse()) {
 				elements["login-form"].hidden = true;
+				elements.login.hidden = true;
 				elements.logout.hidden = false;
 				elements.private.hidden = false;
+				elements["browse-tab"].disabled = false;
+				elements["upload-tab"].disabled = false;
 			} else lock();
 		} catch (error) {
 			lock();
@@ -291,6 +331,8 @@ async function start() {
 		clearError();
 		status("Signed out. Sign in again to manage media.");
 	});
+	lock();
+	status("Sign in to browse and upload media.");
 }
 
 start().catch(error => {

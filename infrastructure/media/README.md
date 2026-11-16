@@ -209,8 +209,10 @@ The app does not change read permissions. If the bucket is private behind
 CloudFront, allow the distribution's origin access to the selected prefix.
 Do not enable public `ListBucket` or public write access. For public media,
 set suitable CDN cache/security headers, including
-`X-Content-Type-Options: nosniff`. Filenames are unique so replacing cached
-assets is unnecessary.
+`X-Content-Type-Options: nosniff`. Uploading the same sanitized filename into the
+same month replaces the object (or creates a new version if S3 versioning is
+enabled). CloudFront can keep serving the previous cached content until its
+TTL expires; invalidate that asset's path when an immediate refresh is needed.
 
 ## 5. Configure and deploy each static page
 
@@ -245,8 +247,10 @@ username/password as site build variables or insert them into JavaScript.
 
 Open `https://benfarrell.com/media/`, enter your credentials, and upload a
 small image or audio file first. Confirm its public link, then upload a file
-over 100 MiB to exercise multipart uploading. Clear the browse month for all
-files in the prefix; use **Load more** for subsequent pages. The **Browse** tab
+over 100 MiB to exercise multipart uploading. Choosing or clearing the browse
+month automatically refreshes the library; clearing it lists all months in
+the prefix. Use the refresh icon to reload the same month and **Load more** for
+subsequent pages. The **Browse** tab
 opens after sign-in; the **Upload** tab contains the uploader and completed
 URLs. Switching tabs preserves filters, library results, and upload progress;
 uploads continue while browsing. Use Left/Right arrows or Home/End to navigate
@@ -268,11 +272,19 @@ the tabs with the keyboard.
 - Files over 100 MiB use fixed 10 MiB parts with retry support.
   Keep the page open: reload/resume across sessions is not implemented.
 - The library lists the selected bucket's S3 keys in lexical order, not newest-first.
-  New files use unique keys; existing filenames/URLs are unchanged.
-- Credentials exist only in the current page's memory. Input fields are
-  cleared after submitting; signing out or reloading requires re-entry.
-  The app does not use session/local storage or login cookies. Browser
-  password managers may independently offer to save credentials.
+  New files use `<prefix>YYYY/MM/<sanitized-filename>` with no generated ID.
+  Path components are stripped and unsafe filename characters are replaced
+  with hyphens. Matching sanitized names in the same month overwrite the same
+  key. Previously uploaded filenames/URLs are unchanged.
+- Credentials exist only in the current page's memory. Input fields stay
+  populated until the sign-in request finishes, then are cleared whether it
+  succeeds or fails. Signing out or reloading clears application login state.
+  The form uses named fields with `autocomplete="username"` and
+  `autocomplete="current-password"` so browsers and password-manager extensions
+  can offer to save and autofill credentials. Saving is controlled by the user
+  and their password manager; prompts and autofill behavior vary by browser.
+  You still choose **Sign in** after autofill. The app does not use
+  session/local storage or login cookies.
 - Basic authorization is base64 encoding, not encryption; use HTTPS.
   Never put credentials in URLs, logs, API access-log templates, or shared
   screenshots. The private layout has no analytics, suppresses referrers,

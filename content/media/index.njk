@@ -5,34 +5,39 @@ description: Private media uploads and library.
 permalink: /media/
 eleventyExcludeFromCollections: true
 ---
-<section class="media-manager" data-pagefind-ignore aria-labelledby="media-title">
-	<h1 id="media-title">Media manager</h1>
-	<p>Upload images, audio, and videos to S3, then copy their public URLs for your posts.</p>
+<section class="media-manager" data-pagefind-ignore aria-label="Media manager">
+	<div class="media-toolbar">
+		<div class="media-tabs" role="tablist" aria-label="Media manager">
+			<button id="media-browse-tab" type="button" role="tab" aria-controls="media-browse-panel" aria-selected="true" disabled>Browse</button>
+			<button id="media-upload-tab" type="button" role="tab" aria-controls="media-upload-panel" aria-selected="false" tabindex="-1" disabled>Upload</button>
+		</div>
+		<div class="media-auth-actions">
+			<button id="media-login" class="media-button" type="submit" form="media-login-form" hidden>Sign in</button>
+			<button id="media-logout" class="media-button" type="button" hidden>Sign out</button>
+		</div>
+	</div>
 	<p id="media-status" role="status" aria-live="polite">Loading media manager...</p>
 	<p id="media-error" role="alert" hidden></p>
 	<noscript>JavaScript is required to sign in and manage media.</noscript>
-	<form id="media-login-form" class="media-auth" autocomplete="off" hidden>
+	<form id="media-login-form" class="media-auth" method="post" autocomplete="on" hidden>
 		<label for="media-username">Username</label>
-		<input id="media-username" type="text" required maxlength="128" autocomplete="off">
+		<input id="media-username" type="text" name="username" required maxlength="128" autocomplete="username">
 		<label for="media-password">Password</label>
-		<input id="media-password" type="password" required maxlength="1024" autocomplete="off">
-		<p>Credentials are kept only in this page's memory. Reloading or signing out clears them.</p>
-		<button id="media-login" class="media-button" type="submit">Sign in</button>
+		<input id="media-password" type="password" name="password" required maxlength="1024" autocomplete="current-password">
 	</form>
-	<div class="media-auth">
-		<button id="media-logout" class="media-button" type="button" hidden>Sign out</button>
-	</div>
 	<div id="media-private" hidden>
-		<div class="media-tabs" role="tablist" aria-label="Media manager">
-			<button id="media-browse-tab" type="button" role="tab" aria-controls="media-browse-panel" aria-selected="true">Browse</button>
-			<button id="media-upload-tab" type="button" role="tab" aria-controls="media-upload-panel" aria-selected="false" tabindex="-1">Upload</button>
-		</div>
 		<div id="media-browse-panel" role="tabpanel" aria-labelledby="media-browse-tab" tabindex="0">
 			<h2>Media library</h2>
 			<form id="media-browse">
 				<label for="media-browse-month">Browse month (leave blank for all months)</label>
-				<input id="media-browse-month" type="month">
-				<button id="media-refresh" class="media-button" type="submit">Refresh library</button>
+				<div class="media-browse-controls">
+					<input id="media-browse-month" type="month">
+					<button id="media-refresh" class="media-button" type="submit" aria-label="Refresh library" title="Refresh library">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+							<path d="M3 12a9 9 0 0 1 15.4-6.4L21 8m0-5v5h-5M21 12a9 9 0 0 1-15.4 6.4L3 16m0 5v-5h5"></path>
+						</svg>
+					</button>
+				</div>
 			</form>
 			<ul id="media-library" class="media-library"></ul>
 			<button id="media-more" class="media-button" type="button" hidden>Load more</button>

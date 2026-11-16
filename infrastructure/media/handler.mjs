@@ -1,4 +1,4 @@
-import { createHash, createHmac, randomUUID, timingSafeEqual } from "node:crypto";
+import { createHash, createHmac, timingSafeEqual } from "node:crypto";
 import {
 	S3Client, ListObjectsV2Command, PutObjectCommand,
 	CreateMultipartUploadCommand, UploadPartCommand, ListPartsCommand,
@@ -140,7 +140,7 @@ export function parseBuckets(value) {
 	return buckets;
 }
 
-export function createHandler({ clientForRegion, sign = getSignedUrl, config, now = () => new Date(), uuid = randomUUID, logger = console }) {
+export function createHandler({ clientForRegion, sign = getSignedUrl, config, now = () => new Date(), logger = console }) {
 	const { username, password } = config;
 	const buckets = parseBuckets(config.buckets);
 	const clients = new Map();
@@ -199,7 +199,7 @@ export function createHandler({ clientForRegion, sign = getSignedUrl, config, no
 				const folder = monthPrefix(body.month || date.toISOString().slice(0, 7), prefix);
 				const filename = body.name.split(/[\\/]/).at(-1)
 					.replace(/[^a-zA-Z0-9._-]/g, "-").replace(/^\.+/, "").slice(-160);
-				const key = `${folder}${uuid()}-${filename}`;
+				const key = `${folder}${filename}`;
 				const ticket = createGrant({
 					bucket, prefix, region,
 					key, size: body.size, type: body.type, sub: "owner",

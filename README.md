@@ -82,7 +82,8 @@ Run the comments checks with `node --test tests/bluesky-comments.test.js`.
 media library for images, audio, and videos. Files upload directly to an
 existing S3 bucket, with multipart
 uploads for files over 100 MiB and a 2 GiB per-file limit. The API assigns
-`<prefix>YYYY/MM/<unique-id>-<filename>` keys and returns public media URLs.
+`<prefix>YYYY/MM/<sanitized-filename>` keys and returns public media URLs.
+Uploading the same sanitized filename to the same month replaces that object.
 This does not publish blog posts, convert videos, or modify the bucket policy.
 
 The page asks only for your username and password. Its API URL and bucket are
@@ -91,7 +92,8 @@ environment variables are required. See
 [the media infrastructure guide](infrastructure/media/README.md) for AWS
 console deployment, the `MEDIA_BUCKETS` Lambda allowlist, existing-bucket
 CORS/lifecycle rules, and configuring each site's static connection settings.
-Credentials are entered into the page each time and never saved by the app.
+Sign-in supports browser/password-manager autofill; credentials are never
+saved by the app.
 Browse and Upload are separate tabs; switching tabs keeps upload progress and
 library filters intact.
 Node.js 22 or newer is required for the new dependencies;
