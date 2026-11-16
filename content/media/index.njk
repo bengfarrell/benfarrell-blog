@@ -1,0 +1,50 @@
+---
+layout: layouts/media.njk
+title: Media manager
+description: Private media uploads and library.
+permalink: /media/
+eleventyExcludeFromCollections: true
+---
+<section class="media-manager" data-pagefind-ignore aria-labelledby="media-title">
+	<h1 id="media-title">Media manager</h1>
+	<p>Upload images, audio, and videos to S3, then copy their public URLs for your posts.</p>
+	<p id="media-status" role="status" aria-live="polite">Loading media manager...</p>
+	<p id="media-error" role="alert" hidden></p>
+	<noscript>JavaScript is required to sign in and manage media.</noscript>
+	<form id="media-login-form" class="media-auth" autocomplete="off" hidden>
+		<label for="media-username">Username</label>
+		<input id="media-username" type="text" required maxlength="128" autocomplete="off">
+		<label for="media-password">Password</label>
+		<input id="media-password" type="password" required maxlength="1024" autocomplete="off">
+		<p>Credentials are kept only in this page's memory. Reloading or signing out clears them.</p>
+		<button id="media-login" class="media-button" type="submit">Sign in</button>
+	</form>
+	<div class="media-auth">
+		<button id="media-logout" class="media-button" type="button" hidden>Sign out</button>
+	</div>
+	<div id="media-private" hidden>
+		<div class="media-tabs" role="tablist" aria-label="Media manager">
+			<button id="media-browse-tab" type="button" role="tab" aria-controls="media-browse-panel" aria-selected="true">Browse</button>
+			<button id="media-upload-tab" type="button" role="tab" aria-controls="media-upload-panel" aria-selected="false" tabindex="-1">Upload</button>
+		</div>
+		<div id="media-browse-panel" role="tabpanel" aria-labelledby="media-browse-tab" tabindex="0">
+			<h2>Media library</h2>
+			<form id="media-browse">
+				<label for="media-browse-month">Browse month (leave blank for all months)</label>
+				<input id="media-browse-month" type="month">
+				<button id="media-refresh" class="media-button" type="submit">Refresh library</button>
+			</form>
+			<ul id="media-library" class="media-library"></ul>
+			<button id="media-more" class="media-button" type="button" hidden>Load more</button>
+		</div>
+		<div id="media-upload-panel" role="tabpanel" aria-labelledby="media-upload-tab" tabindex="0" hidden>
+			<h2>Upload media</h2>
+			<label for="media-upload-month">Upload month (UTC; defaults to the current month)</label>
+			<input id="media-upload-month" type="month">
+			<div id="media-uploader"></div>
+			<h3>Uploaded URLs</h3>
+			<ul id="media-uploaded"></ul>
+		</div>
+	</div>
+</section>
+<script type="module" src="/media/app.js"></script>

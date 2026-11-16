@@ -1,0 +1,87 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: Private media manager for explicitly allowed S3 buckets.
+
+Parameters:
+  BucketsJson:
+    Type: String
+    Description: MEDIA_BUCKETS JSON mapping of bucket names to prefix, publicBaseUrl, and region.
+  BucketArns:
+    Type: CommaDelimitedList
+    Description: Allowed bucket ARNs for listing, matching BucketsJson.
+    AllowedPattern: "arn:[a-z-]+:s3:::[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]"
+  MediaObjectArns:
+    Type: CommaDelimitedList
+    Description: Allowed object-prefix ARNs for uploads, e.g. arn:aws:s3:::example/media/*.
+    AllowedPattern: "arn:[a-z-]+:s3:::[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]/[a-zA-Z0-9_/-]+/\\*"
+  ListPrefixes:
+    Type: CommaDelimitedList
+    Description: Allowed listing prefixes matching BucketsJson, e.g. media/*,uploads/*.
+    AllowedPattern: "[a-zA-Z0-9_-]+(/[a-zA-Z0-9_-]+)*/\\*"
+  SiteOrigins:
+    Type: CommaDelimitedList
+    Default: https://benfarrell.com
+    Description: All allowed site origins, without trailing slashes.
+    AllowedPattern: "https://[^/?#]+"
+
+Resources:
+  MediaApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      CorsConfiguration:
+        AllowOrigins: !Ref SiteOrigins
+        AllowMethods: [GET, POST, OPTIONS]
+        AllowHeaders: [Authorization, Content-Type]
+        MaxAge: 600
+      DefaultRouteSettings:
+        ThrottlingBurstLimit: 10
+        ThrottlingRateLimit: 5
+
+  MediaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: handler.handler
+      Runtime: nodejs22.x
+      Timeout: 20
+      MemorySize: 256
+      Environment:
+        Variables:
+          MEDIA_BUCKETS: !Ref BucketsJson
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action: s3:ListBucket
+              Resource: !Ref BucketArns
+              Condition:
+                StringLike:
+                  s3:prefix: !Ref ListPrefixes
+            - Effect: Allow
+              Action:
+                - s3:PutObject
+                - s3:AbortMultipartUpload
+                - s3:ListMultipartUploadParts
+              Resource: !Ref MediaObjectArns
+      Events:
+        Browse:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref MediaApi
+            Path: /media
+            Method: GET
+        PrepareUpload:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref MediaApi
+            Path: /uploads
+            Method: POST
+        SignUpload:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref MediaApi
+            Path: /sign
+            Method: POST
+
+Outputs:
+  ApiUrl:
+    Value: !Sub "https://${MediaApi}.execute-api.${AWS::Region}.${AWS::URLSuffix}"

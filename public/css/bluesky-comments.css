@@ -1,0 +1,45 @@
+.bluesky-comments {
+	margin-top: 2rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid #ddd;
+}
+
+.bluesky-comments .button {
+	cursor: pointer;
+}
+
+.bluesky-comments [hidden] {
+	display: none;
+}
+
+.bluesky-comments .button:disabled {
+	cursor: wait;
+	opacity: 0.6;
+}
+
+.bluesky-comments ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.bluesky-comments li {
+	margin-top: 1rem;
+	padding-top: 1rem;
+	border-top: 1px solid #ddd;
+	overflow-wrap: anywhere;
+}
+
+.bluesky-comments li ul {
+	margin-left: 0.75rem;
+	padding-left: 0.75rem;
+	border-left: 2px solid #ddd;
+}
+
+.bluesky-comment-meta {
+	font-size: 0.875rem;
+}
+
+.bluesky-comment-text {
+	white-space: pre-wrap;
+}

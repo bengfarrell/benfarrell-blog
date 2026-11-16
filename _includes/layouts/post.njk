@@ -46,8 +46,22 @@ layout: layouts/base.njk
 			{%- endif %}
 			{%- endif %}
 
-			<p class="comments">Normally on a blog, comments would be here. Welp, this is a static site, and also I'd much rather you email me at ben@benfarrell.com or hit me up on <a href="https://bsky.app/profile/benforreal.bsky.socia">Bluesky</a>.
+			{% if blueskyComments %}
+			{% set blueskyUrl = blueskyComments | blueskyPostUrl %}
+			<section class="bluesky-comments" data-bluesky-comments="{{ blueskyUrl | escape }}" data-pagefind-ignore aria-labelledby="bluesky-comments-heading">
+				<h2 id="bluesky-comments-heading">Comments</h2>
+				<p>Join the conversation by <a href="{{ blueskyUrl | escape }}" rel="noopener noreferrer">replying on Bluesky</a>. You'll need a Bluesky account to reply, but not to read comments here.</p>
+				<p>Comments load from Bluesky only when you choose to load them. Loading shares your IP address with Bluesky.</p>
+				<button type="button" class="button" data-comments-load hidden>Load comments</button>
+				<p data-comments-status role="status" aria-live="polite"></p>
+				<div data-comments-list></div>
+				<noscript><p>Enable JavaScript to load comments here, or read the conversation on Bluesky.</p></noscript>
+			</section>
+			<script src="/js/bluesky-comments.js" defer></script>
+			{% else %}
+			<p class="comments">Normally on a blog, comments would be here. Welp, this is a static site, and also I'd much rather you email me at ben@benfarrell.com or hit me up on <a href="https://bsky.app/profile/benforreal.bsky.social">Bluesky</a>.
 				Who knows, if you add lots to the conversation, I might just do a follow up post!</p>
+			{% endif %}
 		</footer>
 	</div><!-- #primary -->
 </div>

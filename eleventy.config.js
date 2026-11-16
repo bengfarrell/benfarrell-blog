@@ -13,8 +13,15 @@ const pluginDrafts = require("./eleventy.config.drafts.js");
 const pluginImages = require("./eleventy.config.images.js");
 
 const { execSync } = require('child_process')
+const { execFileSync } = require("child_process");
 
 module.exports = function(eleventyConfig) {
+	eleventyConfig.on("eleventy.before", () => {
+		execFileSync(process.execPath, ["scripts/build-media.mjs"], { stdio: "inherit" });
+	});
+	eleventyConfig.addWatchTarget("client/");
+	eleventyConfig.addWatchTarget("infrastructure/media/handler.mjs");
+	eleventyConfig.addWatchTarget("infrastructure/media/media-types.mjs");
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
 	eleventyConfig.addPlugin(syntaxHighlight);
 	eleventyConfig.addShortcode('first_image', post => extractFirstImage(post));
@@ -89,6 +96,24 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginBundle);
 
 	// Filters
+	eleventyConfig.addFilter("blueskyPostUrl", value => {
+		const invalid = () => {
+			throw new Error("blueskyComments must be an HTTPS Bluesky post URL: https://bsky.app/profile/handle/post/post-id");
+		};
+		if (typeof value !== "string") return invalid();
+		let url;
+		try {
+			url = new URL(value);
+		} catch {
+			return invalid();
+		}
+		if (url.origin !== "https://bsky.app" || url.username || url.password ||
+			!/^\/profile\/(?:[a-zA-Z0-9.-]+|did:[a-zA-Z0-9:._%-]+)\/post\/[a-zA-Z0-9]+\/?$/.test(url.pathname)) {
+			return invalid();
+		}
+		return `${url.origin}${url.pathname.replace(/\/$/, "")}`;
+	});
+
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
 		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
 		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "dd LLLL yyyy");

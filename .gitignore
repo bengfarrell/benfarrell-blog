@@ -4,3 +4,10 @@ _site/
 node_modules/
 package-lock.json
 .cache
+public/media/
+dist/media-lambda.zip
+.aws-sam/
+samconfig.toml
+.env
+.env.*
+!.env.example
