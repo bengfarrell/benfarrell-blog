@@ -127,6 +127,10 @@ Monthly is pinned to the checked-in
 to build this site. Only the package's browser assets and client-side APIs are
 used here.
 
+The archive is the install source, not just a backup: `npm install` extracts it
+into `node_modules`. Site builds then copy the installed browser assets; they
+do not extract the archive again or rebuild Monthly.
+
 To update, run `npm pack --pack-destination /path/to/benfarrell-blog/vendor`
 from the Monthly project, then run
 `npm install --save-dev ./vendor/<new-archive-name>.tgz` in this project.
