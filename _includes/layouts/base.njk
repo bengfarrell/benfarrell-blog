@@ -38,6 +38,10 @@
 	<link rel="alternate" type="application/json+oembed" href="https://benfarrell.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbenfarrell.com%2F"/>
 	<link rel="alternate" type="text/xml+oembed" href="https://benfarrell.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbenfarrell.com%2F&#038;format=xml"/>
 	<link href="/css/index.css" rel="stylesheet" />
+	{% if monthlyAssets %}
+	<link href="/media/monthly.css" rel="stylesheet" />
+	<link href="/media/site.css" rel="stylesheet" />
+	{% endif %}
 	{% if blueskyComments %}
 	<link href="/css/bluesky-comments.css" rel="stylesheet" />
 	{% endif %}
@@ -58,7 +62,7 @@
 	<style type="text/css" id="wp-custom-css">.rb.row.text-center{display:none}.big-text{font-size:28px;line-height:60px}</style>
 	<style id="tt-easy-google-font-styles" type="text/css">p{}h1{}h2{}h3{}h4{}h5{}h6{}</style>
 </head>
-<body class="home page-template-default page">
+<body class="home page-template-default page{% if monthlyAssets %} monthly-feed-page{% endif %}">
 
 <header id="top-menu" class="top-bar" itemscope="itemscope">
 	<div class="topbar-title title-logo" itemscope="itemscope" role="banner">

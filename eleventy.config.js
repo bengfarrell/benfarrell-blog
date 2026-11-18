@@ -20,8 +20,6 @@ module.exports = function(eleventyConfig) {
 		execFileSync(process.execPath, ["scripts/build-media.mjs"], { stdio: "inherit" });
 	});
 	eleventyConfig.addWatchTarget("client/");
-	eleventyConfig.addWatchTarget("infrastructure/media/handler.mjs");
-	eleventyConfig.addWatchTarget("infrastructure/media/media-types.mjs");
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
 	eleventyConfig.addPlugin(syntaxHighlight);
 	eleventyConfig.addShortcode('first_image', post => extractFirstImage(post));

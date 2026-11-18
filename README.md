@@ -76,40 +76,63 @@ visitor's IP address with Bluesky.
 
 Run the comments checks with `node --test tests/bluesky-comments.test.js`.
 
-## Private S3 media manager
+## Monthly media manager and Lowdown
 
-`/media/` provides a single-user, password-protected Uppy uploader and a month-filtered
+`/media/` uses [Monthly](https://github.com/bengfarrell/monthly) for a
+single-user, password-protected uploader, microblog composer, and month-filtered
 media library for images, audio, and videos. Files upload directly to an
 existing S3 bucket, with multipart
 uploads for files over 100 MiB and a 2 GiB per-file limit. The API assigns
 `<prefix>YYYY/MM/<sanitized-filename>` keys and returns public media URLs.
 Uploading the same sanitized filename to the same month replaces that object.
-This does not publish blog posts, convert videos, or modify the bucket policy.
+The **Post** tab publishes short updates with optional media and tags, including
+hashtags parsed from the message. Posts always use the current UTC month and
+append to `<prefix>YYYY/MM/posts.json`. Regular uploads retain their month picker.
+Monthly does not convert videos or modify the bucket policy.
+
+`/lowdown/` is the public feed, not yet linked in the site navigation. It reads
+the current month and previous two months directly from the existing CDN at
+runtime, with month headings and a responsive one-to-three-column layout.
+Missing JSON files are skipped with a console warning, not a feed error.
+Publishing an update does **not** require rebuilding or redeploying Eleventy.
 
 The page asks only for your username and password. Its API URL and bucket are
-fixed by the `API_URL` and `BUCKET` constants in `_data/media.js`; no frontend
-environment variables are required. See
-[the media infrastructure guide](infrastructure/media/README.md) for AWS
-console deployment, the `MEDIA_BUCKETS` Lambda allowlist, existing-bucket
-CORS/lifecycle rules, and configuring each site's static connection settings.
+fixed by the `API_URL` and `BUCKET` constants in `_data/media.js`; `FEED_URL`
+sets the public CDN URL including the upload prefix. No frontend
+environment variables are required. This repository is only a static client
+of Monthly's library and services. Backend implementation, AWS configuration,
+and deployment are maintained in the
+[Monthly repository](https://github.com/bengfarrell/monthly).
 Sign-in supports browser/password-manager autofill; credentials are never
 saved by the app.
-Browse and Upload are separate tabs; switching tabs keeps upload progress and
+Browse, Upload, and Post are separate tabs; switching tabs keeps upload progress and
 library filters intact.
-Node.js 22 or newer is required for the new dependencies;
-`nvm use` selects the version in `.nvmrc`. The uploader is bundled automatically
+Node.js 22.12 or newer is required;
+`nvm use` selects the version in `.nvmrc`. Monthly's browser assets are copied automatically
 by Eleventy for both `npm run build` and `npm start`.
-These commands also generate `dist/media-lambda.zip` for manual upload through
-the Lambda console (handler: `handler.handler`). `npm run build:media` builds
-just the uploader and ZIP; `npm run build:media-api` generates only the ZIP.
-AWS SDK dependencies are bundled, and Lambda environment variables are not
-included in the archive.
+`npm run build:media` copies only the browser assets and site-specific CSS.
+Site builds do not package or deploy any backend infrastructure.
 
-Run the media checks, including the standalone deployment ZIP:
+Run the Monthly client integration checks:
 
 ```sh
-node --test tests/media-api.test.mjs tests/media-client.test.mjs tests/media-build.test.mjs
+npm run test:media
 ```
+
+### Updating the Monthly package
+
+Monthly is pinned to the checked-in
+`vendor/bengfarrell-monthly-0.1.0.tgz` npm archive. A fresh checkout only needs
+`npm install`; neither npm publishing nor a sibling Monthly checkout is required
+to build this site. Only the package's browser assets and client-side APIs are
+used here.
+
+To update, run `npm pack --pack-destination /path/to/benfarrell-blog/vendor`
+from the Monthly project, then run
+`npm install --save-dev ./vendor/<new-archive-name>.tgz` in this project.
+Use a new package version/archive name for each update, and commit the archive
+and `package.json` together. Generated browser assets and
+`_site` remain ignored. The package does not contain local `.env` files.
 
 ## Features
 
