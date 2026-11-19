@@ -26,8 +26,6 @@ module.exports = async function buildResumePdf(outputDirectory) {
 	const { default: puppeteer } = await import("puppeteer");
 	const browser = await puppeteer.launch({
 		channel: process.platform === "darwin" ? "chrome" : undefined,
-		// Netlify's build container cannot provide Chrome's OS sandbox.
-		args: process.env.NETLIFY ? ["--no-sandbox"] : [],
 	});
 	try {
 		const page = await browser.newPage();

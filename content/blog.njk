@@ -9,6 +9,7 @@
 		reverse: true,
 		alias: "postslist",
 		size: 10,
+		addAllPagesToCollections: true,
 		before: function(data) {
 			return this.filterByCommonCategories(data, ['blog']);
 		}

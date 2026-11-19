@@ -8,6 +8,15 @@ const nunjucks = require("nunjucks");
 const { PDFDocument, PDFDict, PDFName, PDFString, PDFHexString } = require("pdf-lib");
 const buildResumePdf = require("../scripts/build-resume-pdf.js");
 const metadata = require("../_data/metadata.js");
+const expectedLinks = [
+	`mailto:${metadata.author.email}`,
+	new URL(metadata.url).href,
+	"https://github.com/bengfarrell",
+	"https://www.linkedin.com/in/bfarrellforever/",
+	new URL("/work/adobe/", metadata.url).href,
+	new URL("/work/installations/", metadata.url).href,
+	"https://www.manning.com/books/web-components-in-action",
+].sort();
 
 function linkTargets(pdf) {
 	const targets = new Set();
@@ -35,6 +44,7 @@ test("the built resume PDF has clickable public links and regenerates from the p
 
 	const env = new nunjucks.Environment(new nunjucks.FileSystemLoader("_includes"));
 	env.addFilter("absoluteUrl", require("@11ty/eleventy-plugin-rss").absoluteUrl);
+	env.addFilter("seoMetadata", require("../eleventy.config.seo.js").seoMetadata);
 	const stripFrontMatter = source => source.replace(/^---\n[\s\S]*?\n---\n/, "");
 	const source = stripFrontMatter(await readFile("content/resume.md", "utf8"));
 	const content = new MarkdownIt({ html: true }).render(env.renderString(source, { metadata }));
@@ -56,15 +66,7 @@ test("the built resume PDF has clickable public links and regenerates from the p
 	const pdf = await PDFDocument.load(await readFile(file));
 	assert.equal(pdf.getTitle(), context.title);
 	assert.ok(pdf.getPageCount() >= 1 && pdf.getPageCount() <= 2);
-	assert.deepEqual(linkTargets(pdf), [
-		`mailto:${metadata.author.email}`,
-		new URL(metadata.url).href,
-		"https://github.com/bengfarrell",
-		"https://www.linkedin.com/in/bfarrellforever/",
-		new URL("/work/adobe/", metadata.url).href,
-		new URL("/work/installations/", metadata.url).href,
-		"https://www.manning.com/books/web-components-in-action",
-	].sort());
+	assert.deepEqual(linkTargets(pdf), expectedLinks);
 
 	const updated = html
 		.replace("<title>Resume | Ben Farrell</title>", "<title>Updated resume</title>")
@@ -75,6 +77,14 @@ test("the built resume PDF has clickable public links and regenerates from the p
 	assert.equal(regenerated.getTitle(), "Updated resume");
 	assert.ok(linkTargets(regenerated).includes("https://github.com/updated-profile"));
 	assert.ok(!linkTargets(regenerated).includes("https://github.com/bengfarrell"));
+});
+
+test("the checked-in resume PDF is a readable, linked download", async () => {
+	const pdf = await PDFDocument.load(await readFile("public/resume/Ben-Farrell-Resume.pdf"));
+	assert.equal(pdf.getTitle(), "Resume | Ben Farrell");
+	assert.ok(pdf.getPageCount() >= 1 && pdf.getPageCount() <= 2);
+	assert.deepEqual(linkTargets(pdf), expectedLinks);
+	assert.equal(require("../.puppeteerrc.cjs").skipDownload, true);
 });
 
 test("missing resume build inputs fail explicitly rather than leaving a successful export", async t => {

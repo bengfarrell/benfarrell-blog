@@ -13,30 +13,41 @@
 	<meta charset="utf-8"/>
 	<meta http-equiv="x-ua-compatible" content="ie=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>{{ title or metadata.title }}</title>
-	<meta name="description" content="{{ description or metadata.description }}" />
+	{% set seo = { title: title, description: description, content: content, page: page, tags: tags, posts: collections.posts, homepage: homepage, pagination: pagination, coverImage: coverImage, noindex: noindex } | seoMetadata %}
+	<title>{{ seo.title | escape }}</title>
+	<meta name="description" content="{{ seo.description | escape }}" />
+	<meta name="author" content="{{ metadata.author.name | escape }}" />
 
 	{#- Atom and JSON feeds included by default #}
 	<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ title or metadata.title }}" />
 	<link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ title or metadata.title }}" />
-	<meta name='robots' content='max-image-preview:large'/>
+	<meta name="robots" content="{{ seo.robots }}" />
 
-	<link rel="canonical" href="https://benfarrell.com{{ page.url or metadata.url }}"/>
+	<link rel="canonical" href="{{ seo.url | escape }}"/>
 	<meta property="og:locale" content="en_US"/>
-	<meta property="og:type" content="website"/>
-	<meta property="og:title" content="{{ title or metadata.title }}"/>
-	<meta property="og:description" content="{{ description or metadata.description }}"/>
-	<meta property="og:url" content="https://benfarrell.com{{ page.url or metadata.url }}"/>
+	<meta property="og:type" content="{{ seo.type }}"/>
+	<meta property="og:title" content="{{ seo.title | escape }}"/>
+	<meta property="og:description" content="{{ seo.description | escape }}"/>
+	<meta property="og:url" content="{{ seo.url | escape }}"/>
 	<meta property="og:site_name" content="Ben Farrell"/>
-	<meta property="og:image" content="{{ (coverImage or metadata.image) | absoluteUrl(metadata.url) }}" />
+	<meta property="og:image" content="{{ seo.image | escape }}" />
+	<meta property="og:image:alt" content="{{ seo.imageAlt | escape }}" />
+	{% if seo.defaultImage %}
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	{% endif %}
+	{% if seo.published %}
+	<meta property="article:published_time" content="{{ seo.published }}" />
+	{% endif %}
 	<meta name="twitter:card" content="summary_large_image"/>
-	<meta name="twitter:description" content="{{ description or metadata.description }}"/>
-	<meta name="twitter:title" content="{{ title or metadata.title }}"/>
-	<meta name="twitter:image" content="{{ (coverImage or metadata.image) | absoluteUrl(metadata.url) }}" />
+	<meta name="twitter:description" content="{{ seo.description | escape }}"/>
+	<meta name="twitter:title" content="{{ seo.title | escape }}"/>
+	<meta name="twitter:image" content="{{ seo.image | escape }}" />
+	<meta name="twitter:image:alt" content="{{ seo.imageAlt | escape }}" />
+	{% if seo.jsonLd %}
+	<script type="application/ld+json">{{ seo.jsonLd | safe }}</script>
+	{% endif %}
 
-	<link rel='dns-prefetch' href='//fonts.googleapis.com'/>
-	<link rel="alternate" type="application/json+oembed" href="https://benfarrell.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbenfarrell.com%2F"/>
-	<link rel="alternate" type="text/xml+oembed" href="https://benfarrell.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbenfarrell.com%2F&#038;format=xml"/>
 	<link href="/css/index.css" rel="stylesheet" />
 	{% if homepage %}
 	<link href="/css/home.css" rel="stylesheet" />

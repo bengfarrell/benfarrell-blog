@@ -13,21 +13,34 @@ const pluginDrafts = require("./eleventy.config.drafts.js");
 const pluginImages = require("./eleventy.config.images.js");
 const pluginExternalLinks = require("./eleventy.config.links.js");
 const buildResumePdf = require("./scripts/build-resume-pdf.js");
+const buildSocialImage = require("./scripts/build-social-image.js");
+const pluginSeo = require("./eleventy.config.seo.js");
 
 const { execSync } = require('child_process')
 const { execFileSync } = require("child_process");
+const { access, copyFile, mkdir } = require("node:fs/promises");
 
 module.exports = function(eleventyConfig) {
-	eleventyConfig.on("eleventy.before", () => {
+	let resumePdfBuilt = false;
+	eleventyConfig.on("eleventy.before", async ({ dir, outputMode, runMode }) => {
+		if (outputMode === "fs" && runMode !== "serve") await access("public/resume/Ben-Farrell-Resume.pdf");
 		execFileSync(process.execPath, ["scripts/build-media.mjs"], { stdio: "inherit" });
+		if (outputMode === "fs") await buildSocialImage(dir.output);
 	});
+	eleventyConfig.watchIgnores.add("public/resume/Ben-Farrell-Resume.pdf");
 	eleventyConfig.addWatchTarget("client/");
+	eleventyConfig.addWatchTarget("_includes/social-preview.svg.njk");
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
 	eleventyConfig.addPlugin(syntaxHighlight);
 	eleventyConfig.addShortcode('first_image', post => extractFirstImage(post));
 	eleventyConfig.addNunjucksGlobal('extractFirstImage', extractFirstImage );
-	eleventyConfig.on('eleventy.after', async ({ dir, outputMode }) => {
-		if (outputMode === "fs") await buildResumePdf(dir.output);
+	eleventyConfig.on('eleventy.after', async ({ dir, outputMode, runMode }) => {
+		if (outputMode === "fs" && runMode === "serve" && !resumePdfBuilt) {
+			const pdf = await buildResumePdf(dir.output);
+			await mkdir("public/resume", { recursive: true });
+			await copyFile(pdf, "public/resume/Ben-Farrell-Resume.pdf");
+			resumePdfBuilt = true;
+		}
 		execSync(`npx pagefind --source _site --glob \"**/*.html\"`, { encoding: 'utf-8' })
 	});
 
@@ -96,6 +109,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 	eleventyConfig.addPlugin(pluginBundle);
 	eleventyConfig.addPlugin(pluginExternalLinks);
+	eleventyConfig.addPlugin(pluginSeo);
 
 	// Filters
 	eleventyConfig.addFilter("blueskyPostUrl", value => {

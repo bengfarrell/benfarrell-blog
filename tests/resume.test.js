@@ -41,6 +41,7 @@ test("the print script is harmless without a print control", () => {
 test("resume assets and body class are opt-in", () => {
 	const env = new nunjucks.Environment(new nunjucks.FileSystemLoader("_includes"));
 	env.addFilter("absoluteUrl", require("@11ty/eleventy-plugin-rss").absoluteUrl);
+	env.addFilter("seoMetadata", require("../eleventy.config.seo.js").seoMetadata);
 	const template = readFileSync("_includes/layouts/base.njk", "utf8");
 	const context = { metadata, title: "Resume | Ben Farrell", page: { url: "/resume/" } };
 	const resume = env.renderString(template, { ...context, resumePage: true });

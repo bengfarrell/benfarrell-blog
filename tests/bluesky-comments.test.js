@@ -6,7 +6,7 @@ const nunjucks = require("nunjucks");
 
 const filters = new Map();
 require("../eleventy.config.js")(new Proxy({}, {
-	get: (_, name) => name === "addFilter"
+	get: (_, name) => name === "watchIgnores" ? new Set() : name === "addFilter"
 		? (key, filter) => filters.set(key, filter)
 		: () => {},
 }));
@@ -88,6 +88,7 @@ test("validates and canonicalizes front matter URLs", () => {
 test("templates opt in per article and preserve the fallback", () => {
 	const env = new nunjucks.Environment(new nunjucks.FileSystemLoader("_includes"));
 	env.addFilter("absoluteUrl", require("@11ty/eleventy-plugin-rss").absoluteUrl);
+	env.addFilter("seoMetadata", require("../eleventy.config.seo.js").seoMetadata);
 	for (const [name, filter] of filters) env.addFilter(name, filter);
 	const data = { page: { date: new Date() }, tags: [], categories: [], content: "<p>Article</p>" };
 	const disabled = env.render("layouts/post.njk", data);

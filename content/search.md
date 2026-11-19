@@ -1,6 +1,8 @@
 ---
 title: "Search"
 layout: layouts/home.njk
+noindex: true
+eleventyExcludeFromCollections: true
 ---
 
 <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
