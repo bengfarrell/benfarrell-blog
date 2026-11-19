@@ -14,8 +14,8 @@ would be combined to create the final output. We created this installation for t
 
 Read more [Note to Self](https://blog.adobe.com/en/publish/2019/02/01/visualizing-the-invisible)
 
-![the installation](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/portfolio/media_16042252f528d1472a659e63f805f050555f2c9f6.webp)
+![the installation](/images/work/note-to-self.webp)
 *the installation*
 
 
-![the installation](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/portfolio/media_1ae99bd62b5aec85ccc73fe4951253e86507e03ab.webp)*the printed output*
+![the installation](/images/work/note-to-self-output.webp)*the printed output*

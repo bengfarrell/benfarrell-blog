@@ -1,76 +1,238 @@
 ---
 layout: layouts/page.njk
-title: "Positions Held"
+title: "Work history"
+description: "Ben Farrell's experience in creative tools, design systems, video, and interactive experiences."
+workEntries: true
 ---
 
-**Adobe | Design Prototyping 2018 - present**
+For a concise overview and downloadable PDF, see my [resume](/resume/). My [community and independent work](#community-and-independent-work) is included below.
 
-Brought designs and concepts to life through design-led prototyping efforts, mainly on the web. As a "Design Engineer", I can step into product engineering roles, brand new startup efforts, and design thinking/experimentation. Projects ranged from photo/video editing tools, generative AI, design systems, 3D/mixed reality, Acrobat, as well as brand new product verticals. Led development efforts around pro bono installations for the Museum of Photographic Arts in San Diego, as well as the de Young and SFMOMA museums in San Francisco. As Staff Engineer, I gave internal talks and gave experienced support to others on my team.
+## Adobe
 
- 
+<p class="work-entry-meta">Design Engineer | 2018-present</p>
 
-**Adobe | Design Lab 2015 - 2018**
+Design-led prototyping across photo and video editing, generative AI, design systems, 3D/mixed reality, and Acrobat.
 
-Designed and implemented new project ideas with a small team of designers and developers. Mainly focused on Web based work, but also did desktop development with Unity. Every year one of my projects was featured at Adobe MAX Sneaks. Also gave internal talks and workshops on mixed reality, leading to a "Top 10" award for an "Intro to VR" session at our bi-annual tech summit. Our pro bono efforts with SFMOMA led to a Comm Arts award of excellence in 2017 for our "Self Composed" installation.
+- Helped prototype Premiere Color Mode, owning the application architecture and implementing detailed, declarative SVG controls using geometry and trigonometry. Also contributed to WebGPU and heads-up visualizations. The user-tested prototype was incorporated into Premiere almost verbatim.
+- Built a WebCodecs library for frame-accurate video playback, subsequently reused by the team across multiple prototypes, including Premiere Color Mode.
+- Prototyped motion and agentic motion for Firefly Design by integrating its C++/WebAssembly engine into an animation-focused front end. Built a JSON-driven animation and composable-behavior library that the engine team used as specifications for its C++ animation implementation.
+- Maintained the stable Firefly Design motion prototype and guided designers in integrating their smaller, AI-assisted prototypes into it.
+- Served as engineering tech lead for Superheroes at the de Young Museum, leading designers and a backend engineer from ideation through the live event and coordinating with the PM and museum contacts.
+- Contributed Objective-C application code to Note to Self for the Museum of Photographic Arts.
+- Contributed to internal Adobe design tooling, reviewed design-system architectures across the organization, and helped teams establish architecture or complete delivery. Built reusable templates and libraries, provided mentorship, and taught internal technical sessions.
 
- 
+[Selected Adobe work](/work/adobe/) | [Museum installations](/work/installations/)
 
-**General Electric | Lead Design Technologist 2013 - 2015**
+---
 
-At GE, my work mostly consisted of maintaining a family of products called the "GE Design System". I worked with several groups representing different interests at GE including Healthcare, Marketing, and Industrial (power, water, gas, etc). Work included new components for the system, architectural decisions, a testing initiative, and more. The design system itself is meant as production ready HTML for customer applications, training, and design guidance. Other related initiatives I worked on included a font-icon creation tool, HTML5 video training material, and web consistency testing tools based on Grunt/NodeJS.
+## Adobe Design Lab
 
- 
+<p class="work-entry-meta">Design Engineer | 2015-2018</p>
 
-**Digitalsmiths | Senior Software Engineer, 2008-present**
+Developed new project ideas with a small team of designers and developers, working primarily on the web and also on desktop experiences with Unity.
 
-My work at Digitalsmiths mainly included work as the lead developer on video players used on high profile sites like TMZ.com, theWB.com, and cwtv.com. In the beginning of my employment, I took 20+ Flash video players for our customer sites, and streamlined them down to one highly customizable video player product. The look and feel was customizable, as well as other things including which 3rd party ad platforms and reporting components were used. This accomplishment allowed us to work as a team and efficiently use our source control and continuous integration systems to make reliable releases of our product.
+- Led development of Louper, took over and extended Quick Layout, and contributed to SonicScape; all three were shown at Adobe MAX Sneaks.
+- Worked on Self Composed for SFMOMA, connecting the print server to the visitor experience.
+- Gave internal mixed-reality talks and workshops. My Intro to VR session received a Top 10 award at Adobe's internal tech summit.
 
-I continued on work with the CW and WB in project managing and developing iOS, Android, XBOX, Windows 8, and HTML5 video players.  Working with Turner Sports and the PGA, my project received an Emmy for innovative sports coverage.
+Self Composed received a Communication Arts Award of Excellence in 2017.
 
-I also regularly spent time communicating with clients and 3rd party vendors in meetings for integration planning and troubleshooting.
+---
 
-Aside from players, I also built end to end video web applications and demos using Flash, HTML5, Python, and MongoDB.
+## General Electric
 
- 
+<p class="work-entry-meta">Lead Design Technologist | 2013-2015</p>
 
-**360KID | Senior Software Developer, 2003-2008**
+Worked on the GE Design System, providing production-ready HTML components, training, and design guidance for customer applications.
 
-360Kid is a software development company dedicated to doing education and edutainment software. I have completed work for a number of high profile clients like the Sesame Workshop, Pokemon, Nickelodeon Jr, Discovery Channel, and the Princeton Review.
+- Bridged Healthcare, Marketing, and Industrial teams, adapting a shared GE Design System to their different needs.
+- Built testing tools, including a visual regression testing suite to detect unintended UI changes.
+- Developed components and contributed to architecture decisions.
+- Contributed to a font-icon creation tool, HTML5 video training material, and web consistency testing tools built with Grunt and Node.js.
 
-In addition to the big name clients, we've recieved some big recognition for our work as well. Our Sesame Workshop Cable Television projects earned us three Emmy nominations, one of which was earned by a project led by myself. Pokemon Learning League, also a project led by me, we've earned three educational awards and are still counting. I'd led and been a part of many more projects, always achieving success and earning client praise.
+---
 
-I've used a variety of tools and skills in our projects including Flash, Flex, Javascript, HTML, PHP, ASP, ASP.NET/C#, AJAX, Director, Zinc, and more. Typically our projects use Flash, and clean, understandable, organized code is essential. Also essential is the ability to work with our art team and make sure their vision comes through to the final product.
+## Digitalsmiths
 
-My graphic design and user interface design skills have come through as well. Though not part of my job description as a programmer, I often offer an educated opinion for how to design our projects. Every once in a while, I'll even design them myself.
+<p class="work-entry-meta">Senior Software Engineer | 2008-2011</p>
 
-I've also received praise for being able to communicate complicated concepts to non-technical people. This can be very useful when talking with clients, or especially helping out with RFP's.
+- Consolidated more than 20 customer-specific video players into one customizable product, supporting different visual designs, advertising platforms, and analytics integrations.
+- Developed video players across Flash, iOS, Android, HTML5, and Xbox for clients including The CW, The WB, and TMZ, working directly with clients and third-party vendors on integrations.
+- Also developed Windows 8 video players and handled project management, integration planning, and troubleshooting.
+- Built end-to-end video web applications and demos using Flash, HTML5, Python, and MongoDB.
+- Contributed to an Emmy-winning project for Turner Sports and the PGA.
 
- 
+---
 
-**ReadyAbout Interactive | Lead Multimedia Developer, 2001-2002**
+## 360KID
 
-Worked with clients to develop multimedia ranging from educational children’s games to corporate websites. Heavily used Director and Flash to develop games and applications. Often worked with HTML, DHTML, ASP, SQL, and Javascript for corporate sites. Also, worked with other applications as needed (photoshop, illustrator, etc.).
+<p class="work-entry-meta">Senior Software Developer | 2003-2008</p>
 
- 
+- Led development on educational and entertainment projects, including Pokemon Learning League and work for Sesame Workshop.
+- Collaborated with artists and designers on interactive experiences for clients including Discovery Channel, Nickelodeon Jr, and The Princeton Review.
+- Built web and desktop experiences using Flash, Flex, Director, JavaScript, HTML, and server-side technologies, also contributing to graphic and interface design.
+- Helped clients and colleagues understand technical concepts and contributed to requests for proposals.
 
-**JuniorNet | Junior Multimedia Developer, 2001**
+Sesame Workshop cable television projects earned three Emmy nominations, including one for a project I led. Pokemon Learning League received three educational awards.
 
-Worked with producers and other team members to deliver mu ltimedia content for kids on-line and on CD-ROM. Involved fixing bugs, creating standard behaviors, and creating activities for the web and CD-ROM. Software used includes Director 8 with advanced Lingo programming and Macromedia Flash.
+---
 
- 
+## ReadyAbout Interactive
 
-**the Academy of Electronic Media | Multimedia Developer, 1999**
+<p class="work-entry-meta">Lead Multimedia Developer | 2001-2002</p>
 
-Involved producing mulitimedia projects for outside clients with Macromedia’s Director. Work involved Lingo programming, graphic design, and 3D work using OpenSpace 3D for Director. Also used Flash and Illustrator for vector based work.
+Developed educational children's games, multimedia applications, and corporate websites for clients. Built games and applications with Director and Flash, and websites with HTML, JavaScript, ASP, and SQL.
 
- 
+---
 
-**Project Links | Lead Director Developer, 1999**
+## JuniorNet
 
-Worked on web pages for use in classroom learning. Full-time position included part-time HTML work using Dreamweaver and a little javascript programming. The other half of the position involved coming up with concepts for Shockwave applications and then implementing them. Also used OpenSpace 3D for 3D multimedia programming.
+<p class="work-entry-meta">Junior Multimedia Developer | 2001</p>
 
- 
+Worked with producers and other team members to deliver children's content for the web and CD-ROM. Created activities and reusable behaviors, and fixed bugs using Director, Lingo, and Flash.
 
-**Idea Consultants | Multimedia Consultant, 1996-1998**
+---
 
-Designing Multimedia for classroom use. Assisted professors in making programs to aid in the learning process. Designed pieces using Director, Photoshop, Premier, Illustrator, 3D Studio MAX, and Softimage.
+## Academy of Electronic Media
+
+<p class="work-entry-meta">Multimedia Developer | 1999</p>
+
+Produced multimedia projects for external clients using Director and Lingo, including graphic design and 3D work with OpenSpace 3D. Used Flash and Illustrator for vector graphics.
+
+---
+
+## Project Links
+
+<p class="work-entry-meta">Lead Director Developer | 1999</p>
+
+Developed websites and interactive applications for classroom learning. Created concepts and implemented Shockwave applications, including 3D multimedia with OpenSpace 3D, alongside HTML and JavaScript work.
+
+---
+
+## Idea Consultants
+
+<p class="work-entry-meta">Multimedia Consultant | 1996-1998</p>
+
+Helped professors develop multimedia for classroom learning, using Director, Photoshop, Premiere, Illustrator, 3D Studio Max, and Softimage.
+
+---
+
+## Community & independent work
+
+### Sun Gallery
+
+<p class="work-entry-meta">Board Member | 2022-2024</p>
+
+Served on the board of directors for [Sun Gallery](https://sungallery.org), a nonprofit art gallery and makerspace in Hayward.
+
+---
+
+### Web Components in Space
+
+<p class="work-entry-meta">Creator / Producer | 2022-2024</p>
+
+Independently produced [Web Components in Space](http://webcomponents.space), a video series set on a space lab orbiting Earth, teaching emerging web technology and web standards.
+
+---
+
+### de Youngsters Art Party
+
+<p class="work-entry-meta">Technology lead | 2020-2021</p>
+
+Led technology work with Adobe Design on in-person and online experiences for the de Young Museum's annual art party, including [Superheroes](/blog/2020-04-27-superheroes/).
+
+---
+
+### Note to Self
+
+<p class="work-entry-meta">Application development | 2019</p>
+
+Contributed Objective-C application code to [Note to Self](/blog/2019-02-01-notetoself/), an installation for the Museum of Photographic Arts in San Diego combining visitor portraits with patterns made by sound waves in water.
+
+---
+
+### Manning Publications
+
+<p class="work-entry-meta">Author | 2018-2019</p>
+
+Wrote *[Web Components in Action](https://www.manning.com/books/web-components-in-action)*, published in summer 2019.
+
+---
+
+### Self Composed
+
+<p class="work-entry-meta">Software development | 2016</p>
+
+Worked on the development team for [Self Composed](/blog/2016-10-16-selfcomposed/) at SFMOMA, connecting the print server to the interface and visitor experience.
+
+---
+
+### Shark Attack Radio Show
+
+<p class="work-entry-meta">Programmer / Producer | 2011-2016</p>
+
+Built an automated AIR application that gathered new music from RSS feeds and constructed a weekly playlist for the show.
+
+---
+
+### Refresh The Triangle
+
+<p class="work-entry-meta">Board Member / Co-organizer | 2011-2013</p>
+
+Helped run the Raleigh/Durham chapter of Refresh, organizing meetings and events about web technology in the Triangle area.
+
+---
+
+### Runtime Expectations
+
+<p class="work-entry-meta">Director / Producer | 2011-2013</p>
+
+Co-hosted a live show on Codebass Radio with Adrian Pomilio, discussing development and software with guests from the local community.
+
+---
+
+### MediaSlurp
+
+<p class="work-entry-meta">Co-owner | 2010-2016</p>
+
+Designed and developed a community-based podcast and live-station aggregator for AIR, web, and mobile.
+
+---
+
+### Codebass Radio
+
+<p class="work-entry-meta">Senior Producer | 2010-2016</p>
+
+Helped manage a Shoutcast station for developers, supporting the station owner and implementing new ideas.
+
+---
+
+### Tri-ME
+
+<p class="work-entry-meta">Manager | 2010-2011</p>
+
+Co-ran the Triangle Media Experience with Adrian Pomilio. Organized events, presentations, and hack nights, and built the group's website.
+
+---
+
+### RDAUG
+
+<p class="work-entry-meta">Manager | 2006-2010</p>
+
+Ran the Raleigh/Durham Adobe User Group, organizing events and presentations, leading the website initiative, and regularly presenting.
+
+---
+
+### Mercury Charm Offensive
+
+<p class="work-entry-meta">Keyboardist / Graphic Designer / Web Developer | 2002-2005</p>
+
+Played keyboards in a Boston-area rock band that recorded two albums and performed at venues including the Middle East and Milky Way. Designed album covers and show flyers, and designed and developed the band's website.
+
+---
+
+### Brookfield Public Access
+
+<p class="work-entry-meta">Committee Member | 1993-1996</p>
+
+Volunteered in public-access television, recording town events, editing video, and contributing to financial and programming decisions. Created original programming and 2D animation with Deluxe Paint on the Amiga.

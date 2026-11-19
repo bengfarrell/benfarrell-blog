@@ -28,16 +28,23 @@
 	<meta property="og:description" content="{{ description or metadata.description }}"/>
 	<meta property="og:url" content="https://benfarrell.com{{ page.url or metadata.url }}"/>
 	<meta property="og:site_name" content="Ben Farrell"/>
-	<meta property="og:image" content="{{ coverImage or metadata.image }}" />
+	<meta property="og:image" content="{{ (coverImage or metadata.image) | absoluteUrl(metadata.url) }}" />
 	<meta name="twitter:card" content="summary_large_image"/>
 	<meta name="twitter:description" content="{{ description or metadata.description }}"/>
 	<meta name="twitter:title" content="{{ title or metadata.title }}"/>
-	<meta name="twitter:image" content="{{ coverImage or metadata.image }}" />
+	<meta name="twitter:image" content="{{ (coverImage or metadata.image) | absoluteUrl(metadata.url) }}" />
 
 	<link rel='dns-prefetch' href='//fonts.googleapis.com'/>
 	<link rel="alternate" type="application/json+oembed" href="https://benfarrell.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbenfarrell.com%2F"/>
 	<link rel="alternate" type="text/xml+oembed" href="https://benfarrell.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbenfarrell.com%2F&#038;format=xml"/>
 	<link href="/css/index.css" rel="stylesheet" />
+	{% if homepage %}
+	<link href="/css/home.css" rel="stylesheet" />
+	{% endif %}
+	{% if resumePage %}
+	<link href="/css/resume.css" rel="stylesheet" />
+	<script src="/js/resume.js" defer></script>
+	{% endif %}
 	{% if monthlyAssets %}
 	<link href="/media/monthly.css" rel="stylesheet" />
 	<link href="/media/site.css" rel="stylesheet" />
@@ -62,20 +69,20 @@
 	<style type="text/css" id="wp-custom-css">.rb.row.text-center{display:none}.big-text{font-size:28px;line-height:60px}</style>
 	<style id="tt-easy-google-font-styles" type="text/css">p{}h1{}h2{}h3{}h4{}h5{}h6{}</style>
 </head>
-<body class="home page-template-default page{% if monthlyAssets %} monthly-feed-page{% endif %}">
+<body class="home page-template-default page{% if monthlyAssets %} monthly-feed-page{% endif %}{% if resumePage %} resume-page{% endif %}">
 
 <header id="top-menu" class="top-bar" itemscope="itemscope">
 	<div class="topbar-title title-logo" itemscope="itemscope" role="banner">
-		<a href="https://benfarrell.com/" title="Ben Farrell - creating digital hugs">
-			<h1 id="sitetitle">Ben Farrell</h1>
+		<a href="/" title="Ben Farrell - Home">
+			<span id="sitetitle">Ben Farrell</span>
 		</a>
 	</div>
 
 	<div id="menu-container" class="menu-container">
-		<nav class="richprimarymenu" role="navigation">
+		<nav class="richprimarymenu" aria-label="Primary">
 			<ul id="menu-main-menu" class="vertical large-horizontal menu" data-responsive-menu="accordion large-dropdown">
 				<li id="menu-item-1529" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1529"><a href="/resume/">Resume</a></li>
-				<li id="menu-item-1722" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1722"><a href="/blog">Blog</a></li>
+				<li id="menu-item-1722" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1722"><a href="/blog/">Blog</a></li>
 			</ul>
 		</nav>
 		<ul id="iconmenu" class="menu richiconmenu">
@@ -92,7 +99,6 @@
 
 <footer id="site-footer">
 	<aside>
-			<canvas id="shader"></canvas>
 			<div class="social-buttons">
 				<a target="_blank" href="https://bsky.app/profile/benforreal.bsky.social" rel="noopener"><img alt="bluesky" src="/images/social-1_round-bluesky.svg"/></a>
 				<a target="_blank" href="https://github.com/bengfarrell" rel="noopener"><img alt="github" src="/images/social-1_round-github.svg"/></a>
@@ -101,15 +107,12 @@
 				<a target="_blank" href="https://benfarrell.com/feed/feed.json" rel="noopener"><img alt="rss" src="/images/social-1_round-rss.svg"/></a>
 			</div>
 
-			<div class="recent-moments">
-				<a target="_blank" href="/blog/2019-03-24-web-components-in-action/" rel="noopener"><img width="75" height="75" alt="Web Components in Action" src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/03/20044714/Farrell-WebC-MEAP-HI-100x100.jpg"/></a><a target="_blank" href="https://www.commarts.com/project/24685/self-composed" rel="noopener"><img width="75" height="75" alt="SFMOMA Self Composed" src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/03/23231356/893532_102_1160_NzE5NDgzOTc4LTExODA2MTgzMjc-100x100.jpg"/></a><a target="_blank" href="https://blog.adobe.com/en/publish/2019/02/01/visualizing-the-invisible" rel="noopener"><img width="75" height="75" alt="MOPA Note to Self" src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/03/23231824/43244797_568274210297436_1416940896466467256_n-100x100.jpg"/></a><a target="_blank" href="/blog/2019-03-24-adobe-max-sneaks/" rel="noopener"><img width="75" height="75" alt="Project Sonicscape at MAX Sneaks" src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/03/23232820/DMi5QzPVoAA_VfL-100x100.jpg"/></a><a target="_blank" href="/speaking-engagements/" rel="noopener"><img width="75" height="75" alt="Adobe's Immersive Future Talk" src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/2019/03/23232421/image1-100x100.jpg"/></a>
-			</div>
 	</aside>
 
 	<div id="copyright" class="row">
 		<div class="columns">
 			&copy;&nbsp;2024&nbsp;					  <a href="https://benfarrell.com/" title="Ben Farrell - creating digital hugs">
-			Ben Farrell					  </a> &nbsp;&nbsp;ben@benfarrell.com
+			Ben Farrell					  </a> &nbsp;&nbsp;<a href="mailto:{{ metadata.author.email }}">{{ metadata.author.email }}</a>
 		</div>
 	</div><!-- #copyright -->
 
@@ -117,6 +120,5 @@
 	<div class="&#114;b row text-center">&#087;&#111;&#114;&#100;&#080;&#114;&#101;&#115;&#115; &#084;&#104;&#101;m&#101; &#098;&#121; <a href="&#104;tt&#112;&#115;://&#82;&#105;&#99;&#104;&#87;&#80;.&#99;o&#109;/">&#82;&#105;&#99;&#104;&#87;&#80;</a></div>
 </footer>
 
-<script src="/js/shaders.js"></script>
 </body>
 </html>

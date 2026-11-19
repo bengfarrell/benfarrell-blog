@@ -87,6 +87,7 @@ test("validates and canonicalizes front matter URLs", () => {
 
 test("templates opt in per article and preserve the fallback", () => {
 	const env = new nunjucks.Environment(new nunjucks.FileSystemLoader("_includes"));
+	env.addFilter("absoluteUrl", require("@11ty/eleventy-plugin-rss").absoluteUrl);
 	for (const [name, filter] of filters) env.addFilter(name, filter);
 	const data = { page: { date: new Date() }, tags: [], categories: [], content: "<p>Article</p>" };
 	const disabled = env.render("layouts/post.njk", data);
@@ -120,6 +121,10 @@ test("loads only on click, resolves the handle, and renders safe nested replies 
 	assert.deepEqual(nodes.filter(node => node.className === "bluesky-comment-text").map(node => node.textContent),
 		["<script>alert(1)</script>", "nested", "Later"]);
 	assert.equal(nodes.some(node => node.tag === "script"), false);
+	for (const node of nodes.filter(node => node.tag === "a")) {
+		assert.equal(node.target, "_blank");
+		assert.equal(node.rel, "noopener noreferrer");
+	}
 	assert.equal(nodes.filter(node => node.tag === "ul").length, 2);
 	assert.equal(ui.button.textContent, "Refresh comments");
 	assert.equal(ui.list.attributes["aria-busy"], "false");

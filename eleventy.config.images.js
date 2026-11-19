@@ -28,6 +28,8 @@ module.exports = function(eleventyConfig) {
 		let input;
 		if(isFullUrl(src)) {
 			input = src;
+		} else if(src.startsWith("/")) {
+			input = path.join("public", src);
 		} else {
 			input = relativeToInputPath(this.page.inputPath, src);
 		}

@@ -1,6 +1,9 @@
 ---js
 {
-	layout: "layouts/home.njk",
+	layout: "layouts/page.njk",
+	title: "Blog",
+	description: "Writing by Ben Farrell on design, code, and creative technology.",
+	blogIndex: true,
 	pagination: {
 		data: "collections.posts",
 		reverse: true,
@@ -14,24 +17,17 @@
 }
 ---
 
-<div id="container" class="row">
-	<div id="primary" class="large-7 medium-9 small-11 small-centered columns">
-		<article class="articlebox page type-page status-publish hentry">
-
-{% include "postslist.njk" %}
-
-		<nav aria-labelledby="pages" class="pagination">
-			<ul>
-				<li>{% if page.url != pagination.href.first %}<a href="{{ pagination.href.first }}">First</a>{% else %}<span>First</span>{% endif %}</li>
-				<li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}<span>Previous</span>{% endif %}</li>
-				{%- for pageEntry in pagination.pages %}
-				{% if page.url == pagination.hrefs[ loop.index0 ] %}<li>Page {{ loop.index }} of {{ pagination.pages.length }}</li>{% endif %}
-				{%- endfor %}
-				<li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}<span>Next</span>{% endif %}</li>
-				<li>{% if page.url != pagination.href.last %}<a href="{{ pagination.href.last }}">Last</a>{% else %}<span>Last</span>{% endif %}</li>
-			</ul>
-		</nav>
-
-		</article>
-	</div>
+<div class="blog-index">
+	{% include "postslist.njk" %}
+	<nav aria-label="Blog pages" class="blog-pagination">
+		<div class="blog-pagination-group">
+			{% if page.url != pagination.href.first %}<a href="{{ pagination.href.first }}">First</a>{% else %}<span class="pagination-disabled" aria-disabled="true">First</span>{% endif %}
+			{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}" rel="prev">Newer</a>{% else %}<span class="pagination-disabled" aria-disabled="true">Newer</span>{% endif %}
+		</div>
+		<span class="blog-page-status" aria-current="page">Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}</span>
+		<div class="blog-pagination-group">
+			{% if pagination.href.next %}<a href="{{ pagination.href.next }}" rel="next">Older</a>{% else %}<span class="pagination-disabled" aria-disabled="true">Older</span>{% endif %}
+			{% if page.url != pagination.href.last %}<a href="{{ pagination.href.last }}">Last</a>{% else %}<span class="pagination-disabled" aria-disabled="true">Last</span>{% endif %}
+		</div>
+	</nav>
 </div>

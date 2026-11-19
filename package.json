@@ -6,6 +6,7 @@
 		"build": "npx @11ty/eleventy",
 		"build:media": "node scripts/build-media.mjs",
 		"test:media": "node --test --test-concurrency=1 tests/media-client.test.mjs tests/media-build.test.mjs",
+		"test:resume": "node --test tests/resume.test.js tests/resume-pdf.test.js",
 		"build-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
 		"start": "npx @11ty/eleventy --serve --quiet",
 		"debug": "DEBUG=Eleventy* npx @11ty/eleventy",
@@ -47,6 +48,9 @@
 		"marked": "^13.0.2",
 		"netlify-plugin-cache": "^1.0.3",
 		"pagefind": "^1.1.0",
+		"pdf-lib": "^1.17.1",
+		"posthtml": "^0.16.7",
+		"puppeteer": "^24.43.1",
 		"s3-folder-upload": "^2.3.5",
 		"wordpress-export-to-markdown": "^2.2.2"
 	}

@@ -22,7 +22,7 @@ press a button and speak into the microphone to say what AI will replace you wit
 of the picture with body segmentation, and then replaces you with the AI generated image.
 
 
-![sketch](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/portfolio/aiwillreplaceu.png)
+![sketch](/images/work/ai-will-replace-u.webp)
 *the downloadable output after using the installation*
 
 <video controls src="https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/portfolio/aiwillreplaceu.mp4"></video>

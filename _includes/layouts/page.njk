@@ -6,9 +6,9 @@ layout: layouts/base.njk
 <div id="primary" class="large-7 medium-9 small-11 small-centered columns">
 	<article class="articlebox post-1505 page type-page status-publish hentry">
 		<header class="entry-header entry-header-single">
-			<h1 class="entry-title">{{ title }}</h1>
+			<h1 class="entry-title">{{ pageHeading or title }}</h1>
 		</header>
-		<div class="entry-content">
+		<div class="entry-content{% if workEntries %} work-entries{% endif %}">
 			{{ content | safe }}
 		</div><!-- .entry-content -->
 	</article>

@@ -3,14 +3,21 @@
 {% for post in postslist %}
 	{% set firstimg = extractFirstImage(post) %}
 	<li class="post-item">
-		<a class="thumb" href="{{ post.url }}">
+		<a class="thumb" href="{{ post.url }}"{% if blogIndex %} aria-hidden="true" tabindex="-1"{% endif %}>
 			{% image firstimg, "featured image" %}
 		</a>
 
+		{% if blogIndex %}
+		<div class="post-copy">
+			<h2><a href="{{ post.url }}" class="postlist-link title">{{ post.data.title }}</a></h2>
+			<time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLL d, yyyy") }}</time>
+		</div>
+		{% else %}
 		<p>
 			<a href="{{ post.url }}" class="postlist-link title">{{ post.data.title }}</a>
 			<span>{{ post.date.toDateString() }}</span>
 		</p>
+		{% endif %}
 	</li>
 {% endfor %}
 </ol>

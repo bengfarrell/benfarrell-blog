@@ -1,26 +1,100 @@
 ---
 layout: layouts/home.njk
+title: "Ben Farrell | Design Engineer"
+description: "Ben Farrell is a Design Engineer at Adobe. Selected projects, writing, and contact details."
+homepage: true
+selectedWork:
+  - title: "Premiere Color Mode"
+    context: "Adobe work"
+    description: "I helped prototype the new Color Mode in Premiere - these brand new color-grading tools for video editors won over NAB for best of show"
+    url: "https://www.adobe.com/products/premiere/color-mode.html"
+    image: "/images/work/premiere-color-mode.webp"
+    imageWidth: 1400
+    imageHeight: 883
+    alt: "Premiere Color Mode showing a before-and-after color grade and color controls"
+    moreUrl: "/work/adobe/"
+    moreLabel: "More Adobe work"
+  - title: "Self Composed"
+    context: "Museum installations"
+    description: "A two-camera portrait installation for SFMOMA. I worked on the development team, connecting the print server to the interface."
+    url: "/blog/2016-10-16-selfcomposed/"
+    image: "/images/work/self-composed.webp"
+    imageWidth: 1024
+    imageHeight: 683
+    alt: "Visitors using the Self Composed installations at SFMOMA"
+    moreUrl: "/work/installations/"
+    moreLabel: "More installations"
+  - title: "Intro to VR"
+    context: "Speaking & teaching"
+    description: "A talk about Adobe's work in virtual reality. Named a top-10 session at Adobe Tech Summit in 2017."
+    url: "/speaking-engagements/#intro-to-vr"
+    image: "/images/work/intro-to-vr.webp"
+    imageWidth: 300
+    imageHeight: 300
+    alt: "Ben presenting Intro to VR at Adobe Tech Summit"
+    moreUrl: "/speaking-engagements/"
+    moreLabel: "More speaking & teaching"
 ---
 
-<div id="container" class="row">
-	<div id="primary" class="large-7 medium-9 small-11 small-centered columns">
-		<article class="articlebox page type-page status-publish hentry">
-			<header class="entry-header entry-header-single">
-				<h1 class="entry-title">
-					<img width="150" height="150" src="/images/benvector.svg"/>				</h1>
-			</header>
-			<div class="entry-content">
-				<p><span class="big-text">I work as a Prototyper on the<a href="https://adobe.design" target="_blank" rel="noopener"><img class="alignnone" src="/images/ad.gif" alt="Adobe Design" width="58" height="53"/></a>Prototyping Team. I create stuff with a lot of different tools and languages, but the web is my favorite. In fact I wrote a<a href="https://www.manning.com/books/web-components-in-action" target="_blank" rel="noopener"><img loading="lazy" class="alignnone wp-image-1693" src="/images/book.gif" alt="book" width="68" height="60"/></a>on Web Components. Over the past 25 years, I&#8217;ve worked on some<a href="/awards/" target="_blank" rel="noopener"><img loading="lazy" class="alignnone wp-image-1693" src="/images/trophy.gif" alt="book" width="45" height="70"/></a>winning projects with Adobe, various startups, and creative agencies.</span></p>
-				<p><span class="big-text"><br/>
-I live in the East Bay of California with my sci-fi/fantasy<a href="https://rebeccagomezfarrell.com/" target="_blank" rel="noopener"><img loading="lazy" class="alignnone" src="/images/writing.gif" alt="Writing" width="59" height="50"/></a>wife and two cats.</span></p>
-				<p><span class="big-text"><br/>
-I love playing with all sorts of mediums and techonologies, but I'm currently deep-diving on music and making physical things with digital tech. Whatever I'm thinking about lately will probably be highlighted in my
-					most recent blog post:
-				{% set postslist = collections.posts | head(-1) %}
-				<a href="{{ postslist[0].url }}">&#8220;{{ postslist[0].data.title }}&#8221;</a></span></p>
-			</div><!-- .entry-content -->
-		</article>
-	</div><!-- #primary -->
+<div class="portfolio-home">
+	<div class="home-profile">
+		<div class="home-portrait">
+			<img src="/images/benvector.svg" alt="An illustrated portrait of Ben" width="289" height="392" />
+		</div>
+		<h1>Design Engineer<span class="home-title-dot">.</span></h1>
+		<section id="about" class="home-bio" aria-label="About Ben">
+			<p>I'm Ben Farrell, a Design Engineer at <a href="https://adobe.design">Adobe</a>.</p>
+			<p>Mostly web, sometimes installations and hardware, with <a href="/awards/">the occasional award</a> along the way. Lately, music and making physical things with digital tech.</p>
+			<p>I also wrote <a href="https://www.manning.com/books/web-components-in-action">Web Components in Action</a>.</p>
+		</section>
+		<div id="contact" class="home-contact">
+			<a href="mailto:{{ metadata.author.email }}">{{ metadata.author.email }}</a>
+			<div class="home-profile-links">
+				<a href="/resume/">R&eacute;sum&eacute;</a>
+				<a href="https://github.com/bengfarrell">GitHub</a>
+				<a href="https://www.linkedin.com/in/bfarrellforever/">LinkedIn</a>
+			</div>
+		</div>
+	</div>
 
-</div> <!-- #container -->
+	<div class="home-index">
+		<section id="work" aria-labelledby="work-heading">
+			<h2 id="work-heading" class="home-section-label">Selected work</h2>
+			<div class="home-projects">
+				{% for project in selectedWork %}
+				<article class="home-project">
+					<a class="home-project-image" href="{{ project.url }}" aria-label="{{ project.title }}">
+						<img src="{{ project.image }}" alt="{{ project.alt }}" width="{{ project.imageWidth }}" height="{{ project.imageHeight }}" loading="lazy" />
+					</a>
+					<div class="home-project-copy">
+						<p class="home-project-context">{{ project.context }}</p>
+						<h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
+						<p class="home-project-description">{{ project.description }}</p>
+						<p class="home-category-link"><a href="{{ project.moreUrl }}">{{ project.moreLabel }} &rarr;</a></p>
+					</div>
+				</article>
+				{% endfor %}
+			</div>
+		</section>
 
+		{% set recentPosts = collections.posts | filterByCommonCategories("blog") | reverse | head(3) %}
+		{% if recentPosts.length %}
+		<section class="home-writing" aria-labelledby="writing-heading">
+			<div class="home-section-heading">
+				<h2 id="writing-heading" class="home-section-label">Recent writing</h2>
+				<a href="/blog/">All posts</a>
+			</div>
+			<ul class="home-posts">
+				{% for post in recentPosts %}
+				<li>
+					<a href="{{ post.url }}">
+						<time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLL yyyy") }}</time>
+						<span>{{ post.data.title }}</span>
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</section>
+		{% endif %}
+	</div>
+</div>

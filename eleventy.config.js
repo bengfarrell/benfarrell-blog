@@ -11,6 +11,8 @@ const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 
 const pluginDrafts = require("./eleventy.config.drafts.js");
 const pluginImages = require("./eleventy.config.images.js");
+const pluginExternalLinks = require("./eleventy.config.links.js");
+const buildResumePdf = require("./scripts/build-resume-pdf.js");
 
 const { execSync } = require('child_process')
 const { execFileSync } = require("child_process");
@@ -24,7 +26,8 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(syntaxHighlight);
 	eleventyConfig.addShortcode('first_image', post => extractFirstImage(post));
 	eleventyConfig.addNunjucksGlobal('extractFirstImage', extractFirstImage );
-	eleventyConfig.on('eleventy.after', () => {
+	eleventyConfig.on('eleventy.after', async ({ dir, outputMode }) => {
+		if (outputMode === "fs") await buildResumePdf(dir.output);
 		execSync(`npx pagefind --source _site --glob \"**/*.html\"`, { encoding: 'utf-8' })
 	});
 
@@ -92,6 +95,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 	eleventyConfig.addPlugin(pluginBundle);
+	eleventyConfig.addPlugin(pluginExternalLinks);
 
 	// Filters
 	eleventyConfig.addFilter("blueskyPostUrl", value => {

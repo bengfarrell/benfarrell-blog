@@ -11,7 +11,7 @@ This was less of an installation, and more of a popup event! The de Young Museum
 
 Read more [de Youngsters Art Party](https://business.adobe.com/blog/the-latest/adobe-superheroes-make-magic-at-the-de-youngsters-art-party)
 
-![the popup](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/portfolio/media_10fee2f7fc4d75641d11deea042d1ed94cc65cc2d.webp)
+![the popup](/images/work/superheroes.webp)
 *the popup setup*
 
 
@@ -24,4 +24,3 @@ Read more [de Youngsters Art Party](https://business.adobe.com/blog/the-latest/a
 
 ![output](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/portfolio/media_1a8663338795cc6c139378e0c00b9deb0b2ef01bb.webp)
 *the printed output that kids could take away*
-

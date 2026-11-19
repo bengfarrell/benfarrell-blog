@@ -19,8 +19,8 @@ use whatever was in your pockets, place it on the table and create a selfie you 
 Here's the [writeup](https://www.sfmoma.org/read/on-collaboration-sfmoma-adobe-rethink-selfie/) from the SFMOMA, but also we went on to win
 a [Communication Arts Award](https://www.commarts.com/project/24685/self-composed).
 
-![the installation](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/portfolio/SFMOMA-galleries-with-visitors_0551_April-29nd_-Henrik-Kam-2016-1024x683.png)
+![the installation](/images/work/self-composed.webp)
 *we made two installations, side by side (fabrication of the case, though was contracted out*
 
-![playing](https://d2ypg8o05lff0b.cloudfront.net/wp-content/uploads/portfolio/Playing_with_Self_Composed-576x1024.jpg)
+![playing](/images/work/self-composed-playing.webp)
 *playing with self composed*
