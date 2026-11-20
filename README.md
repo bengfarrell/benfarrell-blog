@@ -248,9 +248,12 @@ posts. Videos with a thumbnail (or legacy `poster`) show that poster with
 The upgraded media manager includes image thumbnail controls, video frame
 selection, and the monthly posts JSON editor. Image thumbnails default on above
 1 MiB; new thumbnails do not automatically backfill older posts.
-Uploading thumbnails requires the updated Monthly Lambda, `POST /thumbnails`,
-and thumbnail-index read permissions described in Monthly's AWS guide. This
-site update does not deploy those backend changes.
+Originals and thumbnails use the existing upload/sign endpoints. Associations
+are stored only in memo entries in `posts.json`; no `/thumbnails` API route or
+thumbnail-index permissions are required. The media library lists originals,
+generated thumbnails, and legacy posters as independent media files. Deploy
+Monthly's updated Lambda to get this listing behavior; old `thumbnails.json`
+indexes are ignored. This site update does not deploy backend changes.
 
 Memos adds a small **Expand** button for every image, video, and audio attachment.
 Images also open when clicked/tapped. `public/js/memo-viewer.js` enhances Monthly's
@@ -311,9 +314,8 @@ npm run test:media
 ### Updating the Monthly package
 
 Monthly is pinned to the checked-in
-`vendor/bengfarrell-monthly-0.1.0-9541254.tgz` npm archive, built from Monthly
-commit `9541254`. Monthly still declares version 0.1.0, so the archive's commit
-suffix distinguishes this snapshot from the previous package. A fresh checkout only needs
+`vendor/bengfarrell-monthly-0.1.1.tgz` npm archive, built from the local Monthly
+source with post-only thumbnail associations. A fresh checkout only needs
 `npm install`; neither npm publishing nor a sibling Monthly checkout is required
 to build this site. Only the package's browser assets and client-side APIs are
 used here.

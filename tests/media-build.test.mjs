@@ -21,4 +21,8 @@ test("site assets come from the installed Monthly release rather than the legacy
 	assert.equal(existsSync("public/media/app.css"), false);
 	assert.equal(existsSync("dist/media-lambda.zip"), false);
 	assert.equal(existsSync("dist/media-lambda/handler.mjs"), false);
+	const uploader = readFileSync(new URL("./uploader.js", import.meta.resolve("@bengfarrell/monthly/core")), "utf8");
+	assert.doesNotMatch(uploader, /setThumbnails|metadataAbort|metadataErrors/);
+	const api = readFileSync(new URL("./api.js", import.meta.resolve("@bengfarrell/monthly/core")), "utf8");
+	assert.doesNotMatch(api, /setThumbnails|["']\/thumbnails["']/);
 });
