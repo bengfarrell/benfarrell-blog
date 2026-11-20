@@ -82,6 +82,17 @@ test("the resume is self-contained and corrected dates agree with the work archi
 	assert.match(history, /## Digitalsmiths\n\n<p class="work-entry-meta">Senior Software Engineer \| 2008-2011<\/p>/);
 });
 
+test("the resume consolidates Adobe experience without claiming Acrobat work", () => {
+	const resume = readFileSync("content/resume.md", "utf8");
+	const adobe = resume.split("### Adobe\n")[1].split("### General Electric\n")[0];
+	assert.match(adobe, /<p class="resume-position">Design Engineer <span>2015-present<\/span><\/p>/);
+	assert.equal([...adobe.matchAll(/class="resume-position"/g)].length, 1);
+	assert.match(adobe, /Led development of Louper/);
+	assert.match(adobe, /Worked on Self Composed for SFMOMA/);
+	const history = readFileSync("content/positions-held.md", "utf8");
+	assert.doesNotMatch(resume + history, /Acrobat/i);
+});
+
 test("PDF links use public URLs and archive navigation is grouped separately", async () => {
 	const env = new nunjucks.Environment();
 	env.addFilter("absoluteUrl", require("@11ty/eleventy-plugin-rss").absoluteUrl);

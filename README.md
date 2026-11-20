@@ -95,6 +95,8 @@ Run the local image path checks with `node --test tests/images.test.js`.
 
 `content/resume.md` is a self-contained resume with selected experience,
 capabilities, recognition, and contextual links to the detailed archives.
+Adobe experience is consolidated into one Design Engineer role (2015-present);
+the full work history keeps the separate Design Lab period.
 The full work history retains the resume's experience bullets alongside
 additional project details and individual earlier roles. Update both pages when
 changing shared experience wording; the work-page checks enforce consistency.

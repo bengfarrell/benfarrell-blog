@@ -26,7 +26,7 @@ Design Engineer at Adobe working across creative tools, interactive prototypes, 
 
 ### Adobe
 
-<p class="resume-position">Design Engineer <span>2018-present</span></p>
+<p class="resume-position">Design Engineer <span>2015-present</span></p>
 
 - Helped prototype Premiere Color Mode, owning the application architecture and implementing detailed, declarative SVG controls using geometry and trigonometry. Also contributed to WebGPU and heads-up visualizations. The user-tested prototype was incorporated into Premiere almost verbatim.
 - Built a WebCodecs library for frame-accurate video playback, subsequently reused by the team across multiple prototypes, including Premiere Color Mode.
@@ -34,9 +34,6 @@ Design Engineer at Adobe working across creative tools, interactive prototypes, 
 - Maintained the stable Firefly Design motion prototype and guided designers in integrating their smaller, AI-assisted prototypes into it.
 - Served as engineering tech lead for Superheroes at the de Young Museum, leading designers and a backend engineer from ideation through the live event and coordinating with the PM and museum contacts.
 - Contributed to internal Adobe design tooling, reviewed design-system architectures across the organization, and helped teams establish architecture or complete delivery. Built reusable templates and libraries, provided mentorship, and taught internal technical sessions.
-
-<p class="resume-position">Design Engineer, Design Lab <span>2015-2018</span></p>
-
 - Led development of Louper, took over and extended Quick Layout, and contributed to SonicScape; all three were shown at Adobe MAX Sneaks.
 - Worked on Self Composed for SFMOMA, connecting the print server to the visitor experience.
 

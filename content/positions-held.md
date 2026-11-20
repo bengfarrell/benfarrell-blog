@@ -11,7 +11,7 @@ For a concise overview and downloadable PDF, see my [resume](/resume/). My [comm
 
 <p class="work-entry-meta">Design Engineer | 2018-present</p>
 
-Design-led prototyping across photo and video editing, generative AI, design systems, 3D/mixed reality, and Acrobat.
+Design-led prototyping across photo and video editing, generative AI, design systems, and 3D/mixed reality.
 
 - Helped prototype Premiere Color Mode, owning the application architecture and implementing detailed, declarative SVG controls using geometry and trigonometry. Also contributed to WebGPU and heads-up visualizations. The user-tested prototype was incorporated into Premiere almost verbatim.
 - Built a WebCodecs library for frame-accurate video playback, subsequently reused by the team across multiple prototypes, including Premiere Color Mode.
