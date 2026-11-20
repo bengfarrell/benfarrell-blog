@@ -96,5 +96,13 @@ selectedWork:
 			</ul>
 		</section>
 		{% endif %}
+		<section class="home-notes" aria-labelledby="notes-heading" data-notes-preview data-feed-url="{{ media.feedUrl }}" data-pagefind-ignore hidden>
+			<div class="home-section-heading">
+				<h2 id="notes-heading" class="home-section-label">This month <span data-notes-month></span></h2>
+				<a href="/memos/">All memos</a>
+			</div>
+			<ul class="home-notes-list" data-notes-list></ul>
+		</section>
 	</div>
 </div>
+<script type="module" src="/js/notes-preview.js"></script>

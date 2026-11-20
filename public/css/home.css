@@ -95,6 +95,70 @@
 	margin-top: 0.5rem;
 }
 
+.home-notes[hidden],
+.home-note-media[hidden] {
+	display: none;
+}
+
+.home-notes {
+	margin-top: 2.5rem;
+	font-size: 0.875rem;
+	overflow-wrap: anywhere;
+}
+
+.home-notes-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.home-note-link {
+	display: flex;
+	align-items: center;
+	gap: 0.875rem;
+	padding-block: 0.75rem;
+	color: inherit;
+	text-decoration: none;
+}
+
+.home-note-link:hover p,
+.home-note-link:focus-visible p {
+	color: #0066cc;
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+}
+
+.home-note-copy {
+	min-width: 0;
+}
+
+.home-note-media {
+	display: block;
+	flex: 0 0 2.75rem;
+	width: 2.75rem;
+	height: 2.75rem;
+	border-radius: 0.25rem;
+	object-fit: cover;
+}
+
+.home-note-icon {
+	padding: 0.75rem;
+	background: #f3f5f7;
+	opacity: 0.65;
+}
+
+.home-notes-list time {
+	font-size: 0.75rem;
+}
+
+.home-notes-list time {
+	color: #62676d;
+}
+
+.portfolio-home .home-notes-list p {
+	margin: 0.125rem 0 0;
+}
+
 .portfolio-home .home-section-label {
 	font-size: 0.875rem;
 	line-height: 1.5;
@@ -212,6 +276,9 @@
 
 	.home-contact {
 		grid-column: 2;
+	}
+
+	.home-contact {
 		margin-top: 0;
 	}
 }

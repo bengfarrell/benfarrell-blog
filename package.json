@@ -5,7 +5,7 @@
 	"scripts": {
 		"build": "npx @11ty/eleventy",
 		"build:media": "node scripts/build-media.mjs",
-		"test:media": "node --test --test-concurrency=1 tests/media-client.test.mjs tests/media-build.test.mjs",
+		"test:media": "node --test --test-concurrency=1 tests/media-client.test.mjs tests/media-build.test.mjs tests/notes-preview.test.mjs tests/notes-feed.test.mjs tests/memo-viewer.test.mjs",
 		"test:resume": "node --test tests/resume.test.js tests/resume-pdf.test.js",
 		"test:seo": "node --test tests/seo.test.js",
 		"build-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
@@ -37,13 +37,13 @@
 	},
 	"homepage": "https://github.com/11ty/eleventy-base-blog#readme",
 	"devDependencies": {
-		"@bengfarrell/monthly": "file:vendor/bengfarrell-monthly-0.1.0.tgz",
 		"@11ty/eleventy": "^2.0.1",
 		"@11ty/eleventy-img": "^3.1.1",
 		"@11ty/eleventy-navigation": "^0.3.5",
 		"@11ty/eleventy-plugin-bundle": "^1.0.4",
 		"@11ty/eleventy-plugin-rss": "^1.2.0",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+		"@bengfarrell/monthly": "file:vendor/bengfarrell-monthly-0.1.0-9541254.tgz",
 		"luxon": "^3.3.0",
 		"markdown-it-anchor": "^8.6.7",
 		"marked": "^13.0.2",

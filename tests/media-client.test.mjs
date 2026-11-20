@@ -117,17 +117,21 @@ test("the private page embeds Monthly without analytics or the legacy client", (
 	assert.match(page, /eleventyExcludeFromCollections: true/);
 });
 
-test("Lowdown is a public Monthly feed without a site navigation link", () => {
-	const page = readFileSync("content/lowdown.njk", "utf8");
+test("Memos is a public Monthly feed without a site navigation link", () => {
+	const page = readFileSync("content/memos.njk", "utf8");
 	const layout = readFileSync("_includes/layouts/base.njk", "utf8");
-	assert.match(page, /permalink: \/lowdown\//);
+	assert.match(page, /permalink: \/memos\//);
 	assert.match(page, /monthlyAssets: true/);
-	assert.match(page, /<h1 class="monthly-eyebrow">My Monthly Feed<\/h1>/);
-	assert.match(page, /<monthly-feed base-url="{{ media\.feedUrl }}">/);
+	assert.match(page, /<header class="entry-header entry-header-single"><h1 class="entry-title">Memos<\/h1>/);
+	assert.match(page, /<site-notes-feed base-url="{{ media\.feedUrl }}">/);
 	assert.doesNotMatch(page, /monthly-media|api-url=|bucket=|Refresh|noindex/);
-	assert.doesNotMatch(layout, /href="\/lowdown\/"/);
+	assert.doesNotMatch(layout, /href="\/memos\/"/);
 	assert.match(layout, /{% if monthlyAssets %}[\s\S]*?\/media\/monthly\.css[\s\S]*?{% endif %}/);
 	assert.match(layout, /{% if monthlyAssets %} monthly-feed-page{% endif %}/);
+	const styles = readFileSync("client/monthly-site.css", "utf8");
+	assert.match(styles, /\.monthly-notes site-notes-feed\s*\{[^}]*container-type: inline-size;/);
+	assert.doesNotMatch(styles, /notes-linked|\.monthly-post:target/);
+	assert.doesNotMatch(styles, /\.monthly-notes > header\s*\{[^}]*background: #000/);
 });
 
 test("the site's public feed reads exactly three calendar months without API credentials", async () => {

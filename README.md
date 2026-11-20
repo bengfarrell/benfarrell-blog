@@ -210,7 +210,7 @@ visitor's IP address with Bluesky.
 
 Run the comments checks with `node --test tests/bluesky-comments.test.js`.
 
-## Monthly media manager and Lowdown
+## Monthly media manager and Memos
 
 `/media/` uses [Monthly](https://github.com/bengfarrell/monthly) for a
 single-user, password-protected uploader, microblog composer, and month-filtered
@@ -224,11 +224,66 @@ hashtags parsed from the message. Posts always use the current UTC month and
 append to `<prefix>YYYY/MM/posts.json`. Regular uploads retain their month picker.
 Monthly does not convert videos or modify the bucket policy.
 
-`/lowdown/` is the public feed, not yet linked in the site navigation. It reads
+`/memos/` is the public feed, linked from the homepage preview and media manager.
+`/lowdown/` and `/notes/` redirect to `/memos/`, preserving month queries and
+post anchors with JavaScript, with a static HTML redirect and fallback link
+when JavaScript is unavailable.
+The feed reads
 the current month and previous two months directly from the existing CDN at
 runtime, with month headings and a responsive one-to-three-column layout.
+The site feed element sets `container-type: inline-size` so Monthly's existing
+46rem/two-column and 70rem/three-column container queries work with the subclass.
+`client/monthly-site.css` supplies site typography, muted dates/tags, light card
+borders, and a 75rem page width; the heading reuses the site's blue wave.
+Deep links scroll the memo's beginning below the fixed header and focus it for
+accessibility, without adding a selection outline or highlight.
+No Monthly source changes are needed for this styling.
 Missing JSON files are skipped with a console warning, not a feed error.
 Publishing an update does **not** require rebuilding or redeploying Eleventy.
+
+Monthly's optional `thumbnails` maps are preserved when reading the feed.
+Inline images use the first thumbnail, falling back to the original for older
+posts. Videos with a thumbnail (or legacy `poster`) show that poster with
+`preload="none"`; videos without one retain `preload="metadata"`.
+The upgraded media manager includes image thumbnail controls, video frame
+selection, and the monthly posts JSON editor. Image thumbnails default on above
+1 MiB; new thumbnails do not automatically backfill older posts.
+Uploading thumbnails requires the updated Monthly Lambda, `POST /thumbnails`,
+and thumbnail-index read permissions described in Monthly's AWS guide. This
+site update does not deploy those backend changes.
+
+Memos adds a small **Expand** button for every image, video, and audio attachment.
+Images also open when clicked/tapped. `public/js/memo-viewer.js` enhances Monthly's
+rendered media without changing its library source or inline playback controls.
+The shared native modal dialog constrains media to the viewport, traps keyboard
+focus, and closes with its button, Escape, or a backdrop click. Focus returns to
+the expand button on close. Expanded images and **Open original** always use
+the original media URL, not the inline thumbnail; expanded videos retain their
+poster. Images retain natural sizing; video/audio keep native
+controls, do not autoplay, and preserve the playback position between inline and
+expanded views. Opening pauses the inline player; closing stops the expanded
+player without automatically resuming playback. An **Open original** link is
+available for unsupported formats, with visible errors if media fails to load.
+The viewer and controls are styled in `client/monthly-site.css`; the homepage
+preview remains unchanged.
+Run viewer checks with `node --test tests/memo-viewer.test.mjs` (also included
+in `npm run test:media`).
+
+The homepage's **This month** section sits below Recent writing.
+`public/js/notes-preview.js` fetches only the current UTC month's JSON, reusing
+Monthly's post validation, and shows the two newest non-future entries as plain
+text excerpts of at most 140 characters. Each excerpt links to its full post
+at `/memos/?month=YYYY-MM#note-UUID`. `public/js/notes-feed.js` extends Monthly's
+feed to load the linked month (including older months), assign post anchors,
+and scroll to and focus the requested post after loading.
+Media-only posts get a text label. Posts with an image show one 44px preview
+using its first generated thumbnail when available, otherwise the original;
+otherwise video/audio attachments use local muted icons without requesting
+the associated media. Full players stay on Memos. The month and dates use UTC, matching
+publication. The preview stays hidden without JavaScript, for empty months,
+or if the request fails (failures are logged to the console). It loads no Monthly
+UI or styles and is excluded from Pagefind. New updates need no site rebuild.
+Run its checks with `node --test tests/notes-preview.test.mjs tests/notes-feed.test.mjs`.
 
 The page asks only for your username and password. Its API URL and bucket are
 fixed by the `API_URL` and `BUCKET` constants in `_data/media.js`; `FEED_URL`
@@ -256,7 +311,9 @@ npm run test:media
 ### Updating the Monthly package
 
 Monthly is pinned to the checked-in
-`vendor/bengfarrell-monthly-0.1.0.tgz` npm archive. A fresh checkout only needs
+`vendor/bengfarrell-monthly-0.1.0-9541254.tgz` npm archive, built from Monthly
+commit `9541254`. Monthly still declares version 0.1.0, so the archive's commit
+suffix distinguishes this snapshot from the previous package. A fresh checkout only needs
 `npm install`; neither npm publishing nor a sibling Monthly checkout is required
 to build this site. Only the package's browser assets and client-side APIs are
 used here.
