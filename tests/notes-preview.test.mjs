@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { test } from "node:test";
 import vm from "node:vm";
-import { readPosts, firstThumbnail, mediaType } from "@bengfarrell/monthly/core";
+import { postUrl, readPosts, firstThumbnail, mediaType } from "@bengfarrell/monthly/core";
 
 const source = readFileSync("public/js/notes-preview.js", "utf8")
 	.replace(/^import .*;\n/gm, "");
@@ -36,7 +36,8 @@ async function preview(value, status = 200, now = "2026-11-19T12:00:00Z") {
 		constructor(...args) { super(...(args.length ? args : [now])); }
 	}
 	const context = vm.createContext({
-		Date: Clock, URL, AbortSignal, readPosts, firstThumbnail, mediaType,
+		Date: Clock, URL, AbortSignal, postUrl, readPosts, firstThumbnail, mediaType,
+		window: { location: { href: "https://benfarrell.com/" } },
 		console: {
 			error: (...args) => errors.push(args),
 			warn: (...args) => warnings.push(args),
@@ -82,7 +83,7 @@ test("preview fetches only the current UTC month and shows two newest entries sa
 	assert.equal(copy(ui.list.children[0]).children[0].dateTime, "2026-11-19T00:00:00.000Z");
 	assert.equal(copy(ui.list.children[0]).children[0].textContent, "Nov 19");
 	assert.equal(ui.list.children[0].children[0].href,
-		"/memos/?month=2026-11#note-6e809217-28d0-41bd-b722-4fc7b5524860");
+		"https://benfarrell.com/memos/?month=2026-11#note-6e809217-28d0-41bd-b722-4fc7b5524860");
 });
 
 test("excerpts are at most 140 Unicode characters and media-only posts have a label", async () => {

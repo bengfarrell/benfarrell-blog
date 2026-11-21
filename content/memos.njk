@@ -8,19 +8,7 @@ eleventyExcludeFromCollections: true
 ---
 <section class="monthly-notes" aria-label="Memos">
 	<header class="entry-header entry-header-single"><h1 class="entry-title">Memos</h1></header>
-	<p data-note-status role="alert" hidden></p>
-	<site-notes-feed base-url="{{ media.feedUrl }}"></site-notes-feed>
+	<monthly-feed base-url="{{ media.feedUrl }}" post-viewer post-prefix="note-" post-label="Memo"></monthly-feed>
 	<noscript>JavaScript is required to load these recent updates.</noscript>
 </section>
-<dialog class="memo-viewer" data-memo-viewer aria-labelledby="memo-viewer-title">
-	<header class="memo-viewer-heading">
-		<h2 id="memo-viewer-title" data-viewer-title>Media</h2>
-		<div class="memo-viewer-actions">
-			<a data-viewer-original target="_blank" rel="noopener noreferrer">Open original</a>
-			<form method="dialog"><button type="submit" autofocus aria-label="Close media viewer">Close &times;</button></form>
-		</div>
-	</header>
-	<div class="memo-viewer-content" data-viewer-content></div>
-	<p data-viewer-error role="status" hidden></p>
-</dialog>
-<script type="module" src="/js/notes-feed.js"></script>
+<script type="module" src="/media/monthly.js"></script>

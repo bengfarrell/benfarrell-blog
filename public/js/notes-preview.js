@@ -1,4 +1,4 @@
-import { readPosts } from "../media/shared/posts.js";
+import { postUrl, readPosts } from "../media/shared/posts.js";
 import { firstThumbnail, mediaType } from "../media/shared/media-types.js";
 
 function previewMedia(media) {
@@ -54,7 +54,7 @@ async function loadPreview(section) {
 			const item = document.createElement("li");
 			const link = document.createElement("a");
 			link.className = "home-note-link";
-			link.href = `/memos/?month=${month}#note-${post.id}`;
+			link.href = postUrl(post, new URL("/memos/", window.location.href), "note-").href;
 			const thumbnail = previewMedia(post.media);
 			if (thumbnail) link.append(thumbnail);
 			const copy = document.createElement("div");

@@ -231,12 +231,14 @@ when JavaScript is unavailable.
 The feed reads
 the current month and previous two months directly from the existing CDN at
 runtime, with month headings and a responsive one-to-three-column layout.
-The site feed element sets `container-type: inline-size` so Monthly's existing
-46rem/two-column and 70rem/three-column container queries work with the subclass.
+Monthly's native feed provides `container-type: inline-size` and the existing
+46rem/two-column and 70rem/three-column container queries.
 `client/monthly-site.css` supplies site typography, muted dates/tags, light card
 borders, and a 75rem page width; the heading reuses the site's blue wave.
-Deep links scroll the memo's beginning below the fixed header and focus it for
-accessibility, without adding a selection outline or highlight.
+Deep links open a full memo dialog without highlighting or scrolling a grid card.
+The grid always stays on the current UTC month and previous two months. A link
+to an older memo loads only that month's JSON separately; closing it returns to
+the current grid and removes the month query and post fragment.
 No Monthly source changes are needed for this styling.
 Missing JSON files are skipped with a console warning, not a feed error.
 Publishing an update does **not** require rebuilding or redeploying Eleventy.
@@ -255,9 +257,18 @@ generated thumbnails, and legacy posters as independent media files. Deploy
 Monthly's updated Lambda to get this listing behavior; old `thumbnails.json`
 indexes are ignored. This site update does not deploy backend changes.
 
-Memos adds a small **Expand** button for every image, video, and audio attachment.
-Images also open when clicked/tapped. `public/js/memo-viewer.js` enhances Monthly's
-rendered media without changing its library source or inline playback controls.
+Memos adds a **View memo** link to every card (including text-only memos) and a
+small **Expand** button for every image, video, and audio attachment.
+Images also open when clicked/tapped. Monthly owns rendering, the viewer,
+deep-link navigation, historical loading and playback cleanup; no site-specific
+feed subclass or DOM enhancement script is needed. `content/memos.njk` enables
+`post-viewer`, with `post-prefix="note-"` and `post-label="Memo"`, preserving
+existing URLs and labels. Monthly's grid-only default remains unchanged.
+The dialog shows the full text, UTC date, bordered tags, and all attachments,
+with text beside media on desktop and stacked on mobile. Each attachment has
+its own **Open original** link. Opening from the grid sets a shareable memo URL;
+browser Back closes the dialog and Forward reopens it. Closing a directly linked
+memo stays on this page rather than navigating away.
 The shared native modal dialog constrains media to the viewport, traps keyboard
 focus, and closes with its button, Escape, or a backdrop click. Focus returns to
 the expand button on close. Expanded images and **Open original** always use
@@ -267,18 +278,19 @@ controls, do not autoplay, and preserve the playback position between inline and
 expanded views. Opening pauses the inline player; closing stops the expanded
 player without automatically resuming playback. An **Open original** link is
 available for unsupported formats, with visible errors if media fails to load.
-The viewer and controls are styled in `client/monthly-site.css`; the homepage
-preview remains unchanged.
-Run viewer checks with `node --test tests/memo-viewer.test.mjs` (also included
-in `npm run test:media`).
+Monthly's stylesheet owns the viewer's structure and responsive behavior.
+`client/monthly-site.css` supplies only site styling and inherited
+`--monthly-viewer-*` theme variables; the homepage preview remains lightweight.
+Run integration checks with `npm run test:media`; viewer/navigation browser
+regressions live in Monthly's `tests/browser.integration.ts`.
 
 The homepage's **This month** section sits below Recent writing.
 `public/js/notes-preview.js` fetches only the current UTC month's JSON, reusing
 Monthly's post validation, and shows the two newest non-future entries as plain
 text excerpts of at most 140 characters. Each excerpt links to its full post
-at `/memos/?month=YYYY-MM#note-UUID`. `public/js/notes-feed.js` extends Monthly's
-feed to load the linked month (including older months), assign post anchors,
-and scroll to and focus the requested post after loading.
+at `/memos/?month=YYYY-MM#note-UUID`, built with Monthly's shared `postUrl` helper.
+Monthly's native feed assigns anchors and opens the requested memo after loading,
+fetching historical months independently of the current grid.
 Media-only posts get a text label. Posts with an image show one 44px preview
 using its first generated thumbnail when available, otherwise the original;
 otherwise video/audio attachments use local muted icons without requesting
@@ -314,8 +326,9 @@ npm run test:media
 ### Updating the Monthly package
 
 Monthly is pinned to the checked-in
-`vendor/bengfarrell-monthly-0.1.1.tgz` npm archive, built from the local Monthly
-source with post-only thumbnail associations. A fresh checkout only needs
+`vendor/bengfarrell-monthly-0.1.2.tgz` npm archive, built from the local Monthly
+source with post-only thumbnail associations and the native full-post viewer.
+A fresh checkout only needs
 `npm install`; neither npm publishing nor a sibling Monthly checkout is required
 to build this site. Only the package's browser assets and client-side APIs are
 used here.

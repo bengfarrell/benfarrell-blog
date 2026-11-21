@@ -123,13 +123,14 @@ test("Memos is a public Monthly feed without a site navigation link", () => {
 	assert.match(page, /permalink: \/memos\//);
 	assert.match(page, /monthlyAssets: true/);
 	assert.match(page, /<header class="entry-header entry-header-single"><h1 class="entry-title">Memos<\/h1>/);
-	assert.match(page, /<site-notes-feed base-url="{{ media\.feedUrl }}">/);
+	assert.match(page, /<monthly-feed base-url="{{ media\.feedUrl }}" post-viewer post-prefix="note-" post-label="Memo">/);
 	assert.doesNotMatch(page, /monthly-media|api-url=|bucket=|Refresh|noindex/);
 	assert.doesNotMatch(layout, /href="\/memos\/"/);
 	assert.match(layout, /{% if monthlyAssets %}[\s\S]*?\/media\/monthly\.css[\s\S]*?{% endif %}/);
 	assert.match(layout, /{% if monthlyAssets %} monthly-feed-page{% endif %}/);
 	const styles = readFileSync("client/monthly-site.css", "utf8");
-	assert.match(styles, /\.monthly-notes site-notes-feed\s*\{[^}]*container-type: inline-size;/);
+	assert.match(readFileSync(new URL(import.meta.resolve("@bengfarrell/monthly/styles.css")), "utf8"),
+		/monthly-feed\s*\{[^}]*container-type:\s*inline-size(?:;|})/);
 	assert.doesNotMatch(styles, /notes-linked|\.monthly-post:target/);
 	assert.doesNotMatch(styles, /\.monthly-notes > header\s*\{[^}]*background: #000/);
 });
