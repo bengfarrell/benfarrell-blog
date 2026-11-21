@@ -17,6 +17,13 @@ test("site assets come from the installed Monthly release rather than the legacy
 		));
 	}
 	assert.ok(readFileSync("public/media/site.css").equals(readFileSync("client/monthly-site.css")));
+	const viewer = readFileSync(new URL("../components/post-viewer.js", import.meta.resolve("@bengfarrell/monthly/core")), "utf8");
+	assert.match(viewer, /monthly-post-viewer-media-multiple/);
+	assert.match(viewer, /Previous asset/);
+	assert.match(viewer, /Next asset/);
+	const styles = readFileSync("public/media/monthly.css", "utf8");
+	assert.match(styles, /monthly-post-media-multiple/);
+	assert.match(styles, /monthly-post-viewer-media-focused/);
 	assert.equal(existsSync("public/media/app.js"), false);
 	assert.equal(existsSync("public/media/app.css"), false);
 	assert.equal(existsSync("dist/media-lambda.zip"), false);

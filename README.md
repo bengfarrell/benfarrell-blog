@@ -265,14 +265,19 @@ feed subclass or DOM enhancement script is needed. `content/memos.njk` enables
 `post-viewer`, with `post-prefix="note-"` and `post-label="Memo"`, preserving
 existing URLs and labels. Monthly's grid-only default remains unchanged.
 The dialog shows the full text, UTC date, bordered tags, and all attachments,
-with text beside media on desktop and stacked on mobile. Each attachment has
-its own **Open original** link. Opening from the grid sets a shareable memo URL;
+with text beside media on desktop and stacked on mobile. Multiple images/videos
+form a two-column grid; audio spans the full row.
+The overview uses available image thumbnails. Clicking an image or **Enlarge**
+opens an individual asset, with **Previous asset**, **Next asset**, and
+**Back to memo** controls. Focused images load their original resolution.
+Escape returns from an individual asset to the overview; another Escape closes it.
+Each attachment has its own **Open original** link. Opening from the grid sets a shareable memo URL;
 browser Back closes the dialog and Forward reopens it. Closing a directly linked
 memo stays on this page rather than navigating away.
 The shared native modal dialog constrains media to the viewport, traps keyboard
 focus, and closes with its button, Escape, or a backdrop click. Focus returns to
-the expand button on close. Expanded images and **Open original** always use
-the original media URL, not the inline thumbnail; expanded videos retain their
+the expand button on close. Individually enlarged images and **Open original** use
+the original media URL, not the overview thumbnail; expanded videos retain their
 poster. Images retain natural sizing; video/audio keep native
 controls, do not autoplay, and preserve the playback position between inline and
 expanded views. Opening pauses the inline player; closing stops the expanded
@@ -326,8 +331,11 @@ npm run test:media
 ### Updating the Monthly package
 
 Monthly is pinned to the checked-in
-`vendor/bengfarrell-monthly-0.1.3.tgz` npm archive, built from the local Monthly
-source with post-only thumbnail associations and the native full-post viewer.
+`vendor/bengfarrell-monthly-0.1.3-a99b372.tgz` npm archive, built from Monthly
+commit `a99b372` (multi-image/asset post views). The commit-qualified archive
+distinguishes this update from the previous archive with the same package version.
+It includes
+post-only thumbnail associations and the native full-post viewer.
 A fresh checkout only needs
 `npm install`; neither npm publishing nor a sibling Monthly checkout is required
 to build this site. Only the package's browser assets and client-side APIs are
