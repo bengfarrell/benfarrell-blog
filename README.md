@@ -326,7 +326,7 @@ npm run test:media
 ### Updating the Monthly package
 
 Monthly is pinned to the checked-in
-`vendor/bengfarrell-monthly-0.1.2.tgz` npm archive, built from the local Monthly
+`vendor/bengfarrell-monthly-0.1.3.tgz` npm archive, built from the local Monthly
 source with post-only thumbnail associations and the native full-post viewer.
 A fresh checkout only needs
 `npm install`; neither npm publishing nor a sibling Monthly checkout is required

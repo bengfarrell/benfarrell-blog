@@ -10,6 +10,8 @@ test("Memos opts into Monthly's native viewer while preserving the site's route,
 	assert.doesNotMatch(page, /site-notes-feed|<dialog|data-note-status/);
 	assert.equal(existsSync("public/js/notes-feed.js"), false);
 	assert.equal(existsSync("public/js/memo-viewer.js"), false);
+	const viewer = readFileSync(new URL("../components/post-viewer.js", import.meta.resolve("@bengfarrell/monthly/core")), "utf8");
+	assert.doesNotMatch(viewer, /post-viewer-permalink|this\.permalink/);
 	const styles = readFileSync("client/monthly-site.css", "utf8");
 	assert.match(styles, /--monthly-viewer-background: #14171a/);
 	assert.doesNotMatch(styles, /site-notes-feed|memo-viewer|grid-template-columns|html\./);
