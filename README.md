@@ -257,8 +257,8 @@ generated thumbnails, and legacy posters as independent media files. Deploy
 Monthly's updated Lambda to get this listing behavior; old `thumbnails.json`
 indexes are ignored. This site update does not deploy backend changes.
 
-Memos adds a **View memo** link to every card (including text-only memos) and a
-small **Expand** button for every image, video, and audio attachment.
+Memos adds one **Expand memo** link to every card (including text-only memos),
+instead of separate expansion buttons for each attachment.
 Images also open when clicked/tapped. Monthly owns rendering, the viewer,
 deep-link navigation, historical loading and playback cleanup; no site-specific
 feed subclass or DOM enhancement script is needed. `content/memos.njk` enables
@@ -331,8 +331,8 @@ npm run test:media
 ### Updating the Monthly package
 
 Monthly is pinned to the checked-in
-`vendor/bengfarrell-monthly-0.1.3-a99b372.tgz` npm archive, built from Monthly
-commit `a99b372` (multi-image/asset post views). The commit-qualified archive
+`vendor/bengfarrell-monthly-0.1.3-09cb1bf.tgz` npm archive, built from Monthly
+commit `09cb1bf` (one expand link per card, with multi-asset views). The commit-qualified archive
 distinguishes this update from the previous archive with the same package version.
 It includes
 post-only thumbnail associations and the native full-post viewer.

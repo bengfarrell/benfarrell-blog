@@ -72,11 +72,11 @@
 .monthly-notes video {
 	margin-bottom: 0;
 }
-.monthly-notes .monthly-post-expand {
+.monthly-notes .monthly-post-open {
 	background: #fff;
 	color: #62676d;
 }
-.monthly-notes .monthly-post-expand:hover {
+.monthly-notes .monthly-post-open:hover {
 	background: #edf4fa;
 	color: #292d31;
 }
